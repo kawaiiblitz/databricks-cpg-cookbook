@@ -53,9 +53,9 @@
     display: flex; align-items: center; justify-content: space-between;
     gap: 24px;
   }
-  .brand { font-family: var(--sans); display: flex; align-items: center; gap: 14px; }
+  .brand { font-family: var(--sans); display: flex; align-items: center; gap: 12px; }
+  .brand .logo-svg { height: 22px; width: auto; display: block; }
   .brand .logo-mark { font-weight: 800; color: var(--text); letter-spacing: -0.4px; font-size: 20px; }
-  .brand .logo-mark::before { content: ''; display: inline-block; width: 10px; height: 10px; background: var(--red); border-radius: 2px; margin-right: 10px; vertical-align: 1px; }
   .brand .sep { color: var(--border); font-weight: 400; }
   .brand .tag { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 0.2px; }
   .nav-links { display: flex; gap: 22px; font-size: 13px; }
@@ -75,12 +75,19 @@
     border-bottom: 1px solid var(--border);
   }
   .hero-inner { max-width: 1180px; margin: 0 auto; position: relative; }
-  .hero .brand-lock { display: flex; align-items: center; gap: 16px; margin-bottom: 44px; }
-  .hero .brand-lock .mark { font-family: var(--sans); font-weight: 800; font-size: 32px; color: var(--text); letter-spacing: -0.6px; display: flex; align-items: center; gap: 12px; }
-  .hero .brand-lock .mark::before { content: ''; display: inline-block; width: 14px; height: 14px; background: var(--red); border-radius: 3px; }
-  .hero .brand-lock .div { width: 1px; height: 32px; background: var(--border); }
+  .hero .brand-lock { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .hero .brand-lock .logo-svg { height: 42px; width: auto; display: block; }
+  .hero .brand-lock .mark { font-family: var(--sans); font-weight: 800; font-size: 36px; color: var(--text); letter-spacing: -0.8px; }
+  .hero .brand-lock .div { width: 1px; height: 36px; background: var(--border); }
   .hero .brand-lock .sub { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; }
   .hero .brand-lock .sub strong { color: var(--text); display: block; font-weight: 600; letter-spacing: 0.5px; font-size: 14px; text-transform: none; }
+
+  .hero .primer-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero .primer-tag::before { content: ''; width: 32px; height: 1px; background: var(--red); }
+  .hero .primer-tag::after { content: ''; width: 32px; height: 1px; background: var(--red); }
+
+  .hero .byline { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; max-width: 760px; }
+  .hero .byline strong { color: var(--text); font-weight: 600; }
   .hero h1 {
     font-family: var(--display); font-weight: 700;
     font-size: clamp(48px, 8vw, 96px); line-height: 0.98;
@@ -124,6 +131,12 @@
     font-family: var(--display); font-size: 20px; line-height: 1.55;
     color: var(--text-soft); max-width: 56ch; margin: 0 0 48px; font-weight: 400;
   }
+
+  /* Citations */
+  .citations { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .citations a { font-size: 12px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
+  .citations a:hover { color: var(--red); border-color: rgba(255,54,33,0.4); background: rgba(255,54,33,0.04); }
+  .citations a::before { content: '↗ '; opacity: 0.6; }
 
   /* Reveal on scroll */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -280,14 +293,22 @@
 
 <nav class="topnav">
   <div class="nav-inner">
-    <div class="brand"><span class="logo-mark">Databricks</span><span class="sep">|</span><span class="tag">Consumer Industries · CPG Cookbook</span></div>
+    <div class="brand">
+      <svg class="logo-svg" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
+        <path d="M0 7L12 0L24 7L12 14L0 7Z"/>
+        <path d="M0 14L12 7L24 14L12 21L0 14Z" opacity="0.55"/>
+        <path d="M0 21L12 14L24 21L12 28L0 21Z" opacity="0.25"/>
+      </svg>
+      <span class="logo-mark">Databricks</span><span class="sep">|</span><span class="tag">Consumer Industries · CPG Cookbook</span>
+    </div>
     <div class="nav-links">
       <a href="#que-es">Qué es</a>
       <a href="#como">Cómo funciona</a>
-      <a href="#kpis">KPIs</a>
       <a href="#casos">Casos</a>
-      <a href="#roadmap">Roadmap</a>
       <a href="#recursos">Recursos</a>
+      <a href="#comparativa">Comparativa</a>
+      <a href="#kpis">KPIs</a>
+      <a href="#roadmap">Roadmap</a>
     </div>
   </div>
 </nav>
@@ -295,17 +316,20 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="brand-lock">
+      <svg class="logo-svg" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
+        <path d="M0 7L12 0L24 7L12 14L0 7Z"/>
+        <path d="M0 14L12 7L24 14L12 21L0 14Z" opacity="0.55"/>
+        <path d="M0 21L12 14L24 21L12 28L0 21Z" opacity="0.25"/>
+      </svg>
       <div class="mark">Databricks</div>
       <div class="div"></div>
       <div class="sub"><strong>Consumer Industries</strong>CPG Cookbook</div>
     </div>
-    <h1>CPG Pricing sobre la <em>Data Intelligence Platform</em></h1>
-    <p class="deck">Qué es, cómo funciona, qué KPIs mueve y cómo medirlo — un framework para equipos de Revenue Management, Pricing y Finanzas en bienes de consumo que quieren pasar del precio estático a la capacidad operativa gobernada.</p>
-    <div class="meta">
-      <span><strong>Audiencia</strong>Pricing · Revenue Mgmt · CFO</span>
-      <span><strong>Industria</strong>Bebidas · Bienes de consumo</span>
-      <span><strong>Plataforma</strong>Databricks Data Intelligence</span>
-      <span><strong>Formato</strong>One-pager público</span>
+    <div class="primer-tag">Primer · One-page</div>
+    <h1>What is Dynamic Pricing<br/>para <em>CPG</em></h1>
+    <p class="deck">Del precio estático a la capacidad operativa gobernada. Un marco para equipos de Revenue Management y Pricing en bienes de consumo — con casos, KPIs medibles y la evidencia estadística que lo respalda.</p>
+    <div class="byline">
+      <strong>Preparado por Databricks Consumer Industries</strong> · Framework público basado en casos de éxito de CPG y retail sobre la Databricks Data Intelligence Platform.
     </div>
   </div>
 </header>
@@ -330,9 +354,9 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">Ciclos de decisión que van de segundos a días, según el canal y la granularidad.</p>
+      <p class="section-deck">Ciclos de decisión que van de segundos a días. Gran parte de la data requerida — ERP, scanner panels (NielsenIQ), POS, loyalty, inventario — probablemente ya vive en la <strong>capa Gold</strong>; el framework asume ese punto de partida y añade lo que falte vía Silver para fuentes externas (competencia, pricing de retailers, shopper insights).</p>
       <div class="steps-grid">
-        <div class="step-card"><div class="n">01</div><div class="t">Ingesta gobernada</div><div class="d">ERP, ventas TX, competencia, promociones e inventario se unifican en un Lakehouse con linaje y permisos (Unity Catalog).</div></div>
+        <div class="step-card"><div class="n">01</div><div class="t">Ingesta gobernada</div><div class="d">ERP, ventas TX, competencia, promociones e inventario se unifican en Silver → Gold con linaje y permisos (Unity Catalog). La data que ya está en Gold se conecta directo.</div></div>
         <div class="step-card"><div class="n">02</div><div class="t">Modelo de elasticidad</div><div class="d">ML que aprende cómo cada SKU × canal × cliente responde a cambios de precio y promoción. Versionado y trazable.</div></div>
         <div class="step-card"><div class="n">03</div><div class="t">Optimizador con guardrails</div><div class="d">Recomienda precio sujeto a margen mínimo, paridad de canal, acuerdos con clientes clave y márgenes por categoría.</div></div>
         <div class="step-card"><div class="n">04</div><div class="t">Semántica y agentes</div><div class="d">Metric Views + agentes conversacionales que permiten al equipo comercial preguntar y obtener respuestas trazables.</div></div>
@@ -349,16 +373,15 @@ flowchart LR
     classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
 
     subgraph Fuentes
-      A1[ERP<br/>Pedidos/Facturación]
-      A2[Ventas TX<br/>Canal x SKU]
-      A3[Precios<br/>Competencia]
-      A4[Inventario<br/>y promos históricas]
+      A1[ERP<br/>SAP / Oracle R12]
+      A2[POS + Scanner<br/>NielsenIQ / Loyalty]
+      A3[Precios<br/>Competencia · nuevo]
+      A4[Promos históricas<br/>Inventario]
     end
 
-    subgraph Lakehouse [Lakehouse gobernado]
-      B[Bronze<br/>Raw]
+    subgraph Lakehouse [Lakehouse gobernado · la mayoría ya aquí]
       S[Silver<br/>Conformed]
-      G[Gold<br/>Pricing Mart]
+      G[Gold<br/>Pricing Mart ★]
     end
 
     subgraph Intelligence [Capa de inteligencia]
@@ -373,11 +396,11 @@ flowchart LR
       API[API<br/>transaccional]
     end
 
-    A1 --> B
-    A2 --> B
-    A3 --> B
-    A4 --> B
-    B --> S --> G
+    A1 --> G
+    A2 --> G
+    A3 --> S
+    A4 --> G
+    S --> G
     G --> M --> O
     G --> SM
     O --> D
@@ -386,7 +409,6 @@ flowchart LR
     SM --> AG
 
     class A1,A2,A3,A4 source
-    class B bronze
     class S silver
     class G gold
     class M,O,SM ai
@@ -396,10 +418,151 @@ flowchart LR
     </div>
   </section>
 
-  <!-- 3 · COMPARATIVA -->
+  <!-- 3 · CASOS DE EXITO -->
+  <section class="stage" id="casos">
+    <div class="reveal">
+      <div class="section-label"><span class="num">3</span>Casos de éxito públicos</div>
+      <h2 class="head">Lo que otras marcas ya <em>consiguieron</em></h2>
+      <p class="section-deck">Haz click en cada historia para expandir métricas, quote y link al caso completo.</p>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Reckitt</div>
+            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex — marcas de consumo</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que da visibilidad de elasticidad, campañas y respuesta del consumidor a cambios de precio — la misma infraestructura que habilita pricing dinámico.</p>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
+              <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
+              <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en tareas de marketing</div></div>
+            </div>
+            <div class="story-quote">
+              "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
+              <cite>— Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
+            </div>
+            <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Steelcase</div>
+            <div class="sector">Mobiliario · Consumer Goods · 130+ países · 70,000+ escenarios de pricing/año</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Reemplazó un proceso manual de aprobación de precios (20 min por solicitud) por un motor con IA sobre Databricks: feature store con 70+ features, Random Forest en inferencia serverless y gobernanza con Unity Catalog. Es el caso público más cercano a un motor de pricing dinámico operativo.</p>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">1,500+ hrs</div><div class="l">liberadas/año para vendedores</div></div>
+              <div class="story-metric"><div class="v">35% → 50%</div><div class="l">auto-aprobación de pricing</div></div>
+              <div class="story-metric"><div class="v">20 min → seg</div><div class="l">tiempo por solicitud</div></div>
+            </div>
+            <a class="story-link" href="https://www.databricks.com/customers/steelcase" target="_blank">Ver caso completo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Redkite Pricing Analytics</div>
+            <div class="sector">Solution accelerator · notebooks ejecutables</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Set de notebooks sobre Databricks que implementan técnicas clásicas de pricing analytics CPG: elasticidad, análisis de canibalización y optimización. Es el mejor punto de partida técnico para un equipo de analytics interno que quiera iniciar.</p>
+            <a class="story-link" href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Leer el blog →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4 · RECURSOS PUBLICOS -->
+  <section class="stage" id="recursos">
+    <div class="reveal">
+      <div class="section-label"><span class="num">4</span>Recursos públicos</div>
+      <h2 class="head">Lecturas, accelerators y <em>referencias</em></h2>
+      <p class="section-deck">Todo el material es público y no requiere acceso a Databricks. Úsalo como base de investigación o como anexo a una propuesta.</p>
+
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="industry">Industry</button>
+        <button class="tab-btn" data-tab="blogs">Blogs</button>
+        <button class="tab-btn" data-tab="cases">Case studies</button>
+        <button class="tab-btn" data-tab="tech">Técnico</button>
+      </div>
+
+      <div class="tab-pane active" data-pane="industry">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <tbody>
+              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks — Retail & CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail & CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/consumer-goods" target="_blank">Databricks Consumer Goods</a></td><td class="dim">Soluciones específicas para CPG: RGM, trade promo, shopper.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane" data-pane="blogs">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <tbody>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/dynamic-pricing-airlines-how-ai-can-reshape-revenue-strategy" target="_blank">Dynamic Pricing — Databricks Blog</a></td><td class="dim">Arquitectura de referencia para pricing dinámico (aplicable a CPG).</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite Pricing Analytics</a></td><td class="dim">Notebooks ejecutables de pricing analytics CPG.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/unlocking-next-gen-customer-experiences-data-intelligence-marketing" target="_blank">Next-Gen Customer Experiences</a></td><td class="dim">Data intelligence para marketing personalizado.</td></tr>
+              <tr><td class="hi"><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing" target="_blank">McKinsey — The power of pricing</a></td><td class="dim">Evidencia clásica: +1% precio → +8–11% EBIT.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane" data-pane="cases">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <tbody>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt — Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase — Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers" target="_blank">Databricks Customers (todos)</a></td><td class="dim">Directorio completo de casos públicos.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane" data-pane="tech">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <tbody>
+              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo de solution accelerators ejecutables.</td></tr>
+              <tr><td class="hi"><a href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital — Dynamic Pricing</a></td><td class="dim">Implementación partner sobre Databricks, escenarios y simulación.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5 · COMPARATIVA -->
   <section class="stage" id="comparativa">
     <div class="reveal">
-      <div class="section-label"><span class="num">3</span>Tradicional vs. dinámico</div>
+      <div class="section-label"><span class="num">5</span>Pricing dinámico vs. normal</div>
       <h2 class="head">Seis dimensiones que <em>cambian</em></h2>
       <div class="table-wrap">
         <table>
@@ -417,11 +580,11 @@ flowchart LR
     </div>
   </section>
 
-  <!-- 4 · KPIs -->
+  <!-- 6 · KPIs -->
   <section class="stage" id="kpis">
     <div class="reveal">
-      <div class="section-label"><span class="num">4</span>KPIs que mueve</div>
-      <h2 class="head">Cuatro <em>outcomes</em> medibles</h2>
+      <div class="section-label"><span class="num">6</span>KPIs y business outcomes</div>
+      <h2 class="head">Cuatro métricas <em>medibles</em> y lo que representan para el negocio</h2>
       <p class="section-deck">Rangos observados en implementaciones públicas en CPG y retail. Cada organización debe establecer su baseline antes de fijar metas.</p>
       <div class="kpi-grid">
         <div class="kpi"><div class="l">Margen bruto</div><div class="v green">+1 a 3 pp</div><div class="h">vs. baseline pricing estático</div></div>
@@ -433,85 +596,24 @@ flowchart LR
         <div class="chart-card"><canvas id="kpiChart"></canvas></div>
         <div class="chart-card"><canvas id="marginChart"></canvas></div>
       </div>
+      <div class="table-wrap" style="margin-top: 28px;">
+        <table>
+          <thead><tr><th style="width:28%;">KPI técnico</th><th>Business outcome asociado</th></tr></thead>
+          <tbody>
+            <tr><td class="hi">+1–3 pp margen bruto</td><td class="dim">Protege rentabilidad frente a private label y guerras de descuento en canal moderno. Evidencia: <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing" target="_blank">McKinsey</a>, +1% precio → +8–11% EBIT.</td></tr>
+            <tr><td class="hi">+2–5% volumen por canal</td><td class="dim">Recupera share en segmentos elásticos sin quemar margen en los inelásticos.</td></tr>
+            <tr><td class="hi">-10 a 20% descuento perdido</td><td class="dim">Reasigna gasto promocional a SKUs con uplift real. NielsenIQ estima que ~30% del gasto promo no genera volumen incremental.</td></tr>
+            <tr><td class="hi">Ciclo de decisión días vs. semanas</td><td class="dim">Anticipa a la competencia en vez de reaccionar. Clave en bebidas de canal tradicional donde la ventana de reacción es corta.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
-  <!-- 5 · CASOS -->
-  <section class="stage" id="casos">
-    <div class="reveal">
-      <div class="section-label"><span class="num">5</span>Casos de éxito</div>
-      <h2 class="head">Tres historias <em>públicas</em></h2>
-      <p class="section-deck">Haz click en cada historia para expandir métricas, quote y link al caso completo.</p>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Steelcase</div>
-            <div class="sector">Mobiliario · Consumer Goods · 130+ países</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Reemplazó un proceso manual de aprobación de precios (20 minutos por solicitud, 70,000+ escenarios anuales) por un motor con IA sobre Databricks: feature store con 70+ features, Random Forest en inferencia serverless y gobernanza con Unity Catalog.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">1,500+ hrs</div><div class="l">liberadas por año para vendedores</div></div>
-              <div class="story-metric"><div class="v">35% → 50%</div><div class="l">auto-aprobación de pricing</div></div>
-              <div class="story-metric"><div class="v">20 min → seg</div><div class="l">tiempo por solicitud</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/steelcase" target="_blank">Ver caso completo →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Reckitt</div>
-            <div class="sector">CPG global · marcas de consumo</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto y social listening en un Lakehouse con Mosaic AI. Aunque su foco es marketing intelligence y revenue growth, la infraestructura es la misma que se requiere para pricing dinámico.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
-              <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
-              <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en marketing</div></div>
-            </div>
-            <div class="story-quote">
-              "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>— Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Redkite Pricing Analytics</div>
-            <div class="sector">Solution accelerator · notebooks ejecutables</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Set de notebooks sobre Databricks que implementan técnicas clásicas de pricing analytics CPG: elasticidad, análisis de canibalización, optimización. Sirve como punto de partida técnico para un equipo de analytics interno que quiera arrancar.</p>
-            <a class="story-link" href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Leer el blog →</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6 · FRAMEWORK -->
+  <!-- 7 · FRAMEWORK -->
   <section class="stage" id="medir">
     <div class="reveal">
-      <div class="section-label"><span class="num">6</span>Framework de medición</div>
+      <div class="section-label"><span class="num">7</span>Framework de medición</div>
       <h2 class="head">Seis preguntas antes de <em>arrancar</em></h2>
       <p class="section-deck">Aplica esta auditoría interna antes de iniciar un proyecto, para tener baseline y definir metas concretas.</p>
       <div class="table-wrap">
@@ -533,7 +635,7 @@ flowchart LR
   <!-- 7 · ROADMAP -->
   <section class="stage" id="roadmap">
     <div class="reveal">
-      <div class="section-label"><span class="num">7</span>Roadmap de madurez</div>
+      <div class="section-label"><span class="num">8</span>Roadmap de madurez y business outcomes</div>
       <h2 class="head">Tres fases — <em>de semanas a meses</em></h2>
       <div class="phases">
         <div class="phase">
@@ -567,72 +669,6 @@ flowchart LR
           <div class="goal">Escalar a 2–3 canales con atribución controlada</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 8 · RECURSOS -->
-  <section class="stage" id="recursos">
-    <div class="reveal">
-      <div class="section-label"><span class="num">8</span>Recursos</div>
-      <h2 class="head">Lecturas y accelerators <em>públicos</em></h2>
-
-      <div class="tabs-nav" role="tablist">
-        <button class="tab-btn active" data-tab="industry">Industry</button>
-        <button class="tab-btn" data-tab="blogs">Blogs</button>
-        <button class="tab-btn" data-tab="cases">Case studies</button>
-        <button class="tab-btn" data-tab="tech">Técnico</button>
-      </div>
-
-      <div class="tab-pane active" data-pane="industry">
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
-            <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks — Retail & CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail & CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tab-pane" data-pane="blogs">
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
-            <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/dynamic-pricing-airlines-how-ai-can-reshape-revenue-strategy" target="_blank">Dynamic Pricing — Databricks Blog</a></td><td class="dim">Arquitectura de referencia para pricing dinámico (aplicable a CPG).</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite Pricing Analytics</a></td><td class="dim">Notebooks ejecutables de pricing analytics CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/unlocking-next-gen-customer-experiences-data-intelligence-marketing" target="_blank">Next-Gen Customer Experiences</a></td><td class="dim">Data intelligence para marketing personalizado.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tab-pane" data-pane="cases">
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
-            <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase — Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt — Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers" target="_blank">Databricks Customers (todos)</a></td><td class="dim">Directorio completo de casos públicos.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tab-pane" data-pane="tech">
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
-            <tbody>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo de solution accelerators ejecutables.</td></tr>
-              <tr><td class="hi"><a href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital — Dynamic Pricing</a></td><td class="dim">Implementación partner sobre Databricks, escenarios y simulación.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
     </div>
   </section>
 
