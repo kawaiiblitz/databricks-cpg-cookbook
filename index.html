@@ -6,7 +6,7 @@
 <title>CPG Pricing — Framework | Databricks Consumer Industries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
@@ -24,9 +24,8 @@
     --green: #00A972;
     --orange: #FCA429;
     --blue: #3B82F6;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono: 'DM Mono', 'SF Mono', Menlo, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -54,9 +53,11 @@
     display: flex; align-items: center; justify-content: space-between;
     gap: 24px;
   }
-  .brand { font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: 0; color: var(--text-soft); display: flex; align-items: center; gap: 4px; }
-  .brand .logo-mark { font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
-  .brand .dot { color: var(--red); margin: 0 8px; font-weight: 700; }
+  .brand { font-family: var(--sans); display: flex; align-items: center; gap: 14px; }
+  .brand .logo-mark { font-weight: 800; color: var(--text); letter-spacing: -0.4px; font-size: 20px; }
+  .brand .logo-mark::before { content: ''; display: inline-block; width: 10px; height: 10px; background: var(--red); border-radius: 2px; margin-right: 10px; vertical-align: 1px; }
+  .brand .sep { color: var(--border); font-weight: 400; }
+  .brand .tag { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 0.2px; }
   .nav-links { display: flex; gap: 22px; font-size: 13px; }
   .nav-links a { color: var(--muted); border-bottom: none; }
   .nav-links a:hover { color: var(--text); }
@@ -74,25 +75,21 @@
     border-bottom: 1px solid var(--border);
   }
   .hero-inner { max-width: 1180px; margin: 0 auto; position: relative; }
-  .hero .kicker {
-    font-family: var(--sans); font-size: 12px; font-weight: 600;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--red); margin-bottom: 24px;
-    display: inline-block;
-    padding: 6px 14px;
-    border: 1px solid rgba(255,54,33,0.3);
-    border-radius: 999px;
-    background: rgba(255,54,33,0.06);
-  }
+  .hero .brand-lock { display: flex; align-items: center; gap: 16px; margin-bottom: 44px; }
+  .hero .brand-lock .mark { font-family: var(--sans); font-weight: 800; font-size: 32px; color: var(--text); letter-spacing: -0.6px; display: flex; align-items: center; gap: 12px; }
+  .hero .brand-lock .mark::before { content: ''; display: inline-block; width: 14px; height: 14px; background: var(--red); border-radius: 3px; }
+  .hero .brand-lock .div { width: 1px; height: 32px; background: var(--border); }
+  .hero .brand-lock .sub { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; }
+  .hero .brand-lock .sub strong { color: var(--text); display: block; font-weight: 600; letter-spacing: 0.5px; font-size: 14px; text-transform: none; }
   .hero h1 {
-    font-family: var(--serif); font-weight: 700;
+    font-family: var(--display); font-weight: 700;
     font-size: clamp(48px, 8vw, 96px); line-height: 0.98;
     margin: 0 0 32px; max-width: 14ch;
     letter-spacing: -0.04em;
   }
-  .hero h1 em { font-style: italic; color: var(--red); font-weight: 400; }
+  .hero h1 em { font-style: normal; color: var(--red); font-weight: 700; }
   .hero .deck {
-    font-family: var(--serif); font-size: clamp(20px, 2.2vw, 26px); line-height: 1.45;
+    font-family: var(--display); font-size: clamp(20px, 2.2vw, 26px); line-height: 1.45;
     color: var(--text-soft); max-width: 52ch; font-weight: 400;
     margin: 0 0 40px;
   }
@@ -118,13 +115,13 @@
     text-align: center; margin-right: 10px; font-size: 11px;
   }
   h2.head {
-    font-family: var(--serif); font-weight: 600;
+    font-family: var(--display); font-weight: 600;
     font-size: clamp(34px, 5vw, 56px); line-height: 1.05;
     margin: 0 0 24px; letter-spacing: -0.02em; max-width: 20ch;
   }
-  h2.head em { font-style: italic; color: var(--red); font-weight: 400; }
+  h2.head em { font-style: normal; color: var(--red); font-weight: 600; }
   .section-deck {
-    font-family: var(--serif); font-size: 20px; line-height: 1.55;
+    font-family: var(--display); font-size: 20px; line-height: 1.55;
     color: var(--text-soft); max-width: 56ch; margin: 0 0 48px; font-weight: 400;
   }
 
@@ -133,14 +130,11 @@
   .reveal.on { opacity: 1; transform: translateY(0); }
 
   /* Narrative prose */
-  .prose { max-width: 66ch; font-family: var(--serif); font-size: 19px; line-height: 1.7; color: var(--text); }
+  .prose { max-width: 66ch; font-family: var(--display); font-size: 19px; line-height: 1.7; color: var(--text); }
   .prose p { margin: 0 0 20px; }
   .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(255,54,33,0.18) 60%); padding: 0 2px; }
-  .prose p:first-of-type::first-letter {
-    font-size: 72px; float: left; line-height: 0.85;
-    padding: 6px 14px 0 0; font-weight: 700; color: var(--red);
-    font-family: var(--serif);
-  }
+  .prose p { color: var(--text-soft); }
+  .prose p:first-of-type { font-size: 21px; color: var(--text); }
 
   /* Steps */
   .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
@@ -150,7 +144,7 @@
   }
   .step-card:hover { transform: translateY(-4px); border-color: rgba(255,54,33,0.4); }
   .step-card .n {
-    font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--red);
+    font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--red);
     line-height: 1; margin-bottom: 12px;
   }
   .step-card .t { font-weight: 600; font-size: 17px; margin-bottom: 8px; }
@@ -181,7 +175,7 @@
   }
   .kpi:hover { transform: translateY(-4px); }
   .kpi .l { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
-  .kpi .v { font-family: var(--serif); font-size: 42px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .kpi .v { font-family: var(--display); font-size: 42px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
   .kpi .v.green { color: var(--green); }
   .kpi .v.orange { color: var(--orange); }
   .kpi .v.red { color: var(--red); }
@@ -205,7 +199,7 @@
   }
   .story-head:hover { background: rgba(255,54,33,0.04); }
   .story-head .left { flex: 1; }
-  .story-head .name { font-family: var(--serif); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
+  .story-head .name { font-family: var(--display); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
   .story-head .sector { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .story-head .plus {
     width: 36px; height: 36px; border-radius: 50%;
@@ -229,12 +223,12 @@
     background: rgba(0,169,114,0.07); border: 1px solid rgba(0,169,114,0.25);
     border-radius: 8px; padding: 16px 18px;
   }
-  .story-metric .v { color: var(--green); font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.1; }
+  .story-metric .v { color: var(--green); font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; }
   .story-metric .l { color: var(--muted); font-size: 12px; margin-top: 6px; }
   .story-quote {
     border-left: 3px solid var(--red); padding: 6px 0 6px 22px;
-    margin: 20px 0; font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.5;
-    color: var(--text);
+    margin: 20px 0; font-family: var(--display); font-size: 18px; line-height: 1.55;
+    color: var(--text); font-weight: 500;
   }
   .story-quote cite { display: block; font-style: normal; color: var(--muted); font-size: 13px; margin-top: 10px; font-family: var(--sans); }
   .story-link { display: inline-block; margin-top: 14px; font-size: 13px; color: var(--text); border-bottom: 1px solid var(--red); padding-bottom: 2px; }
@@ -253,7 +247,7 @@
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red);
   }
   .phase .ph { color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-  .phase .t { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.2px; }
+  .phase .t { font-family: var(--display); font-size: 24px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.2px; }
   .phase ul { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; line-height: 1.65; }
   .phase ul li { margin-bottom: 8px; }
   .phase ul li strong { color: var(--text); font-weight: 600; }
@@ -279,14 +273,14 @@
     color: var(--muted); font-size: 12px;
     border-top: 1px solid var(--border); margin-top: 60px;
   }
-  footer .sig { font-family: var(--serif); font-style: italic; font-size: 14px; margin-bottom: 6px; }
+  footer .sig { font-family: var(--display); font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--text); }
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <div class="brand"><span class="logo-mark">Databricks</span><span class="dot">·</span>Consumer Industries<span class="dot">·</span>CPG Pricing</div>
+    <div class="brand"><span class="logo-mark">Databricks</span><span class="sep">|</span><span class="tag">Consumer Industries · CPG Cookbook</span></div>
     <div class="nav-links">
       <a href="#que-es">Qué es</a>
       <a href="#como">Cómo funciona</a>
@@ -300,8 +294,12 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="kicker">Databricks · Consumer Industries</div>
-    <h1>CPG Pricing<br/>sobre la <em>Data Intelligence Platform</em></h1>
+    <div class="brand-lock">
+      <div class="mark">Databricks</div>
+      <div class="div"></div>
+      <div class="sub"><strong>Consumer Industries</strong>CPG Cookbook</div>
+    </div>
+    <h1>CPG Pricing sobre la <em>Data Intelligence Platform</em></h1>
     <p class="deck">Qué es, cómo funciona, qué KPIs mueve y cómo medirlo — un framework para equipos de Revenue Management, Pricing y Finanzas en bienes de consumo que quieren pasar del precio estático a la capacidad operativa gobernada.</p>
     <div class="meta">
       <span><strong>Audiencia</strong>Pricing · Revenue Mgmt · CFO</span>
