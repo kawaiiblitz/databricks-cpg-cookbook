@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CPG Pricing — Framework | Databricks Consumer Industries</title>
+<title>CPG Pricing: Framework | Databricks Consumer Industries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -166,9 +166,10 @@
   /* Mermaid */
   .diagram {
     background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
-    padding: 40px; overflow-x: auto; margin-top: 32px;
+    padding: 30px; overflow-x: auto; margin-top: 32px;
   }
   .mermaid { background: transparent !important; }
+  .mermaid svg { width: 100% !important; height: auto !important; }
 
   /* Tables */
   .table-wrap { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -280,6 +281,61 @@
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
 
+  /* Expandable step cards:evidence from real customer cases */
+  .step-card.evidence { cursor: pointer; padding-right: 64px; }
+  .step-card.evidence::after {
+    content: '+'; position: absolute; top: 24px; right: 22px;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--red); font-size: 18px; font-weight: 300;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .step-card.evidence.open::after { transform: rotate(45deg); border-color: var(--red); }
+  .step-card .evidence-body { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+  .step-card.open .evidence-body { max-height: 2000px; }
+  .evidence-inner { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+  .evidence-label {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--red); font-weight: 700; margin-bottom: 14px;
+  }
+  .evidence-item { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--border); }
+  .evidence-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .evidence-item .who { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.1px; }
+  .evidence-item .what { font-size: 13px; color: var(--text-soft); line-height: 1.55; margin-bottom: 10px; }
+  .evidence-item .kpis { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .evidence-item .kpi-tag {
+    font-size: 11px; padding: 3px 10px;
+    background: rgba(0,169,114,0.08); color: var(--green);
+    border: 1px solid rgba(0,169,114,0.25); border-radius: 999px; font-weight: 600;
+  }
+  .evidence-item .src {
+    font-size: 11px; color: var(--muted);
+    border-bottom: 1px solid var(--border); padding-bottom: 1px;
+  }
+  .evidence-item .src:hover { color: var(--red); border-color: var(--red); }
+  .evidence-item .src::after { content: ' ↗'; opacity: 0.6; }
+  .step-card .hint { font-size: 11px; color: var(--red); margin-top: 12px; letter-spacing: 0.5px; font-weight: 600; opacity: 0.75; }
+  .step-card.open .hint { opacity: 0; }
+
+  /* Price simulator */
+  .sim-wrap { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; }
+  .sim-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+  .sim-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; }
+  .sim-value { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+  .sim-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; outline: none; }
+  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(255,54,33,0.18); }
+  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(255,54,33,0.18); }
+  .sim-ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .sim-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  @media (max-width: 640px) { .sim-stats { grid-template-columns: 1fr; } }
+  .sim-stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
+  .sim-stat .l { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; font-weight: 700; }
+  .sim-stat .v { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spacing: -0.4px; transition: color 0.3s ease; }
+  .sim-stat .v.pos { color: var(--green); }
+  .sim-stat .v.neg { color: var(--red); }
+  .sim-stat .v.neutral { color: var(--text); }
+
   /* Footer */
   footer {
     text-align: center; padding: 60px 32px 40px;
@@ -327,7 +383,7 @@
     </div>
     <div class="primer-tag">Primer · One-page</div>
     <h1>What is Dynamic Pricing<br/>para <em>CPG</em></h1>
-    <p class="deck">Del precio estático a la capacidad operativa gobernada. Un marco para equipos de Revenue Management y Pricing en bienes de consumo — con casos, KPIs medibles y la evidencia estadística que lo respalda.</p>
+    <p class="deck">Del precio estático a la capacidad operativa gobernada. Un marco para equipos de Revenue Management y Pricing en bienes de consumo, con casos de éxito en la industria y KPIs.</p>
     <div class="byline">
       <strong>Preparado por Databricks Consumer Industries</strong> · Framework público basado en casos de éxito de CPG y retail sobre la Databricks Data Intelligence Platform.
     </div>
@@ -342,9 +398,7 @@
       <div class="section-label"><span class="num">1</span>Qué es Dynamic Pricing</div>
       <h2 class="head">Del precio <em>estático</em> a la capacidad operativa gobernada</h2>
       <div class="prose">
-        <p>Dynamic Pricing es el paso de fijar precios con reglas estáticas y hojas de cálculo a <strong>ajustar precio y promoción en tiempo casi real</strong>, en función de señales de demanda, elasticidad por canal, competencia, inventario y margen objetivo — manteniendo guardrails de negocio.</p>
-        <p>No es "cobrar más cuando hay escasez". Es convertir la decisión de precio y descuento en una <strong>capacidad operativa gobernada</strong>: modelos que aprenden de la venta, optimizadores que proponen el precio óptimo por SKU × canal × cliente, y una capa semántica que traduce esas recomendaciones al lenguaje del negocio.</p>
-        <p>Para una compañía de bebidas o bienes de consumo con <strong>ruta a detalle, canal moderno, e-commerce y HoReCa</strong>, es la diferencia entre reaccionar a la competencia con dos semanas de retraso y anticiparla con datos gobernados.</p>
+        <p>Dynamic Pricing es el paso de fijar precios con reglas estáticas y hojas de cálculo a <strong>ajustar precio y promoción en tiempo casi real</strong>, en función de señales de demanda, elasticidad por canal, competencia, inventario y margen objetivo, manteniendo guardrails de negocio. Encima, una <strong>capa semántica</strong> permite que los agentes aprendan del dominio y que el negocio interactúe con ellos en lenguaje natural.</p>
       </div>
     </div>
   </section>
@@ -354,52 +408,131 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">Ciclos de decisión que van de segundos a días. Gran parte de la data requerida — ERP, scanner panels (NielsenIQ), POS, loyalty, inventario — probablemente ya vive en la <strong>capa Gold</strong>; el framework asume ese punto de partida y añade lo que falte vía Silver para fuentes externas (competencia, pricing de retailers, shopper insights).</p>
+      <p class="section-deck">Ciclos de decisión de segundos a días, sobre una arquitectura de tres capas: <strong>Data Foundation</strong> (Unity Catalog + Delta Lake), <strong>Intelligence</strong> (MLflow versionando los modelos) y <strong>Activación</strong> (Model Serving, Agent Framework, AI/BI Genie, Databricks Apps). La mayoría de la data CPG (ERP, POS, scanner NielsenIQ, loyalty, inventario) probablemente ya vive en Gold; el framework asume ese punto de partida.</p>
       <div class="steps-grid">
         <div class="step-card"><div class="n">01</div><div class="t">Ingesta gobernada</div><div class="d">ERP, ventas TX, competencia, promociones e inventario se unifican en Silver → Gold con linaje y permisos (Unity Catalog). La data que ya está en Gold se conecta directo.</div></div>
-        <div class="step-card"><div class="n">02</div><div class="t">Modelo de elasticidad</div><div class="d">ML que aprende cómo cada SKU × canal × cliente responde a cambios de precio y promoción. Versionado y trazable.</div></div>
-        <div class="step-card"><div class="n">03</div><div class="t">Optimizador con guardrails</div><div class="d">Recomienda precio sujeto a margen mínimo, paridad de canal, acuerdos con clientes clave y márgenes por categoría.</div></div>
+        <div class="step-card evidence" data-step>
+          <div class="n">02</div>
+          <div class="t">Modelo de elasticidad</div>
+          <div class="d">ML que aprende cómo cada SKU × canal × cliente responde a cambios de precio y promoción. Versionado y trazable.</div>
+          <div class="hint">+ Ver cómo lo hicieron</div>
+          <div class="evidence-body"><div class="evidence-inner">
+            <div class="evidence-label">Evidencia · casos públicos</div>
+
+            <div class="evidence-item">
+              <div class="who">Mondelēz International</div>
+              <div class="what">Uplift modeling con MLflow + Unity Catalog + Mosaic AI ("SnackGPT") para recomendar SKUs a nivel tienda con modelos versionados a escala.</div>
+              <div class="kpis">
+                <span class="kpi-tag">+2–4% uplift SKU</span>
+                <span class="kpi-tag">+3–5% forecast accuracy</span>
+                <span class="kpi-tag">20K modelos · 3K en prod</span>
+              </div>
+              <a class="src" href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>
+            </div>
+
+            <div class="evidence-item">
+              <div class="who">Embotelladora global (bebidas · vidrio/lata/PET)</div>
+              <div class="what">Cálculo automatizado de elasticidad a nivel SKU × segmento POS × canal (tradicional vs online), incluyendo densidad competidora como covariable. Dashboards descriptivo + predictivo + prescriptivo con what-if.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Fuente única en 4 mercados</span>
+                <span class="kpi-tag">SKU × POS × canal</span>
+                <span class="kpi-tag">What-if simulation</span>
+              </div>
+              <a class="src" href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Lingaro: AI Price Elasticity para RGM</a>
+            </div>
+
+            <div class="evidence-item">
+              <div class="who">Redkite: Solution Accelerator (Databricks)</div>
+              <div class="what">Set de notebooks ejecutables sobre Databricks con técnicas clásicas de pricing analytics CPG: elasticidad, canibalización y optimización. Punto de partida reproducible.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Notebooks ejecutables</span>
+                <span class="kpi-tag">Open source-style</span>
+              </div>
+              <a class="src" href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Databricks blog: Redkite Pricing Analytics</a>
+            </div>
+
+          </div></div>
+        </div>
+        <div class="step-card evidence" data-step>
+          <div class="n">03</div>
+          <div class="t">Optimizador con guardrails</div>
+          <div class="d">Recomienda precio sujeto a margen mínimo, paridad de canal, acuerdos con clientes clave y márgenes por categoría.</div>
+          <div class="hint">+ Ver cómo lo hicieron</div>
+          <div class="evidence-body"><div class="evidence-inner">
+            <div class="evidence-label">Evidencia · casos públicos</div>
+
+            <div class="evidence-item">
+              <div class="who">Steelcase</div>
+              <div class="what">Reemplazó aprobación manual de precios (20 min por solicitud) por motor sobre Databricks: feature store con 70+ features, Random Forest en inferencia serverless, Unity Catalog. Guardrails de margen y política automatizan aprobaciones.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Auto-aprobación 35% → 50%</span>
+                <span class="kpi-tag">20 min → segundos</span>
+                <span class="kpi-tag">1,500+ hrs/año liberadas</span>
+                <span class="kpi-tag">70K escenarios/año · 130+ países</span>
+              </div>
+              <a class="src" href="https://www.databricks.com/customers/steelcase" target="_blank">Databricks: Steelcase customer story</a>
+            </div>
+
+            <div class="evidence-item">
+              <div class="who">Aimpoint Digital: Promotion Price Optimization</div>
+              <div class="what">Solución partner sobre Databricks que implementa simulación y optimización de precios/promos con guardrails (margen mínimo, paridad, acuerdos). Arquitectura de referencia reutilizable.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Partner accelerator</span>
+                <span class="kpi-tag">Simulación de escenarios</span>
+              </div>
+              <a class="src" href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital: Dynamic Pricing</a>
+            </div>
+
+          </div></div>
+        </div>
         <div class="step-card"><div class="n">04</div><div class="t">Semántica y agentes</div><div class="d">Metric Views + agentes conversacionales que permiten al equipo comercial preguntar y obtener respuestas trazables.</div></div>
         <div class="step-card"><div class="n">05</div><div class="t">Activación</div><div class="d">El precio llega al sistema transaccional, ruta del vendedor o motor de e-commerce. Con medición cerrada del uplift.</div></div>
       </div>
       <div class="diagram">
         <div class="mermaid">
 flowchart LR
-    classDef source fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
-    classDef bronze fill:#11212A,stroke:#FCA429,stroke-width:1px,color:#FCA429
+    classDef src fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
     classDef silver fill:#11212A,stroke:#8B9399,stroke-width:1px,color:#EEEFF1
-    classDef gold fill:#11212A,stroke:#00A972,stroke-width:1px,color:#00A972
+    classDef gold fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
     classDef ai fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
     classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
 
-    subgraph Fuentes
-      A1[ERP<br/>SAP / Oracle R12]
-      A2[POS + Scanner<br/>NielsenIQ / Loyalty]
-      A3[Precios<br/>Competencia · nuevo]
-      A4[Promos históricas<br/>Inventario]
+    subgraph Sources [Fuentes]
+      direction TB
+      A1["POS · transaccional<br/>loyalty · ticket"]
+      A2["E-commerce<br/>web · marketplaces"]
+      A3["Paneles sindicados<br/>encuestas · shopper research"]
+      A4["Competencia<br/>scraping · precios externos"]
+      A5["Inventario y promos<br/>trade execution"]
+      A6["Social y reviews<br/>listening · sentimiento"]
     end
 
-    subgraph Lakehouse [Lakehouse gobernado · la mayoría ya aquí]
-      S[Silver<br/>Conformed]
-      G[Gold<br/>Pricing Mart ★]
+    subgraph Lake ["Lakehouse gobernado por Unity Catalog"]
+      direction TB
+      S["Silver<br/>Conformed"]
+      G["Gold"]
     end
 
-    subgraph Intelligence [Capa de inteligencia]
-      M[Modelo<br/>Elasticidad]
-      O[Optimizador<br/>con guardrails]
-      SM[Semantics<br/>+ Agentes]
+    subgraph Intel ["Capa de inteligencia · MLflow"]
+      direction TB
+      M["Modelo<br/>Elasticidad"]
+      O["Optimizador<br/>con guardrails"]
+      SM["Capa semántica<br/>+ agentes"]
     end
 
-    subgraph Activacion [Activación]
-      D[Dashboard<br/>Revenue Mgmt]
-      AG[Agente<br/>Pricing]
-      API[API<br/>transaccional]
+    subgraph Act ["Activación"]
+      direction TB
+      D["Databricks Apps<br/>Dashboard Revenue Mgmt"]
+      AG["Agent Framework<br/>agente Pricing"]
+      API["Model Serving<br/>API transaccional"]
     end
 
     A1 --> G
     A2 --> G
     A3 --> S
-    A4 --> G
+    A4 --> S
+    A5 --> G
+    A6 --> S
     S --> G
     G --> M --> O
     G --> SM
@@ -408,13 +541,14 @@ flowchart LR
     O --> API
     SM --> AG
 
-    class A1,A2,A3,A4 source
+    class A1,A2,A3,A4,A5,A6 src
     class S silver
     class G gold
     class M,O,SM ai
     class D,AG,API out
         </div>
       </div>
+      <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted);">Fuente: <a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Big Book of Retail &amp; CG Use Cases (Databricks)</a>.</p>
     </div>
   </section>
 
@@ -423,19 +557,49 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">3</span>Casos de éxito públicos</div>
       <h2 class="head">Lo que otras marcas ya <em>consiguieron</em></h2>
-      <p class="section-deck">Haz click en cada historia para expandir métricas, quote y link al caso completo.</p>
+      <p class="section-deck">Historias públicas de clientes que ya implementaron elasticidad, pricing o promo optimization sobre Databricks. Haz click en cada una para ver métricas, quote y link al caso completo.</p>
 
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Reckitt</div>
-            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex — marcas de consumo</div>
+            <div class="name">Embotelladora global (caso Lingaro)</div>
+            <div class="sector">Bebidas · portafolio de vidrio, lata y PET · 4 mercados globales</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que da visibilidad de elasticidad, campañas y respuesta del consumidor a cambios de precio — la misma infraestructura que habilita pricing dinámico.</p>
+            <p class="story-desc">Un CPG global de bebidas con portafolio diverso en vidrio, lata y PET automatizó el cálculo de elasticidad de precio a nivel <strong>SKU × segmento POS × canal</strong> (moderno vs. tradicional vs. online), incluyendo densidad competidora como covariable. Redujo workflows manuales, habilitó simulación what-if de pricing, y se convirtió en la <strong>fuente única de verdad para estrategia de precios en 4 mercados</strong>, con plan de expansión.</p>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">4 mercados</div><div class="l">globales usándolo como fuente única de pricing</div></div>
+              <div class="story-metric"><div class="v">SKU × POS</div><div class="l">granularidad real, no categoría agregada</div></div>
+              <div class="story-metric"><div class="v">Descriptivo + predictivo + prescriptivo</div><div class="l">en un solo dashboard de RGM</div></div>
+            </div>
+            <p style="color: var(--muted); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin: 22px 0 8px; font-weight: 700;">Change management: la parte que se olvida</p>
+            <p class="story-desc" style="font-size: 15px;">Antes de construir la herramienta, el cliente estableció el proceso de uso y el marco de soporte a usuarios finales. Sin plan de adopción, la herramienta se queda sin usuarios. La práctica de commercial analytics de Lingaro acompañó con <strong>learning assets y sesiones demo</strong> sobre cinco decisiones concretas que el equipo comercial iba a tomar con la herramienta:</p>
+            <ul style="color: var(--text-soft); font-size: 14px; line-height: 1.75; padding-left: 20px; margin: 0 0 16px;">
+              <li>Encontrar el precio óptimo del producto.</li>
+              <li>Entender el pricing de la competencia.</li>
+              <li>Identificar tendencias que influyen la estrategia de precios.</li>
+              <li>Mitigar el riesgo e impacto adverso de cambios de precio.</li>
+              <li>Evaluar el efecto sobre la marca tras cambiar un precio.</li>
+            </ul>
+            <a class="story-link" href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Ver caso completo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Reckitt</div>
+            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex, marcas de consumo</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que da visibilidad de elasticidad, campañas y respuesta del consumidor a cambios de precio, la misma infraestructura que habilita pricing dinámico.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
               <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
@@ -443,7 +607,7 @@ flowchart LR
             </div>
             <div class="story-quote">
               "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>— Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
+              <cite>Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
             </div>
             <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
           </div>
@@ -494,14 +658,14 @@ flowchart LR
   <section class="stage" id="recursos">
     <div class="reveal">
       <div class="section-label"><span class="num">4</span>Recursos públicos</div>
-      <h2 class="head">Lecturas, accelerators y <em>referencias</em></h2>
-      <p class="section-deck">Todo el material es público y no requiere acceso a Databricks. Úsalo como base de investigación o como anexo a una propuesta.</p>
+      <h2 class="head">Aceleradores y <em>lecturas</em></h2>
+      <p class="section-deck">Todo es material público: notebooks, blogs, benchmarks y casos que puedes anexar a una propuesta o explorar con un data scientist. La pestaña <strong>AI Accelerators</strong> tiene código listo para ejecutar sobre Databricks.</p>
 
       <div class="tabs-nav" role="tablist">
         <button class="tab-btn active" data-tab="industry">Industry</button>
         <button class="tab-btn" data-tab="blogs">Blogs</button>
         <button class="tab-btn" data-tab="cases">Case studies</button>
-        <button class="tab-btn" data-tab="tech">Técnico</button>
+        <button class="tab-btn" data-tab="tech">AI Accelerators</button>
       </div>
 
       <div class="tab-pane active" data-pane="industry">
@@ -509,7 +673,7 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks — Retail & CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks: Retail & CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail & CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia.</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/consumer-goods" target="_blank">Databricks Consumer Goods</a></td><td class="dim">Soluciones específicas para CPG: RGM, trade promo, shopper.</td></tr>
             </tbody>
@@ -520,12 +684,15 @@ flowchart LR
       <div class="tab-pane" data-pane="blogs">
         <div class="table-wrap">
           <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene · fuente</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/dynamic-pricing-airlines-how-ai-can-reshape-revenue-strategy" target="_blank">Dynamic Pricing — Databricks Blog</a></td><td class="dim">Arquitectura de referencia para pricing dinámico (aplicable a CPG).</td></tr>
+              <tr><td class="hi"><a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Expanding Profit Margin Through Intelligent Pricing (2025)</a></td><td class="dim">+200–300 bps margen, +3 pp profit premium, +12% win-rate con data-driven pricing.</td></tr>
+              <tr><td class="hi"><a href="https://www.everestgrp.com/the-power-of-pricing-in-the-success-of-cpg-brands-2025-and-beyond-blog.html" target="_blank">Everest Group: Power of Pricing in CPG 2025</a></td><td class="dim">Solo 25–30% de CPG tienen analytics avanzado de pricing. Gap de adopción como palanca.</td></tr>
+              <tr><td class="hi"><a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ: Promotion Performance Uplift (2024)</a></td><td class="dim">59% de promos globales NO alcanzan break-even.</td></tr>
+              <tr><td class="hi"><a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute: State of the Industry (2024–2025)</a></td><td class="dim">11–27% de revenue en trade spend; 88% no lo gestiona bien; 61% no ejecuta promo como planeó.</td></tr>
+              <tr><td class="hi"><a href="https://www.custonomy.ai/blog/ai-powered-dynamic-pricing-retail-cpg/" target="_blank">AI-Powered Dynamic Pricing en Retail/CPG</a></td><td class="dim">Compila BCG: +5–10% margen en retailers con AI pricing.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/dynamic-pricing-airlines-how-ai-can-reshape-revenue-strategy" target="_blank">Databricks: Dynamic Pricing Blog</a></td><td class="dim">Arquitectura de referencia (aplicable a CPG).</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite Pricing Analytics</a></td><td class="dim">Notebooks ejecutables de pricing analytics CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/unlocking-next-gen-customer-experiences-data-intelligence-marketing" target="_blank">Next-Gen Customer Experiences</a></td><td class="dim">Data intelligence para marketing personalizado.</td></tr>
-              <tr><td class="hi"><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing" target="_blank">McKinsey — The power of pricing</a></td><td class="dim">Evidencia clásica: +1% precio → +8–11% EBIT.</td></tr>
             </tbody>
           </table>
         </div>
@@ -536,9 +703,11 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt — Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase — Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers" target="_blank">Databricks Customers (todos)</a></td><td class="dim">Directorio completo de casos públicos.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/pepsico" target="_blank">PepsiCo: Customer Story</a></td><td class="dim">Consolidación BI sobre DBSQL: -65% costo ($500K → $175K), decommission Synapse/Teradata.</td></tr>
+              <tr><td class="hi"><a href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Lingaro: AI Price Elasticity para RGM</a></td><td class="dim">Embotelladora global de bebidas con SKU × POS × canal en 4 mercados.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase: Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">+2–4% uplift por SKU, +80% sales rep effectiveness, 20K modelos / 3K en producción.</td></tr>
             </tbody>
           </table>
         </div>
@@ -547,10 +716,11 @@ flowchart LR
       <div class="tab-pane" data-pane="tech">
         <div class="table-wrap">
           <table>
-            <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
+            <thead><tr><th style="width:36%;">Accelerator</th><th>Qué contiene · tipo</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo de solution accelerators ejecutables.</td></tr>
-              <tr><td class="hi"><a href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital — Dynamic Pricing</a></td><td class="dim">Implementación partner sobre Databricks, escenarios y simulación.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite: Pricing Analytics</a></td><td class="dim">Notebooks ejecutables: elasticidad, canibalización y optimización para CPG. <strong>Empieza aquí.</strong></td></tr>
+              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo oficial de solution accelerators para retail, CPG, forecasting, propensity. Código ejecutable.</td></tr>
+              <tr><td class="hi"><a href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital: Dynamic Pricing</a></td><td class="dim">Solución partner sobre Databricks con simulación y optimización de precios/promos.</td></tr>
             </tbody>
           </table>
         </div>
@@ -584,26 +754,84 @@ flowchart LR
   <section class="stage" id="kpis">
     <div class="reveal">
       <div class="section-label"><span class="num">6</span>KPIs y business outcomes</div>
-      <h2 class="head">Cuatro métricas <em>medibles</em> y lo que representan para el negocio</h2>
-      <p class="section-deck">Rangos observados en implementaciones públicas en CPG y retail. Cada organización debe establecer su baseline antes de fijar metas.</p>
+      <h2 class="head">Qué <em>medir</em> y por qué</h2>
+      <p class="section-deck">Estos son los KPIs que un equipo de RGM debe instrumentar antes, durante y después del programa. Son <strong>definiciones</strong>, no metas: el valor que cada organización debe perseguir depende de su baseline, su mix y su madurez de datos.</p>
       <div class="kpi-grid">
-        <div class="kpi"><div class="l">Margen bruto</div><div class="v green">+1 a 3 pp</div><div class="h">vs. baseline pricing estático</div></div>
-        <div class="kpi"><div class="l">Volumen por canal</div><div class="v green">+2 a 5 %</div><div class="h">ajuste elástico informado</div></div>
-        <div class="kpi"><div class="l">Descuento sin ROI</div><div class="v orange">-10 a 20 %</div><div class="h">recuperado vía guardrails</div></div>
-        <div class="kpi"><div class="l">Ciclo de decisión</div><div class="v red">Semanas → días</div><div class="h">o menos, según canal</div></div>
+        <div class="kpi">
+          <div class="l">01 · Margen bruto post-descuento</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Estás protegiendo rentabilidad real?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> (precio neto − costo) × unidades, por SKU × canal × cliente, desde ERP + transaccional conciliado con finanzas. <strong>Cadencia:</strong> mensual.</div>
+        </div>
+        <div class="kpi">
+          <div class="l">02 · Volumen por canal</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La demanda responde como predijo el modelo?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> Δ unidades vendidas vs. baseline de 26 semanas, por SKU × canal. <strong>Cadencia:</strong> semanal con atribución causal (control group).</div>
+        </div>
+        <div class="kpi">
+          <div class="l">03 · Descuento sin uplift</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué % de tu gasto promocional está quemado?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> test A/B o comparación pre/post con control group. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+        </div>
+        <div class="kpi">
+          <div class="l">04 · Ciclo de decisión</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Anticipas o reaccionas al mercado?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> p50 y p95 del tiempo entre solicitud de cambio y go-live, por canal. <strong>Cadencia:</strong> trimestral.</div>
+        </div>
       </div>
-      <div class="chart-row">
-        <div class="chart-card"><canvas id="kpiChart"></canvas></div>
-        <div class="chart-card"><canvas id="marginChart"></canvas></div>
+      <div class="sim-wrap">
+        <div class="sim-header">
+          <div>
+            <div class="sim-label">Simulador interactivo</div>
+            <div style="font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--text); margin-top: 4px;">Mueve el slider para ver qué pasa con el portafolio cuando cambias el precio</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="sim-label">Cambio de precio</div>
+            <div class="sim-value" id="priceChangeVal">0%</div>
+          </div>
+        </div>
+        <input type="range" class="sim-slider" id="priceSlider" min="-15" max="15" value="0" step="1">
+        <div class="sim-ticks"><span>-15%</span><span>-10%</span><span>-5%</span><span>baseline</span><span>+5%</span><span>+10%</span><span>+15%</span></div>
+        <div class="sim-stats">
+          <div class="sim-stat"><div class="l">Impacto en volumen</div><div class="v neutral" id="volImpact">0.0%</div></div>
+          <div class="sim-stat"><div class="l">Impacto en ingreso</div><div class="v neutral" id="revImpact">0.0%</div></div>
+          <div class="sim-stat"><div class="l">Impacto en margen</div><div class="v neutral" id="marginImpact">0.0%</div></div>
+        </div>
       </div>
-      <div class="table-wrap" style="margin-top: 28px;">
+      <div class="chart-card" style="height: 500px;">
+        <canvas id="elasticityScatter"></canvas>
+      </div>
+      <div style="margin-top: 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;">
+        <div style="font-family: 'SFMono-Regular', Consolas, monospace; font-size: 16px; color: var(--orange); line-height: 1.6; white-space: nowrap; font-weight: 600;">
+          <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); font-weight: 700; font-family: var(--sans); margin-bottom: 6px;">Fórmula</div>
+          Q(p) = Q<sub>0</sub> · (p / p<sub>0</sub>)<sup>ε</sup>
+        </div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">
+          <strong>Modelo de elasticidad constante (log-log)</strong>. Es el modelo económico estándar para CPG pricing: el volumen responde al precio en una proporción fija ε (la elasticidad), típicamente estimada con regresión log-log sobre histórico POS. El simulador aplica esta fórmula SKU por SKU y agrega el resultado.
+          <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
+            Lecturas:
+            <a href="https://lingarogroup.com/blog/understanding-price-elasticity-and-its-impact-on-consumers-and-business-strategy" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Lingaro · Understanding Price Elasticity</a> ·
+            <a href="https://www.cpgdatainsights.com/answer-business-questions/how-to-apply-price-elasticity/" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">CPG Data Insights · How to Apply Price Elasticity</a> ·
+            <a href="https://en.wikipedia.org/wiki/Price_elasticity_of_demand" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Wikipedia · Price elasticity of demand</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 18px 0 0; font-size: 12px; color: var(--muted); text-align: center;"><strong>Simulador 100% ilustrativo construido para este cookbook</strong>: los 30 SKUs, las elasticidades y los precios son sintéticos. El formato de visualización está inspirado en el caso público de <a href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Lingaro: AI Price Elasticity para RGM</a>, y el patrón (familiares inelásticos, singles elásticos) es un hallazgo típico en embotelladores.</p>
+      <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);">
+        <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Rangos observados en reportes públicos</h3>
+        <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Puntos de referencia de la industria para calibrar. Úsalos como referencia al fijar metas internas.</p>
+      </div>
+      <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:28%;">KPI técnico</th><th>Business outcome asociado</th></tr></thead>
+          <thead><tr><th style="width:28%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
           <tbody>
-            <tr><td class="hi">+1–3 pp margen bruto</td><td class="dim">Protege rentabilidad frente a private label y guerras de descuento en canal moderno. Evidencia: <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing" target="_blank">McKinsey</a>, +1% precio → +8–11% EBIT.</td></tr>
-            <tr><td class="hi">+2–5% volumen por canal</td><td class="dim">Recupera share en segmentos elásticos sin quemar margen en los inelásticos.</td></tr>
-            <tr><td class="hi">-10 a 20% descuento perdido</td><td class="dim">Reasigna gasto promocional a SKUs con uplift real. NielsenIQ estima que ~30% del gasto promo no genera volumen incremental.</td></tr>
-            <tr><td class="hi">Ciclo de decisión días vs. semanas</td><td class="dim">Anticipa a la competencia en vez de reaccionar. Clave en bebidas de canal tradicional donde la ventana de reacción es corta.</td></tr>
+            <tr><td class="hi">+200–300 bps margen bruto</td><td class="dim">Modelo comercial repetible que alinea marketing, assortment y distribución. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence 2025</a> · reporta también +3–5 pp revenue growth.</td></tr>
+            <tr><td class="hi">+5–10% margen vía AI pricing</td><td class="dim">Retailers que adoptan AI pricing. Fuente: BCG, citado en <a href="https://www.custonomy.ai/blog/ai-powered-dynamic-pricing-retail-cpg/" target="_blank">reviews 2024 de AI Dynamic Pricing Retail/CPG</a>.</td></tr>
+            <tr><td class="hi">+3 pp profit margin premium</td><td class="dim">Compañías confident en ejecutar incrementos de precio 2025 vs. no, brecha de 5–11 pp según comparativo. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain 2025</a>.</td></tr>
+            <tr><td class="hi">+12% win-rate en deals</td><td class="dim">Organizaciones con data-driven pricing guidance cierran deals 12% más veces que quienes no la tienen. Sales reps <strong>2× más confident</strong> en realizar incrementos de precio. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain 2025</a>.</td></tr>
+            <tr><td class="hi">59% de promos NO rentables</td><td class="dim">No llegan a break-even globalmente. Reasignar ese gasto a SKUs con uplift real es la palanca más grande en trade. Fuente: <a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ 2024</a>.</td></tr>
+            <tr><td class="hi">11–27% de revenue en trade spend</td><td class="dim">Segunda línea más grande del P&amp;L después de COGS, pero <strong>88% de CPG no la gestiona bien</strong>. Fuente: <a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute 2024</a>.</td></tr>
+            <tr><td class="hi">Solo 25–30% de CPG con analytics avanzado en pricing</td><td class="dim">Brecha de adopción: la mayoría sigue en Excel y reglas estáticas. Quien ejecuta primero captura el premium. Fuente: <a href="https://www.everestgrp.com/the-power-of-pricing-in-the-success-of-cpg-brands-2025-and-beyond-blog.html" target="_blank">Everest Group 2025</a>.</td></tr>
           </tbody>
         </table>
       </div>
@@ -632,11 +860,11 @@ flowchart LR
     </div>
   </section>
 
-  <!-- 7 · ROADMAP -->
+  <!-- 8 · ROADMAP -->
   <section class="stage" id="roadmap">
     <div class="reveal">
       <div class="section-label"><span class="num">8</span>Roadmap de madurez y business outcomes</div>
-      <h2 class="head">Tres fases — <em>de semanas a meses</em></h2>
+      <h2 class="head">Tres fases:<em>de semanas a meses</em></h2>
       <div class="phases">
         <div class="phase">
           <div class="ph">Fase 1 · Fundamentos</div>
@@ -675,7 +903,7 @@ flowchart LR
 </main>
 
 <footer>
-  <div class="sig">CPG Pricing — A framework</div>
+  <div class="sig">CPG Pricing: A framework</div>
   <div>Databricks Consumer Industries · One-pager público · 2026</div>
 </footer>
 
@@ -692,10 +920,10 @@ flowchart LR
       lineColor: '#8B9399',
       secondaryColor: '#11212A',
       tertiaryColor: '#11212A',
-      fontSize: '14px',
-      fontFamily: 'DM Sans, sans-serif'
+      fontSize: '16px',
+      fontFamily: 'Inter, sans-serif'
     },
-    flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 50, rankSpacing: 60 }
+    flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 35, rankSpacing: 55, padding: 12 }
   });
 
   // Charts
@@ -703,48 +931,177 @@ flowchart LR
   Chart.defaults.borderColor = '#223845';
   Chart.defaults.font.family = 'DM Sans, sans-serif';
 
-  new Chart(document.getElementById('kpiChart'), {
-    type: 'bar',
+  // Portafolio ilustrativo estilo embotellador PepsiCo (refrescos, aguas, jugos, isotónicos)
+  // Cada SKU: x = ventas baseline (miles de unidades / 26 semanas), e = |elasticidad|, p0 = precio MXN, c = costo unitario MXN
+  // Patrón realista: formatos familiares 2L/garrafón inelásticos; singles 600ml/355ml más elásticos
+  const skuData = [
+    { label: 'Cola 600ml PET Single', x: 850, e: 1.8, p0: 14, c: 7.5 },
+    { label: 'Cola 2L PET Familiar', x: 620, e: 0.5, p0: 32, c: 18 },
+    { label: 'Cola 355ml Lata Single', x: 280, e: 2.4, p0: 17, c: 8 },
+    { label: 'Cola 500ml Vidrio Retornable', x: 340, e: 0.8, p0: 13, c: 6 },
+    { label: 'Cola 3L Vidrio Retornable', x: 250, e: 0.45, p0: 42, c: 22 },
+    { label: 'Cola 8-pack 355ml Lata', x: 340, e: 1.3, p0: 95, c: 50 },
+    { label: 'Naranja 600ml PET Single', x: 420, e: 2.2, p0: 14, c: 7 },
+    { label: 'Naranja 2L PET Familiar', x: 290, e: 0.7, p0: 30, c: 17 },
+    { label: 'Naranja 355ml Lata Single', x: 180, e: 2.6, p0: 17, c: 8 },
+    { label: 'Limón 600ml PET Single', x: 380, e: 2.0, p0: 14, c: 7 },
+    { label: 'Limón 2L PET Familiar', x: 260, e: 0.6, p0: 30, c: 17 },
+    { label: 'Toronja 600ml PET Single', x: 195, e: 2.3, p0: 14, c: 7 },
+    { label: 'Agua Mineral 355ml Lata', x: 520, e: 1.5, p0: 10, c: 4.5 },
+    { label: 'Agua Mineral 600ml PET', x: 680, e: 1.2, p0: 11, c: 5 },
+    { label: 'Agua Mineral 2L PET', x: 480, e: 0.4, p0: 22, c: 10 },
+    { label: 'Agua Epura 600ml PET', x: 720, e: 2.8, p0: 9, c: 3.5 },
+    { label: 'Agua Epura 1.5L PET', x: 650, e: 1.4, p0: 14, c: 6 },
+    { label: 'Agua Epura 4L Garrafón', x: 380, e: 0.3, p0: 32, c: 14 },
+    { label: 'Jugo Manzana 450ml', x: 240, e: 1.8, p0: 16, c: 8 },
+    { label: 'Jugo Manzana 1L Familiar', x: 180, e: 0.9, p0: 28, c: 14 },
+    { label: 'Jugo Naranja 450ml', x: 210, e: 1.7, p0: 17, c: 8.5 },
+    { label: 'Jugo Naranja 1L Familiar', x: 160, e: 0.8, p0: 29, c: 14.5 },
+    { label: 'Té Helado Durazno 600ml', x: 310, e: 2.5, p0: 15, c: 7 },
+    { label: 'Té Verde Limón 600ml', x: 240, e: 2.3, p0: 15, c: 7 },
+    { label: 'Isotónica 600ml PET', x: 290, e: 1.8, p0: 18, c: 8 },
+    { label: 'Isotónica 1L PET', x: 180, e: 1.0, p0: 26, c: 12 },
+    { label: 'Energética 500ml Lata', x: 150, e: 1.6, p0: 35, c: 15 },
+    { label: 'Energética 250ml Lata', x: 180, e: 1.9, p0: 22, c: 9 },
+    { label: 'Agua Saborizada 600ml', x: 230, e: 2.0, p0: 13, c: 6 },
+    { label: 'Agua Saborizada 1.5L', x: 170, e: 1.0, p0: 22, c: 10 },
+  ];
+
+  // Totales baseline (para calcular % de cambio)
+  const baseVol = skuData.reduce((a, s) => a + s.x, 0);
+  const baseRev = skuData.reduce((a, s) => a + s.x * s.p0, 0);
+  const baseMargin = skuData.reduce((a, s) => a + s.x * (s.p0 - s.c), 0);
+
+  function recalc(dp) {
+    const mult = 1 + dp / 100;
+    const points = skuData.map(s => {
+      const volMult = Math.pow(mult, -s.e);
+      const newVol = s.x * volMult;
+      return {
+        x: s.x,
+        y: s.e,
+        r: Math.max(4, Math.sqrt(newVol) * 0.7),
+        label: s.label,
+        baseVol: s.x,
+        newVol,
+        newPrice: s.p0 * mult,
+        newRev: newVol * s.p0 * mult,
+        newMargin: newVol * (s.p0 * mult - s.c)
+      };
+    });
+    const newVolT = points.reduce((a, p) => a + p.newVol, 0);
+    const newRevT = points.reduce((a, p) => a + p.newRev, 0);
+    const newMarginT = points.reduce((a, p) => a + p.newMargin, 0);
+    return {
+      points,
+      dVol: (newVolT / baseVol - 1) * 100,
+      dRev: (newRevT / baseRev - 1) * 100,
+      dMargin: (newMarginT / baseMargin - 1) * 100
+    };
+  }
+
+  const elasticityChart = new Chart(document.getElementById('elasticityScatter'), {
+    type: 'bubble',
     data: {
-      labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-      datasets: [
-        { label: 'Baseline', data: [100, 102, 101, 103], backgroundColor: '#8B9399', borderRadius: 4 },
-        { label: 'Con Dynamic Pricing', data: [100, 104, 107, 110], backgroundColor: '#FF3621', borderRadius: 4 }
-      ]
+      datasets: [{
+        label: 'SKUs',
+        data: recalc(0).points,
+        backgroundColor: 'rgba(255,54,33,0.55)',
+        borderColor: '#FF3621',
+        borderWidth: 1.5,
+        hoverBackgroundColor: 'rgba(255,54,33,0.85)'
+      }]
     },
     options: {
       maintainAspectRatio: false,
+      animation: { duration: 450 },
       plugins: {
-        title: { display: true, text: 'Volumen indexado (base 100)', color: '#EEEFF1', font: { size: 14, weight: '600' } },
-        legend: { position: 'bottom', labels: { color: '#EEEFF1' } }
+        title: { display: true, text: 'Elasticidad × volumen por SKU · portafolio tipo embotellador (refrescos · aguas · jugos)', color: '#EEEFF1', font: { size: 13, weight: '600' }, padding: { bottom: 12 } },
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0E181C',
+          borderColor: '#223845',
+          borderWidth: 1,
+          titleColor: '#EEEFF1',
+          bodyColor: '#C9CED3',
+          padding: 12,
+          callbacks: {
+            title: (items) => items[0].raw.label,
+            label: (ctx) => {
+              const p = ctx.raw;
+              const deltaVol = (p.newVol / p.baseVol - 1) * 100;
+              return [
+                `Volumen base: ${Math.round(p.baseVol)}k`,
+                `Volumen proyectado: ${Math.round(p.newVol)}k (${deltaVol >= 0 ? '+' : ''}${deltaVol.toFixed(1)}%)`,
+                `|ε| = ${p.y.toFixed(2)}`,
+                `Precio: $${p.newPrice.toFixed(2)}`
+              ];
+            }
+          }
+        }
       },
       scales: {
-        y: { grid: { color: '#223845' }, ticks: { color: '#8B9399' } },
-        x: { grid: { display: false }, ticks: { color: '#8B9399' } }
+        x: {
+          title: { display: true, text: 'Ventas baseline (miles de unidades · 26 semanas)', color: '#8B9399', font: { size: 12 } },
+          grid: { color: '#223845' },
+          ticks: { color: '#8B9399', callback: (v) => v + 'k' },
+          min: 0,
+          max: 1000
+        },
+        y: {
+          title: { display: true, text: '|Elasticidad de precio|', color: '#8B9399', font: { size: 12 } },
+          grid: { color: '#223845' },
+          ticks: { color: '#8B9399' },
+          min: 0,
+          max: 3.2
+        }
       }
-    }
+    },
+    plugins: [{
+      id: 'quadrantLines',
+      afterDraw: (chart) => {
+        const { ctx, chartArea, scales } = chart;
+        const yCut = scales.y.getPixelForValue(1);
+        const xCut = scales.x.getPixelForValue(450);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(139,147,153,0.3)';
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(chartArea.left, yCut); ctx.lineTo(chartArea.right, yCut);
+        ctx.moveTo(xCut, chartArea.top); ctx.lineTo(xCut, chartArea.bottom);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(201,206,211,0.5)';
+        ctx.font = '600 10px Inter, sans-serif';
+        ctx.fillText('Elástico · alto volumen → optimizar agresivo', xCut + 10, chartArea.top + 16);
+        ctx.fillText('Elástico · bajo volumen → promo táctica', chartArea.left + 10, chartArea.top + 16);
+        ctx.fillText('Inelástico · alto volumen → proteger margen', xCut + 10, chartArea.bottom - 10);
+        ctx.fillText('Inelástico · bajo volumen → subir precio', chartArea.left + 10, chartArea.bottom - 10);
+        ctx.restore();
+      }
+    }]
   });
 
-  new Chart(document.getElementById('marginChart'), {
-    type: 'line',
-    data: {
-      labels: ['Ruta', 'Moderno', 'E-com', 'HoReCa', 'Mayoreo'],
-      datasets: [
-        { label: 'Margen baseline (%)', data: [22, 18, 15, 28, 14], borderColor: '#8B9399', backgroundColor: 'rgba(139,147,153,0.1)', tension: 0.3, fill: true },
-        { label: 'Margen con optimización (%)', data: [24, 20, 17, 30, 16], borderColor: '#00A972', backgroundColor: 'rgba(0,169,114,0.1)', tension: 0.3, fill: true }
-      ]
-    },
-    options: {
-      maintainAspectRatio: false,
-      plugins: {
-        title: { display: true, text: 'Margen % por canal — uplift esperado', color: '#EEEFF1', font: { size: 14, weight: '600' } },
-        legend: { position: 'bottom', labels: { color: '#EEEFF1' } }
-      },
-      scales: {
-        y: { grid: { color: '#223845' }, ticks: { color: '#8B9399' } },
-        x: { grid: { display: false }, ticks: { color: '#8B9399' } }
-      }
-    }
+  function setStat(id, val) {
+    const el = document.getElementById(id);
+    el.textContent = (val >= 0 ? '+' : '') + val.toFixed(1) + '%';
+    el.classList.remove('pos', 'neg', 'neutral');
+    if (Math.abs(val) < 0.05) el.classList.add('neutral');
+    else if (val > 0) el.classList.add('pos');
+    else el.classList.add('neg');
+  }
+
+  const slider = document.getElementById('priceSlider');
+  const priceLabel = document.getElementById('priceChangeVal');
+  slider.addEventListener('input', (e) => {
+    const dp = parseFloat(e.target.value);
+    priceLabel.textContent = (dp >= 0 ? '+' : '') + dp + '%';
+    const r = recalc(dp);
+    elasticityChart.data.datasets[0].data = r.points;
+    elasticityChart.update('none');
+    setStat('volImpact', r.dVol);
+    setStat('revImpact', r.dRev);
+    setStat('marginImpact', r.dMargin);
   });
 
   // Accordion
@@ -757,6 +1114,14 @@ flowchart LR
   // Open first by default
   const firstStory = document.querySelector('[data-story]');
   if (firstStory) firstStory.classList.add('open');
+
+  // Expandable step-cards (evidence)
+  document.querySelectorAll('.step-card.evidence').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') return;
+      card.classList.toggle('open');
+    });
+  });
 
   // Tabs
   document.querySelectorAll('.tab-btn').forEach(btn => {
