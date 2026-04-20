@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CPG Promo & NBO: Framework | Databricks Consumer Industries</title>
+<title>CPG Pricing: Framework | Databricks Consumer Industries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,9 +19,8 @@
     --text: #EEEFF1;
     --text-soft: #C9CED3;
     --muted: #8B9399;
-    --red: #3B82F6;
-    --red-dim: #2563EB;
-    --brand-red: #FF3621;
+    --red: #FF3621;
+    --red-dim: #C42B1A;
     --green: #00A972;
     --orange: #FCA429;
     --blue: #3B82F6;
@@ -38,7 +37,7 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--red); text-decoration: none; }
-  a:hover { color: #7aa8fa; }
+  a:hover { color: #ff5c4a; }
 
   /* NAV */
   nav.topnav {
@@ -70,7 +69,7 @@
     padding: 120px 32px 100px;
     overflow: hidden;
     background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59,130,246,0.12), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255,54,33,0.12), transparent 70%),
       radial-gradient(ellipse 50% 40% at 20% 80%, rgba(0,169,114,0.08), transparent 70%),
       linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     border-bottom: 1px solid var(--border);
@@ -83,9 +82,9 @@
   .hero .brand-lock .sub { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; }
   .hero .brand-lock .sub strong { color: var(--text); display: block; font-weight: 600; letter-spacing: 0.5px; font-size: 14px; text-transform: none; }
 
-  .hero .primer-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-red); margin-bottom: 32px; }
-  .hero .primer-tag::before { content: ''; width: 32px; height: 1px; background: var(--brand-red); }
-  .hero .primer-tag::after { content: ''; width: 32px; height: 1px; background: var(--brand-red); }
+  .hero .primer-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
+  .hero .primer-tag::before { content: ''; width: 32px; height: 1px; background: var(--red); }
+  .hero .primer-tag::after { content: ''; width: 32px; height: 1px; background: var(--red); }
 
   .hero .byline { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; max-width: 760px; }
   .hero .byline strong { color: var(--text); font-weight: 600; }
@@ -136,7 +135,7 @@
   /* Citations */
   .citations { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
   .citations a { font-size: 12px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
-  .citations a:hover { color: var(--red); border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.04); }
+  .citations a:hover { color: var(--red); border-color: rgba(255,54,33,0.4); background: rgba(255,54,33,0.04); }
   .citations a::before { content: '↗ '; opacity: 0.6; }
 
   /* Reveal on scroll */
@@ -146,7 +145,7 @@
   /* Narrative prose */
   .prose { max-width: 66ch; font-family: var(--display); font-size: 19px; line-height: 1.7; color: var(--text); }
   .prose p { margin: 0 0 20px; }
-  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(59,130,246,0.18) 60%); padding: 0 2px; }
+  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(255,54,33,0.18) 60%); padding: 0 2px; }
   .prose p { color: var(--text-soft); }
   .prose p:first-of-type { font-size: 21px; color: var(--text); }
 
@@ -156,9 +155,9 @@
     background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
     padding: 26px; position: relative; transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .step-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
+  .step-card:hover { transform: translateY(-4px); border-color: rgba(255,54,33,0.4); }
   .step-card .n {
-    font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--orange);
+    font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--red);
     line-height: 1; margin-bottom: 12px;
   }
   .step-card .t { font-weight: 600; font-size: 17px; margin-bottom: 8px; }
@@ -178,7 +177,7 @@
   thead th { background: var(--panel-2); color: var(--text); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-align: left; padding: 16px 20px; font-weight: 700; border-bottom: 1px solid var(--border); }
   tbody td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: top; color: var(--text-soft); }
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: rgba(59,130,246,0.04); }
+  tbody tr:hover { background: rgba(255,54,33,0.04); }
   td.hi { color: var(--text); font-weight: 600; }
   td.dim { color: var(--muted); }
 
@@ -212,17 +211,17 @@
     cursor: pointer; user-select: none;
     transition: background 0.2s ease;
   }
-  .story-head:hover { background: rgba(59,130,246,0.04); }
+  .story-head:hover { background: rgba(255,54,33,0.04); }
   .story-head .left { flex: 1; }
   .story-head .name { font-family: var(--display); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
   .story-head .sector { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .story-head .plus {
     width: 36px; height: 36px; border-radius: 50%;
     border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-    color: var(--brand-red); font-size: 18px; font-weight: 300;
+    color: var(--red); font-size: 18px; font-weight: 300;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .story.open .story-head .plus { transform: rotate(45deg); border-color: var(--brand-red); }
+  .story.open .story-head .plus { transform: rotate(45deg); border-color: var(--red); }
   .story-body {
     max-height: 0; overflow: hidden;
     transition: max-height 0.5s ease;
@@ -241,7 +240,7 @@
   .story-metric .v { color: var(--green); font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; }
   .story-metric .l { color: var(--muted); font-size: 12px; margin-top: 6px; }
   .story-quote {
-    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px;
+    border-left: 3px solid var(--red); padding: 6px 0 6px 22px;
     margin: 20px 0; font-family: var(--display); font-size: 18px; line-height: 1.55;
     color: var(--text); font-weight: 500;
   }
@@ -257,11 +256,11 @@
     padding: 28px; position: relative; overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .phase:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
+  .phase:hover { transform: translateY(-4px); border-color: rgba(255,54,33,0.4); }
   .phase::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange);
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red);
   }
-  .phase .ph { color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .phase .ph { color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
   .phase .t { font-family: var(--display); font-size: 24px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.2px; }
   .phase ul { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; line-height: 1.65; }
   .phase ul li { margin-bottom: 8px; }
@@ -325,8 +324,8 @@
   .sim-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; }
   .sim-value { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
   .sim-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; outline: none; }
-  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
-  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
+  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(255,54,33,0.18); }
+  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(255,54,33,0.18); }
   .sim-ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px; }
   .sim-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
   @media (max-width: 640px) { .sim-stats { grid-template-columns: 1fr; } }
@@ -360,7 +359,6 @@
     </div>
     <div class="nav-links">
       <a href="index.html">← Cookbook</a>
-      <a href="dynamic-pricing.html" style="color: #FF3621;">Dynamic Pricing</a>
       <a href="#que-es">Qué es</a>
       <a href="#como">Cómo funciona</a>
       <a href="#casos">Casos</a>
@@ -368,6 +366,7 @@
       <a href="#comparativa">Comparativa</a>
       <a href="#kpis">KPIs</a>
       <a href="#roadmap">Roadmap</a>
+      <a href="promo-nbo.html" style="color: #3B82F6;">Promo &amp; NBO →</a>
     </div>
   </div>
 </nav>
@@ -384,11 +383,11 @@
       <div class="div"></div>
       <div class="sub"><strong>Consumer Industries</strong>CPG Cookbook</div>
     </div>
-    <div class="primer-tag">Primer · Recipe 2 de 2</div>
-    <h1>Promo &amp; <em>NBO</em><br/>para CPG</h1>
-    <p class="deck">Del descuento masivo al cupón inteligente: ofertas personalizadas por shopper × canal × momento, con atribución causal y guardrails de margen. Promo Optimization + <strong>NBO (Next Best Offer)</strong> = la segunda palanca de Revenue Growth Management.</p>
+    <div class="primer-tag">Primer · One-page</div>
+    <h1>What is Dynamic Pricing<br/>para <em>CPG</em></h1>
+    <p class="deck">Del precio estático a la capacidad operativa gobernada. Un marco para equipos de Revenue Management y Pricing en bienes de consumo, con casos de éxito en la industria y KPIs.</p>
     <div class="byline">
-      <strong>Preparado por Databricks Consumer Industries</strong> · Recipe 2 del CPG Cookbook. Recipe 1 cubre <a href="dynamic-pricing.html" style="color: var(--text); border-bottom: 1px solid var(--red);">Dynamic Pricing</a>. Juntas forman el stack de Revenue Growth Management (RGM) sobre la Databricks Data Intelligence Platform.
+      <strong>Preparado por Databricks Consumer Industries</strong> · Framework público basado en casos de éxito de CPG y retail sobre la Databricks Data Intelligence Platform.
     </div>
   </div>
 </header>
@@ -398,11 +397,10 @@
   <!-- 1 · QUE ES -->
   <section class="stage" id="que-es">
     <div class="reveal">
-      <div class="section-label"><span class="num">1</span>Qué es Promo &amp; NBO</div>
-      <h2 class="head">Del <em>descuento masivo</em> a la oferta personalizada</h2>
+      <div class="section-label"><span class="num">1</span>Qué es Dynamic Pricing</div>
+      <h2 class="head">Del precio <em>estático</em> a la capacidad operativa gobernada</h2>
       <div class="prose">
-        <p>Promo &amp; NBO es el paso de mandar la misma promoción a todos los shoppers, a <strong>personalizar la oferta por shopper, canal y momento</strong>. Se apoya en tres piezas: una <strong>atribución causal</strong> que compara resultados entre un grupo que recibió la promo y un grupo control, un <strong>uplift model</strong> que estima cuánta de la venta es realmente incremental (no hubiera ocurrido sin la promo), y un <strong>recomendador</strong> que decide qué producto ofrecer a cada cliente.</p>
-        <p><strong>NBO (Next Best Offer)</strong> es el componente que pone todo junto: dice qué oferta, a quién, cuándo y por qué canal, buscando el margen incremental más alto sin afectar las ventas de otros productos del portafolio.</p>
+        <p>Dynamic Pricing es el paso de fijar precios con reglas estáticas y hojas de cálculo a <strong>ajustar precio y promoción en tiempo casi real</strong>, en función de señales de demanda, elasticidad por canal, competencia, inventario y margen objetivo, manteniendo guardrails de negocio. Encima, una <strong>capa semántica</strong> permite que los agentes aprendan del dominio y que el negocio interactúe con ellos en lenguaje natural.</p>
       </div>
     </div>
   </section>
@@ -412,96 +410,85 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">El ciclo promocional pasa de planeación trimestral a decisión por shopper × momento, con atribución causal. Misma arquitectura base del cookbook (Unity Catalog + MLflow + Activación), ahora con modelos de uplift + recommender en el corazón.</p>
+      <p class="section-deck">Ciclos de decisión de segundos a días, sobre una arquitectura de tres capas: <strong>Data Foundation</strong> (Unity Catalog + Delta Lake), <strong>Intelligence</strong> (MLflow versionando los modelos) y <strong>Activación</strong> (Model Serving, Agent Framework, AI/BI Genie, Databricks Apps). La mayoría de la data CPG (ERP, POS, scanner NielsenIQ, loyalty, inventario) probablemente ya vive en Gold; el framework asume ese punto de partida.</p>
       <div class="steps-grid">
-        <div class="step-card"><div class="n">01</div><div class="t">Ingesta 360</div><div class="d">Unifica POS, loyalty, app engagement, promos históricas, catálogo y costos. Identidad resuelta shopper × hogar × canal en Unity Catalog.</div></div>
+        <div class="step-card"><div class="n">01</div><div class="t">Ingesta gobernada</div><div class="d">ERP, ventas TX, competencia, promociones e inventario se unifican en Silver → Gold con linaje y permisos (Unity Catalog). La data que ya está en Gold se conecta directo.</div></div>
         <div class="step-card evidence" data-step>
           <div class="n">02</div>
-          <div class="t">Uplift model + recommender</div>
-          <div class="d">Mide impacto causal de cada mecánica promocional (uplift), y decide qué SKU ofrecer a cada shopper (recommender).</div>
+          <div class="t">Modelo de elasticidad</div>
+          <div class="d">ML que aprende cómo cada SKU × canal × cliente responde a cambios de precio y promoción. Versionado y trazable.</div>
           <div class="hint">+ Ver cómo lo hicieron</div>
           <div class="evidence-body"><div class="evidence-inner">
             <div class="evidence-label">Evidencia · casos públicos</div>
 
             <div class="evidence-item">
               <div class="who">Mondelēz International</div>
-              <div class="what">Uplift modeling sobre MLflow + Unity Catalog + Mosaic AI para recomendar SKUs a nivel tienda. Modelos versionados a escala con medición de incrementalidad.</div>
+              <div class="what">Uplift modeling con MLflow + Unity Catalog + Mosaic AI ("SnackGPT") para recomendar SKUs a nivel tienda con modelos versionados a escala.</div>
               <div class="kpis">
                 <span class="kpi-tag">+2–4% uplift SKU</span>
-                <span class="kpi-tag">+80% sales rep effectiveness</span>
+                <span class="kpi-tag">+3–5% forecast accuracy</span>
                 <span class="kpi-tag">20K modelos · 3K en prod</span>
               </div>
               <a class="src" href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">AB InBev · BEES (Direct-to-retail app)</div>
-              <div class="what">App B2B que vende a 2.1M tiendas SMB. Motor ML sobre Databricks para ofertas personalizadas por tienda × momento. Active learning para limited-time offers.</div>
+              <div class="who">Embotelladora global (bebidas · vidrio/lata/PET)</div>
+              <div class="what">Cálculo automatizado de elasticidad a nivel SKU × segmento POS × canal (tradicional vs online), incluyendo densidad competidora como covariable. Dashboards descriptivo + predictivo + prescriptivo con what-if.</div>
               <div class="kpis">
-                <span class="kpi-tag">75% de órdenes vía ML</span>
-                <span class="kpi-tag">1.6M órdenes/semana</span>
-                <span class="kpi-tag">GMV &gt;$13B en 9 meses</span>
+                <span class="kpi-tag">Fuente única en 4 mercados</span>
+                <span class="kpi-tag">SKU × POS × canal</span>
+                <span class="kpi-tag">What-if simulation</span>
               </div>
-              <a class="src" href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + ML</a>
+              <a class="src" href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Lingaro: AI Price Elasticity para RGM</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">ALS Recommender · Databricks Solution Accelerator</div>
-              <div class="what">Notebooks ejecutables con matrix factorization (ALS) sobre Instacart. Punto de partida para un equipo de ML que quiera arrancar un recommender de productos.</div>
+              <div class="who">Redkite: Solution Accelerator (Databricks)</div>
+              <div class="what">Set de notebooks ejecutables sobre Databricks con técnicas clásicas de pricing analytics CPG: elasticidad, canibalización y optimización. Punto de partida reproducible.</div>
               <div class="kpis">
-                <span class="kpi-tag">Código ejecutable</span>
-                <span class="kpi-tag">Instacart dataset</span>
-                <span class="kpi-tag">Spark MLLib</span>
+                <span class="kpi-tag">Notebooks ejecutables</span>
+                <span class="kpi-tag">Open source-style</span>
               </div>
-              <a class="src" href="https://github.com/databricks-industry-solutions/als-recommender" target="_blank">GitHub: databricks-industry-solutions/als-recommender</a>
+              <a class="src" href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Databricks blog: Redkite Pricing Analytics</a>
             </div>
 
           </div></div>
         </div>
         <div class="step-card evidence" data-step>
           <div class="n">03</div>
-          <div class="t">Ranking + guardrails</div>
-          <div class="d">Ordena ofertas candidatas sujeto a margen mínimo, cap por shopper, budget promocional y control de canibalización.</div>
+          <div class="t">Optimizador con guardrails</div>
+          <div class="d">Recomienda precio sujeto a margen mínimo, paridad de canal, acuerdos con clientes clave y márgenes por categoría.</div>
           <div class="hint">+ Ver cómo lo hicieron</div>
           <div class="evidence-body"><div class="evidence-inner">
             <div class="evidence-label">Evidencia · casos públicos</div>
 
             <div class="evidence-item">
-              <div class="who">Aimpoint Digital · Promotion Price Optimization</div>
-              <div class="what">Solución partner oficial sobre Databricks que encuentra el descuento ideal por promoción, con econometría + ML + AI. Interfaz Sigma para what-if scenarios, guardrails de margen, paridad de canal y acuerdos.</div>
+              <div class="who">Steelcase</div>
+              <div class="what">Reemplazó aprobación manual de precios (20 min por solicitud) por motor sobre Databricks: feature store con 70+ features, Random Forest en inferencia serverless, Unity Catalog. Guardrails de margen y política automatizan aprobaciones.</div>
               <div class="kpis">
-                <span class="kpi-tag">Partner oficial Databricks</span>
-                <span class="kpi-tag">Econometría + ML</span>
-                <span class="kpi-tag">What-if interactivo</span>
+                <span class="kpi-tag">Auto-aprobación 35% → 50%</span>
+                <span class="kpi-tag">20 min → segundos</span>
+                <span class="kpi-tag">1,500+ hrs/año liberadas</span>
+                <span class="kpi-tag">70K escenarios/año · 130+ países</span>
               </div>
-              <a class="src" href="https://www.databricks.com/company/partners/consulting-and-si/partner-solutions/aimpoint-digital-promotion-price" target="_blank">Databricks · Aimpoint Promo Price Optimization</a>
+              <a class="src" href="https://www.databricks.com/customers/steelcase" target="_blank">Databricks: Steelcase customer story</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">84.51° (Kroger)</div>
-              <div class="what">Plataforma de promoción cross-category y geography sobre Databricks. Dashboards con control group, parametrización por categoría, 100× más workflows diarios que antes.</div>
+              <div class="who">Aimpoint Digital: Promotion Price Optimization</div>
+              <div class="what">Solución partner sobre Databricks que implementa simulación y optimización de precios/promos con guardrails (margen mínimo, paridad, acuerdos). Arquitectura de referencia reutilizable.</div>
               <div class="kpis">
-                <span class="kpi-tag">-85% tiempo de job (6-8h → 1h)</span>
-                <span class="kpi-tag">100× workflows/día</span>
-                <span class="kpi-tag">2,800+ usos reporte promo</span>
+                <span class="kpi-tag">Partner accelerator</span>
+                <span class="kpi-tag">Simulación de escenarios</span>
               </div>
-              <a class="src" href="https://www.databricks.com/customers/8451" target="_blank">Databricks: 84.51° customer story</a>
-            </div>
-
-            <div class="evidence-item">
-              <div class="who">Next Best Action · Databricks Solution Accelerator (HLS)</div>
-              <div class="what">Accelerator de constrained optimization en GitHub. Originalmente para healthcare, el patrón (ranking sujeto a restricciones de negocio) aplica directamente a promo/NBO en CPG.</div>
-              <div class="kpis">
-                <span class="kpi-tag">Constrained optimization</span>
-                <span class="kpi-tag">Código ejecutable</span>
-              </div>
-              <a class="src" href="https://github.com/databricks-industry-solutions/next-best-action-hls" target="_blank">GitHub: next-best-action-hls</a>
+              <a class="src" href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital: Dynamic Pricing</a>
             </div>
 
           </div></div>
         </div>
-        <div class="step-card"><div class="n">04</div><div class="t">Semántica y agentes</div><div class="d">Agent Framework + AI/BI Genie. El agente de trade marketing pregunta "¿qué cupón al shopper X en canal Y?" y obtiene respuesta trazable.</div></div>
-        <div class="step-card"><div class="n">05</div><div class="t">Activación multicanal</div><div class="d">Push en app, cupón personalizado en e-com, recomendación al vendedor de ruta, email, SMS. Con test/control para medir uplift real.</div></div>
+        <div class="step-card"><div class="n">04</div><div class="t">Semántica y agentes</div><div class="d">Metric Views + agentes conversacionales que permiten al equipo comercial preguntar y obtener respuestas trazables.</div></div>
+        <div class="step-card"><div class="n">05</div><div class="t">Activación</div><div class="d">El precio llega al sistema transaccional, ruta del vendedor o motor de e-commerce. Con medición cerrada del uplift.</div></div>
       </div>
       <div class="diagram">
         <div class="mermaid">
@@ -509,16 +496,17 @@ flowchart LR
     classDef src fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
     classDef silver fill:#11212A,stroke:#8B9399,stroke-width:1px,color:#EEEFF1
     classDef gold fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef ai fill:#0E1B2A,stroke:#3B82F6,stroke-width:2px,color:#3B82F6
+    classDef ai fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
     classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
 
     subgraph Sources [Fuentes]
       direction TB
-      A1["POS · loyalty<br/>ticket · hogar"]
-      A2["App engagement<br/>web · clickstream"]
-      A3["Promos históricas<br/>con test/control"]
-      A4["Catálogo y costos<br/>margen por SKU"]
-      A5["Shopper research<br/>encuestas · paneles"]
+      A1["POS · transaccional<br/>loyalty · ticket"]
+      A2["E-commerce<br/>web · marketplaces"]
+      A3["Paneles sindicados<br/>encuestas · shopper research"]
+      A4["Competencia<br/>scraping · precios externos"]
+      A5["Inventario y promos<br/>trade execution"]
+      A6["Social y reviews<br/>listening · sentimiento"]
     end
 
     subgraph Lake ["Lakehouse gobernado por Unity Catalog"]
@@ -529,43 +517,37 @@ flowchart LR
 
     subgraph Intel ["Capa de inteligencia · MLflow"]
       direction TB
-      U["Uplift model<br/>causal impact"]
-      R["Recommender<br/>ALS · matrix factorization"]
-      O["Ranking + guardrails<br/>margen · cap · budget"]
+      M["Modelo<br/>Elasticidad"]
+      O["Optimizador<br/>con guardrails"]
       SM["Capa semántica<br/>+ agentes"]
     end
 
-    subgraph Act ["Activación multicanal"]
+    subgraph Act ["Activación"]
       direction TB
-      AP["Push en app<br/>D2C / B2B"]
-      CU["Cupón personalizado<br/>e-commerce"]
-      RU["App del vendedor<br/>ruta a detalle"]
-      EM["Email / SMS"]
+      D["Databricks Apps<br/>Dashboard Revenue Mgmt"]
+      AG["Agent Framework<br/>agente Pricing"]
+      API["Model Serving<br/>API transaccional"]
     end
 
     A1 --> G
     A2 --> G
-    A3 --> G
-    A4 --> G
-    A5 --> S
+    A3 --> S
+    A4 --> S
+    A5 --> G
+    A6 --> S
     S --> G
-    G --> U
-    G --> R
-    U --> O
-    R --> O
+    G --> M --> O
     G --> SM
-    O --> AP
-    O --> CU
-    O --> RU
-    O --> EM
-    SM --> AP
-    SM --> RU
+    O --> D
+    O --> AG
+    O --> API
+    SM --> AG
 
-    class A1,A2,A3,A4,A5 src
+    class A1,A2,A3,A4,A5,A6 src
     class S silver
     class G gold
-    class U,R,O,SM ai
-    class AP,CU,RU,EM out
+    class M,O,SM ai
+    class D,AG,API out
         </div>
       </div>
       <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted);">Fuente: <a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Big Book of Retail &amp; CG Use Cases (Databricks)</a>.</p>
@@ -577,72 +559,34 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">3</span>Casos de éxito públicos</div>
       <h2 class="head">Lo que otras marcas ya <em>consiguieron</em></h2>
-      <p class="section-deck">Historias públicas de clientes que ya implementaron promo optimization, recommenders y NBO sobre Databricks. Haz click en cada historia para ver métricas, quote y link al caso completo.</p>
+      <p class="section-deck">Historias públicas de clientes que ya implementaron elasticidad, pricing o promo optimization sobre Databricks. Haz click en cada una para ver métricas, quote y link al caso completo.</p>
 
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">AB InBev · BEES</div>
-            <div class="sector">Bebidas · app B2B para 2.1M tiendas SMB globales · ML-first</div>
+            <div class="name">Embotelladora global (caso Lingaro)</div>
+            <div class="sector">Bebidas · portafolio de vidrio, lata y PET · 4 mercados globales</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">BEES es la app B2B de AB InBev donde 2.1M tiendas (tienditas, autoservicios pequeños, bares) hacen pedidos directamente. Sobre Databricks, BEES personaliza <strong>ofertas limitadas en el tiempo por tienda y momento</strong>, con active learning. Es el caso público de referencia para cualquier embotelladora o CPG que opere una app D2C o B2B con recomendador y promoción asociada.</p>
+            <p class="story-desc">Un CPG global de bebidas con portafolio diverso en vidrio, lata y PET automatizó el cálculo de elasticidad de precio a nivel <strong>SKU × segmento POS × canal</strong> (moderno vs. tradicional vs. online), incluyendo densidad competidora como covariable. Redujo workflows manuales, habilitó simulación what-if de pricing, y se convirtió en la <strong>fuente única de verdad para estrategia de precios en 4 mercados</strong>, con plan de expansión.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">75%</div><div class="l">de las órdenes generadas por ML</div></div>
-              <div class="story-metric"><div class="v">1.6M</div><div class="l">órdenes por semana</div></div>
-              <div class="story-metric"><div class="v">&gt;$13B</div><div class="l">GMV en 9 meses</div></div>
-              <div class="story-metric"><div class="v">2.1M</div><div class="l">tiendas SMB atendidas mensualmente</div></div>
+              <div class="story-metric"><div class="v">4 mercados</div><div class="l">globales usándolo como fuente única de pricing</div></div>
+              <div class="story-metric"><div class="v">SKU × POS</div><div class="l">granularidad real, no categoría agregada</div></div>
+              <div class="story-metric"><div class="v">Descriptivo + predictivo + prescriptivo</div><div class="l">en un solo dashboard de RGM</div></div>
             </div>
-            <a class="story-link" href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + ML →</a>
-            &nbsp;·&nbsp;
-            <a class="story-link" href="https://consumergoods.com/ab-inbev-helps-drive-marketing-optimization-ml-powered-bees" target="_blank">Consumer Goods: BEES Marketing Optimization →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Mondelēz International</div>
-            <div class="sector">CPG global · Oreo, Cadbury, Milka · uplift y forecasting a escala</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Mondelez unificó datos de trade, retail y consumer sobre Databricks Mosaic AI (“SnackGPT”) con <strong>uplift modeling</strong> para recomendar SKUs a nivel tienda. Lakehouse Federation les evitó migración forzada de fuentes. MLflow + Unity Catalog para 20K modelos, 3K en producción.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">+2–4%</div><div class="l">uplift ventas por SKU recomendado</div></div>
-              <div class="story-metric"><div class="v">+80%</div><div class="l">sales rep effectiveness</div></div>
-              <div class="story-metric"><div class="v">+3–5%</div><div class="l">forecast accuracy</div></div>
-              <div class="story-metric"><div class="v">20K modelos</div><div class="l">3K en producción</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/mondelez" target="_blank">Ver caso completo →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">84.51° (Kroger)</div>
-            <div class="sector">Retail + CPG data · promociones cross-category y geography</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">84.51°, el brazo de data de Kroger, rediseñó su plataforma de promociones sobre Databricks. Notebooks parametrizables para análisis cross-category, control group embebido, Delta Lake para versionar datasets. El dashboard de pricing y el reporte de promociones son artefactos usados diariamente por trade y merchandising.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">-85%</div><div class="l">tiempo de job (6-8h → 1h)</div></div>
-              <div class="story-metric"><div class="v">100×</div><div class="l">workflows diarios vs. baseline</div></div>
-              <div class="story-metric"><div class="v">2,800+</div><div class="l">usos del reporte de promos en 6 meses</div></div>
-              <div class="story-metric"><div class="v">400+</div><div class="l">views/mes dashboard pricing</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/8451" target="_blank">Ver caso completo →</a>
+            <p style="color: var(--muted); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin: 22px 0 8px; font-weight: 700;">Change management: la parte que se olvida</p>
+            <p class="story-desc" style="font-size: 15px;">Antes de construir la herramienta, el cliente estableció el proceso de uso y el marco de soporte a usuarios finales. Sin plan de adopción, la herramienta se queda sin usuarios. La práctica de commercial analytics de Lingaro acompañó con <strong>learning assets y sesiones demo</strong> sobre cinco decisiones concretas que el equipo comercial iba a tomar con la herramienta:</p>
+            <ul style="color: var(--text-soft); font-size: 14px; line-height: 1.75; padding-left: 20px; margin: 0 0 16px;">
+              <li>Encontrar el precio óptimo del producto.</li>
+              <li>Entender el pricing de la competencia.</li>
+              <li>Identificar tendencias que influyen la estrategia de precios.</li>
+              <li>Mitigar el riesgo e impacto adverso de cambios de precio.</li>
+              <li>Evaluar el efecto sobre la marca tras cambiar un precio.</li>
+            </ul>
+            <a class="story-link" href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Ver caso completo →</a>
           </div>
         </div>
       </div>
@@ -651,24 +595,60 @@ flowchart LR
         <div class="story-head">
           <div class="left">
             <div class="name">Reckitt</div>
-            <div class="sector">CPG global · marketing intelligence + GenAI para campañas</div>
+            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex, marcas de consumo</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Reckitt consolidó research de consumidor, reseñas de producto, social listening y brand analytics en Lakehouse + Databricks Mosaic AI. El impacto directo aplica a promo/NBO: <strong>crean y localizan campañas mucho más rápido</strong>, y el agente conversacional reduce el tiempo que marketers tardan en armar una oferta personalizada.</p>
+            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que da visibilidad de elasticidad, campañas y respuesta del consumidor a cambios de precio, la misma infraestructura que habilita pricing dinámico.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
               <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
               <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en tareas de marketing</div></div>
-              <div class="story-metric"><div class="v">-44%</div><div class="l">cost-per-view de campañas</div></div>
             </div>
             <div class="story-quote">
               "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>Tewfik Bedreddine, Global VP Data &amp; Analytics, Reckitt</cite>
+              <cite>Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
             </div>
             <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Steelcase</div>
+            <div class="sector">Mobiliario · Consumer Goods · 130+ países · 70,000+ escenarios de pricing/año</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Reemplazó un proceso manual de aprobación de precios (20 min por solicitud) por un motor con IA sobre Databricks: feature store con 70+ features, Random Forest en inferencia serverless y gobernanza con Unity Catalog. Es el caso público más cercano a un motor de pricing dinámico operativo.</p>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">1,500+ hrs</div><div class="l">liberadas/año para vendedores</div></div>
+              <div class="story-metric"><div class="v">35% → 50%</div><div class="l">auto-aprobación de pricing</div></div>
+              <div class="story-metric"><div class="v">20 min → seg</div><div class="l">tiempo por solicitud</div></div>
+            </div>
+            <a class="story-link" href="https://www.databricks.com/customers/steelcase" target="_blank">Ver caso completo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Redkite Pricing Analytics</div>
+            <div class="sector">Solution accelerator · notebooks ejecutables</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Set de notebooks sobre Databricks que implementan técnicas clásicas de pricing analytics CPG: elasticidad, análisis de canibalización y optimización. Es el mejor punto de partida técnico para un equipo de analytics interno que quiera iniciar.</p>
+            <a class="story-link" href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Leer el blog →</a>
           </div>
         </div>
       </div>
@@ -695,10 +675,9 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/accelerators/recommendation-engines" target="_blank">Databricks: Recommendation Engines for Personalization</a></td><td class="dim">Solution Accelerator oficial de recommenders para retail/CPG. <strong>Empieza aquí.</strong></td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks: Retail & CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail & CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia.</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/consumer-goods" target="_blank">Databricks Consumer Goods</a></td><td class="dim">Soluciones específicas para CPG: RGM, trade promo, shopper.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail &amp; CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia para retail y CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks: Retail &amp; CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
             </tbody>
           </table>
         </div>
@@ -709,12 +688,13 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene · fuente</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2023/01/06/products-we-think-you-might-generating-personalized-recommendations.html" target="_blank">Products We Think You Might Like (2023)</a></td><td class="dim">Blog oficial Databricks: matrix factorization + ALS sobre Instacart.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2021/06/09/how-to-build-a-scalable-wide-and-deep-product-recommender.html" target="_blank">Wide &amp; Deep Product Recommender (2021)</a></td><td class="dim">Deep learning recommender combinando purchase + preference data.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2020/12/18/personalizing-the-customer-experience-with-recommendations.html" target="_blank">Personalizing Customer Experience with Recommendations</a></td><td class="dim">Arquitectura de referencia para omnichannel personalization.</td></tr>
-              <tr><td class="hi"><a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ: Promotion Performance Uplift (2024)</a></td><td class="dim">59% de promos globales NO alcanzan break-even. Palanca más grande en trade.</td></tr>
-              <tr><td class="hi"><a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute: State of the Industry</a></td><td class="dim">11–27% del revenue en trade spend; 88% de CPG no lo gestiona bien.</td></tr>
-              <tr><td class="hi"><a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence (2025)</a></td><td class="dim">+200–300 bps margen, +12% win-rate con data-driven pricing y promo.</td></tr>
+              <tr><td class="hi"><a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Expanding Profit Margin Through Intelligent Pricing (2025)</a></td><td class="dim">+200–300 bps margen, +3 pp profit premium, +12% win-rate con data-driven pricing.</td></tr>
+              <tr><td class="hi"><a href="https://www.everestgrp.com/the-power-of-pricing-in-the-success-of-cpg-brands-2025-and-beyond-blog.html" target="_blank">Everest Group: Power of Pricing in CPG 2025</a></td><td class="dim">Solo 25–30% de CPG tienen analytics avanzado de pricing. Gap de adopción como palanca.</td></tr>
+              <tr><td class="hi"><a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ: Promotion Performance Uplift (2024)</a></td><td class="dim">59% de promos globales NO alcanzan break-even.</td></tr>
+              <tr><td class="hi"><a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute: State of the Industry (2024–2025)</a></td><td class="dim">11–27% de revenue en trade spend; 88% no lo gestiona bien; 61% no ejecuta promo como planeó.</td></tr>
+              <tr><td class="hi"><a href="https://www.custonomy.ai/blog/ai-powered-dynamic-pricing-retail-cpg/" target="_blank">AI-Powered Dynamic Pricing en Retail/CPG</a></td><td class="dim">Compila BCG: +5–10% margen en retailers con AI pricing.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/dynamic-pricing-airlines-how-ai-can-reshape-revenue-strategy" target="_blank">Databricks: Dynamic Pricing Blog</a></td><td class="dim">Arquitectura de referencia (aplicable a CPG).</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite Pricing Analytics</a></td><td class="dim">Notebooks ejecutables de pricing analytics CPG.</td></tr>
             </tbody>
           </table>
         </div>
@@ -725,10 +705,11 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">AB InBev · BEES (VentureBeat)</a></td><td class="dim">App B2B para 2.1M tiendas, 75% órdenes vía ML, GMV $13B/9 meses.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">+2–4% uplift por SKU, +80% sales rep effectiveness, 20K modelos.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/8451" target="_blank">84.51° (Kroger)</a></td><td class="dim">Promociones cross-category: -85% job time, 100× workflows/día.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">Marketing intelligence GenAI: 40–60% más rápido crear campañas.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/pepsico" target="_blank">PepsiCo: Customer Story</a></td><td class="dim">Consolidación BI sobre DBSQL: -65% costo ($500K → $175K), decommission Synapse/Teradata.</td></tr>
+              <tr><td class="hi"><a href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Lingaro: AI Price Elasticity para RGM</a></td><td class="dim">Embotelladora global de bebidas con SKU × POS × canal en 4 mercados.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase: Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">+2–4% uplift por SKU, +80% sales rep effectiveness, 20K modelos / 3K en producción.</td></tr>
             </tbody>
           </table>
         </div>
@@ -739,12 +720,9 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Accelerator</th><th>Qué contiene · tipo</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions/als-recommender" target="_blank">ALS Recommender (GitHub)</a></td><td class="dim">Notebooks Databricks con matrix factorization (ALS) sobre Instacart. <strong>Empieza aquí.</strong></td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/resources/architectures/telecom-next-best-action-reference-architecture" target="_blank">NBA Reference Architecture (Databricks)</a></td><td class="dim">Patrón oficial de Next Best Action. Aunque es telecom, es reusable en cualquier industria.</td></tr>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions/next-best-action-hls" target="_blank">Next Best Action (GitHub)</a></td><td class="dim">Constrained optimization accelerator. Originalmente healthcare, el patrón aplica a CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/company/partners/consulting-and-si/partner-solutions/aimpoint-digital-promotion-price" target="_blank">Aimpoint: Promotion Price Optimization</a></td><td class="dim">Partner oficial: econometría + ML + AI para encontrar el descuento ideal por promoción.</td></tr>
-              <tr><td class="hi"><a href="https://github.com/uber/causalml" target="_blank">causalml · Uber (GitHub)</a></td><td class="dim">Biblioteca Python estándar de industria para uplift modeling (medir incrementalidad real).</td></tr>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo paraguas con solution accelerators retail/CPG/forecasting/propensity.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/introducing-redkites-pricing-analytics-solution-powered-databricks" target="_blank">Redkite: Pricing Analytics</a></td><td class="dim">Notebooks ejecutables: elasticidad, canibalización y optimización para CPG. <strong>Empieza aquí.</strong></td></tr>
+              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo oficial de solution accelerators para retail, CPG, forecasting, propensity. Código ejecutable.</td></tr>
+              <tr><td class="hi"><a href="https://www.aimpointdigital.com/dynamic-pricing" target="_blank">Aimpoint Digital: Dynamic Pricing</a></td><td class="dim">Solución partner sobre Databricks con simulación y optimización de precios/promos.</td></tr>
             </tbody>
           </table>
         </div>
@@ -756,16 +734,16 @@ flowchart LR
   <!-- 5 · COMPARATIVA -->
   <section class="stage" id="comparativa">
     <div class="reveal">
-      <div class="section-label"><span class="num">5</span>Promo masiva vs. personalizada</div>
+      <div class="section-label"><span class="num">5</span>Pricing dinámico vs. normal</div>
       <h2 class="head">Cuatro dimensiones que <em>cambian</em></h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:22%;">Dimensión</th><th>Promo tradicional</th><th>Promo &amp; NBO</th></tr></thead>
+          <thead><tr><th style="width:22%;">Dimensión</th><th>Tradicional</th><th>Dinámico</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Segmentación</td><td class="dim">Todos los shoppers reciben la misma oferta.</td><td>Micro-segmentos o personalización 1:1 por shopper y momento.</td></tr>
-            <tr><td class="hi">Atribución del uplift</td><td class="dim">Estimación ex-post comparando período vs. período. Confounding alto.</td><td>Atribución causal con test y control. Uplift incremental medido, no estimado.</td></tr>
-            <tr><td class="hi">Gasto promocional</td><td class="dim">Blanket: todos los elegibles reciben el descuento, rentable o no.</td><td>Dirigido: gasta donde el uplift es real. Reasigna budget a SKUs con ROI positivo.</td></tr>
-            <tr><td class="hi">Ciclo de planeación</td><td class="dim">Trimestral, en comité. Difícil de corregir a mitad de ciclo.</td><td>Semanal o en tiempo casi real, con feedback de redemption.</td></tr>
+            <tr><td class="hi">Ciclo de decisión</td><td class="dim">Trimestral o mensual, en comité.</td><td>Diario a intra-día según canal y categoría.</td></tr>
+            <tr><td class="hi">Granularidad</td><td class="dim">Lista de precios por región o por cliente grande.</td><td>SKU, canal, cliente y momento.</td></tr>
+            <tr><td class="hi">Input principal</td><td class="dim">Costos + margen objetivo; benchmark manual.</td><td>Elasticidad aprendida, señales de demanda, competencia en tiempo real.</td></tr>
+            <tr><td class="hi">Medición del uplift</td><td class="dim">Estimación ex-post, difícil de atribuir.</td><td>Test &amp; learn cerrado, atribución por SKU y canal.</td></tr>
           </tbody>
         </table>
       </div>
@@ -777,29 +755,68 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">6</span>KPIs y business outcomes</div>
       <h2 class="head">Qué <em>medir</em> y por qué</h2>
-      <p class="section-deck">KPIs que un equipo de trade marketing y CRM debe instrumentar antes, durante y después de cada mecánica. Son <strong>definiciones</strong>, no metas: el valor depende del baseline, canal y madurez de datos.</p>
+      <p class="section-deck">Estos son los KPIs que un equipo de RGM debe instrumentar antes, durante y después del programa. Son <strong>definiciones</strong>, no metas: el valor que cada organización debe perseguir depende de su baseline, su mix y su madurez de datos.</p>
       <div class="kpi-grid">
         <div class="kpi">
-          <div class="l">01 · Uplift incremental (%)</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La promo generó ventas que no hubieran ocurrido sin ella?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> diferencia en ventas entre grupo tratado y control, con holdout aleatorizado o matched-pair design. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">01 · Margen bruto post-descuento</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Estás protegiendo rentabilidad real?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> (precio neto − costo) × unidades, por SKU × canal × cliente, desde ERP + transaccional conciliado con finanzas. <strong>Cadencia:</strong> mensual.</div>
         </div>
         <div class="kpi">
-          <div class="l">02 · Redemption rate (%)</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué % de ofertas enviadas se canjearon?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> canjes / ofertas elegibles enviadas, por canal × mecánica × segmento. <strong>Cadencia:</strong> diaria durante la promo.</div>
+          <div class="l">02 · Volumen por canal</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La demanda responde como predijo el modelo?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> Δ unidades vendidas vs. baseline de 26 semanas, por SKU × canal. <strong>Cadencia:</strong> semanal con atribución causal (control group).</div>
         </div>
         <div class="kpi">
-          <div class="l">03 · ROI promocional</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La promoción ganó o perdió margen?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> (margen incremental − costo de la promo) / costo de la promo. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">03 · Descuento sin uplift</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué % de tu gasto promocional está quemado?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> test A/B o comparación pre/post con control group. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
         </div>
         <div class="kpi">
-          <div class="l">04 · Canibalización</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué SKUs bajaron cuando se empujó otro?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> Δ ventas en SKUs sustitutos vs. baseline durante la promo. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">04 · Ciclo de decisión</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Anticipas o reaccionas al mercado?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> p50 y p95 del tiempo entre solicitud de cambio y go-live, por canal. <strong>Cadencia:</strong> trimestral.</div>
         </div>
       </div>
+      <div class="sim-wrap">
+        <div class="sim-header">
+          <div>
+            <div class="sim-label">Simulador interactivo</div>
+            <div style="font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--text); margin-top: 4px;">Mueve el slider para ver qué pasa con el portafolio cuando cambias el precio</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="sim-label">Cambio de precio</div>
+            <div class="sim-value" id="priceChangeVal">0%</div>
+          </div>
+        </div>
+        <input type="range" class="sim-slider" id="priceSlider" min="-15" max="15" value="0" step="1">
+        <div class="sim-ticks"><span>-15%</span><span>-10%</span><span>-5%</span><span>baseline</span><span>+5%</span><span>+10%</span><span>+15%</span></div>
+        <div class="sim-stats">
+          <div class="sim-stat"><div class="l">Impacto en volumen</div><div class="v neutral" id="volImpact">0.0%</div></div>
+          <div class="sim-stat"><div class="l">Impacto en ingreso</div><div class="v neutral" id="revImpact">0.0%</div></div>
+          <div class="sim-stat"><div class="l">Impacto en margen</div><div class="v neutral" id="marginImpact">0.0%</div></div>
+        </div>
+      </div>
+      <div class="chart-card" style="height: 500px;">
+        <canvas id="elasticityScatter"></canvas>
+      </div>
+      <div style="margin-top: 18px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;">
+        <div style="font-family: 'SFMono-Regular', Consolas, monospace; font-size: 16px; color: var(--orange); line-height: 1.6; white-space: nowrap; font-weight: 600;">
+          <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); font-weight: 700; font-family: var(--sans); margin-bottom: 6px;">Fórmula</div>
+          Q(p) = Q<sub>0</sub> · (p / p<sub>0</sub>)<sup>ε</sup>
+        </div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">
+          <strong>Modelo de elasticidad constante (log-log)</strong>. Es el modelo económico estándar para CPG pricing: el volumen responde al precio en una proporción fija ε (la elasticidad), típicamente estimada con regresión log-log sobre histórico POS. El simulador aplica esta fórmula SKU por SKU y agrega el resultado.
+          <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">
+            Lecturas:
+            <a href="https://lingarogroup.com/blog/understanding-price-elasticity-and-its-impact-on-consumers-and-business-strategy" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Lingaro · Understanding Price Elasticity</a> ·
+            <a href="https://www.cpgdatainsights.com/answer-business-questions/how-to-apply-price-elasticity/" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">CPG Data Insights · How to Apply Price Elasticity</a> ·
+            <a href="https://en.wikipedia.org/wiki/Price_elasticity_of_demand" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Wikipedia · Price elasticity of demand</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 18px 0 0; font-size: 12px; color: var(--muted); text-align: center;"><strong>Simulador 100% ilustrativo construido para este cookbook</strong>: los 30 SKUs, las elasticidades y los precios son sintéticos. El formato de visualización está inspirado en el caso público de <a href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Lingaro: AI Price Elasticity para RGM</a>, y el patrón (familiares inelásticos, singles elásticos) es un hallazgo típico en embotelladores.</p>
       <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);">
         <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Rangos observados en reportes públicos</h3>
         <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Puntos de referencia de la industria para calibrar. Úsalos como referencia al fijar metas internas.</p>
@@ -808,12 +825,13 @@ flowchart LR
         <table>
           <thead><tr><th style="width:28%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
           <tbody>
-            <tr><td class="hi">59% de promos NO rentables</td><td class="dim">No llegan a break-even globalmente. La mayor palanca está en reasignar el gasto actual a SKUs con uplift real, no en subir el budget. Fuente: <a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ 2024</a>.</td></tr>
+            <tr><td class="hi">+200–300 bps margen bruto</td><td class="dim">Modelo comercial repetible que alinea marketing, assortment y distribución. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence 2025</a> · reporta también +3–5 pp revenue growth.</td></tr>
+            <tr><td class="hi">+5–10% margen vía AI pricing</td><td class="dim">Retailers que adoptan AI pricing. Fuente: BCG, citado en <a href="https://www.custonomy.ai/blog/ai-powered-dynamic-pricing-retail-cpg/" target="_blank">reviews 2024 de AI Dynamic Pricing Retail/CPG</a>.</td></tr>
+            <tr><td class="hi">+3 pp profit margin premium</td><td class="dim">Compañías confident en ejecutar incrementos de precio 2025 vs. no, brecha de 5–11 pp según comparativo. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain 2025</a>.</td></tr>
+            <tr><td class="hi">+12% win-rate en deals</td><td class="dim">Organizaciones con data-driven pricing guidance cierran deals 12% más veces que quienes no la tienen. Sales reps <strong>2× más confident</strong> en realizar incrementos de precio. Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain 2025</a>.</td></tr>
+            <tr><td class="hi">59% de promos NO rentables</td><td class="dim">No llegan a break-even globalmente. Reasignar ese gasto a SKUs con uplift real es la palanca más grande en trade. Fuente: <a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ 2024</a>.</td></tr>
             <tr><td class="hi">11–27% de revenue en trade spend</td><td class="dim">Segunda línea más grande del P&amp;L después de COGS, pero <strong>88% de CPG no la gestiona bien</strong>. Fuente: <a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute 2024</a>.</td></tr>
-            <tr><td class="hi">61% no ejecuta promo como planeó</td><td class="dim">44% de CPG cita data quality / harmonización como blocker para TPO. Fuente: <a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute 2025</a>.</td></tr>
-            <tr><td class="hi">AB InBev: 75% órdenes vía ML</td><td class="dim">BEES procesa 1.6M órdenes/semana con recomendaciones generadas por ML. GMV &gt;$13B en 9 meses. Fuente: <a href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + Databricks</a>.</td></tr>
-            <tr><td class="hi">Mondelez: +2–4% uplift SKU</td><td class="dim">Uplift medido a nivel tienda con modelos causales sobre Databricks MLflow + Unity Catalog. Fuente: <a href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>.</td></tr>
-            <tr><td class="hi">+200–300 bps margen bruto</td><td class="dim">Commercial excellence con modelo comercial repetible (pricing + promo + assortment alineados). Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence 2025</a>.</td></tr>
+            <tr><td class="hi">Solo 25–30% de CPG con analytics avanzado en pricing</td><td class="dim">Brecha de adopción: la mayoría sigue en Excel y reglas estáticas. Quien ejecuta primero captura el premium. Fuente: <a href="https://www.everestgrp.com/the-power-of-pricing-in-the-success-of-cpg-brands-2025-and-beyond-blog.html" target="_blank">Everest Group 2025</a>.</td></tr>
           </tbody>
         </table>
       </div>
@@ -825,15 +843,15 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">7</span>Framework de medición</div>
       <h2 class="head">Cuatro preguntas antes de <em>arrancar</em></h2>
-      <p class="section-deck">Auditoría interna antes de iniciar un programa de Promo &amp; NBO, para tener baseline y poder medir el impacto real del cambio.</p>
+      <p class="section-deck">Aplica esta auditoría interna antes de iniciar un proyecto, para tener baseline y definir metas concretas.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:24%;">Dimensión</th><th>Pregunta clave</th><th style="width:32%;">Cómo medirla</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Grupo control</td><td>¿Tienes holdout aleatorio disponible cuando lanzas una promo?</td><td class="dim">Revisar últimas 5 promos: ¿se reservó un % de shoppers elegibles sin ofrecer la promo?</td></tr>
-            <tr><td class="hi">Identidad resuelta</td><td>¿Puedes vincular la misma persona entre POS, loyalty, app y e-com?</td><td class="dim">Auditoría: ¿hay un customer_id único? ¿qué % de transacciones están vinculadas?</td></tr>
-            <tr><td class="hi">Uplift histórico</td><td>¿Qué % de tus promos del último año generaron uplift incremental positivo?</td><td class="dim">Análisis causal post-hoc de 12 meses de promos con control o matched-pair.</td></tr>
-            <tr><td class="hi">Costo de la promo</td><td>¿Sabes exactamente cuánto cuesta cada promo, incluyendo descuento y activación?</td><td class="dim">Conciliación con finanzas: COGS incremental + descuento neto + costo de activación.</td></tr>
+            <tr><td class="hi">Baseline de margen</td><td>¿Cuál es el margen bruto por SKU, canal y cliente hoy, post-descuento?</td><td class="dim">Reporte mensual desde ERP + transaccional, conciliado con finanzas.</td></tr>
+            <tr><td class="hi">Elasticidad intuitiva</td><td>¿Cuánto cambia el volumen cuando mueves precio 1% en cada canal?</td><td class="dim">Análisis histórico de 12–24 meses por categoría.</td></tr>
+            <tr><td class="hi">Ciclo de decisión</td><td>¿Cuánto tarda aprobar un cambio de precio o una promoción?</td><td class="dim">Log de aprobaciones; medir p50 y p95 en días.</td></tr>
+            <tr><td class="hi">Calidad del dato</td><td>¿Hay un único lugar donde precio, costo y promoción convivan gobernados?</td><td class="dim">Auditoría: contar sistemas fuente y pipelines duplicados.</td></tr>
           </tbody>
         </table>
       </div>
@@ -848,33 +866,33 @@ flowchart LR
       <div class="phases">
         <div class="phase">
           <div class="ph">Fase 1 · Fundamentos</div>
-          <div class="t">Identidad y test/control</div>
+          <div class="t">Un lugar gobernado</div>
           <ul>
-            <li><strong>Unificar</strong> POS, loyalty, app y e-com con identidad resuelta en Unity Catalog.</li>
-            <li><strong>Instrumentar</strong> holdout aleatorio al enviar promos (grupo control).</li>
-            <li><strong>Auditar</strong> 12 meses de promos históricas para medir uplift real post-hoc.</li>
+            <li><strong>Unificar</strong> ERP, TX, promos, inventario en Lakehouse con Unity Catalog.</li>
+            <li><strong>Construir</strong> el Pricing Mart de oro con linaje.</li>
+            <li><strong>Dashboard</strong> de margen post-descuento por canal.</li>
           </ul>
-          <div class="goal">Baseline claro: % de promos con uplift positivo hoy</div>
+          <div class="goal">Time-to-insight &lt; 1 día</div>
         </div>
         <div class="phase">
           <div class="ph">Fase 2 · Analítica</div>
-          <div class="t">Uplift + recommender</div>
+          <div class="t">Elasticidad y guardrails</div>
           <ul>
-            <li><strong>Modelar</strong> uplift por mecánica × segmento con causalml o equivalente.</li>
-            <li><strong>Recommender</strong> de SKU por shopper (ALS / matrix factorization como MVP).</li>
-            <li><strong>Piloto</strong>: una categoría, un canal, con grupo control aleatorizado.</li>
+            <li><strong>Modelar</strong> elasticidad por SKU × canal con 12+ meses de historia.</li>
+            <li><strong>Simulador</strong> de promociones con margen objetivo.</li>
+            <li><strong>Piloto</strong> acotado: una categoría, un canal, un trimestre.</li>
           </ul>
-          <div class="goal">ROI incremental positivo en la mecánica piloto</div>
+          <div class="goal">Uplift medible por SKU × canal, con grupo control</div>
         </div>
         <div class="phase">
           <div class="ph">Fase 3 · Activación</div>
-          <div class="t">Agente + multicanal</div>
+          <div class="t">Agentes e integración</div>
           <ul>
-            <li><strong>Ranking + guardrails</strong> en producción con cap de canibalización y margen mínimo.</li>
-            <li><strong>Agente</strong> de trade marketing para preguntas what-if en lenguaje natural.</li>
-            <li><strong>Activación</strong> push en app, cupón en e-com, recomendación al vendedor de ruta.</li>
+            <li><strong>Optimizador</strong> en producción con guardrails automáticos.</li>
+            <li><strong>Agente</strong> conversacional para equipo comercial.</li>
+            <li><strong>Integración</strong> con sistema transaccional o e-commerce.</li>
           </ul>
-          <div class="goal">Escalar a 2–3 canales con atribución causal en cada uno</div>
+          <div class="goal">Escalar a 2–3 canales con atribución controlada</div>
         </div>
       </div>
     </div>
@@ -883,8 +901,8 @@ flowchart LR
 </main>
 
 <footer>
-  <div class="sig">CPG Promo &amp; NBO: A framework</div>
-  <div>Databricks Consumer Industries · Recipe 2 del CPG Cookbook · 2026 · <a href="dynamic-pricing.html" style="color: var(--red); border-bottom: 1px solid var(--border);">Ver Recipe 1: Dynamic Pricing</a></div>
+  <div class="sig">CPG Pricing: A framework</div>
+  <div>Databricks Consumer Industries · One-pager público · 2026</div>
 </footer>
 
 <script>
@@ -906,7 +924,14 @@ flowchart LR
     flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 35, rankSpacing: 55, padding: 12 }
   });
 
-  /* Simulador y Chart de Recipe 1 removidos — no aplican aquí.
+  // Charts
+  Chart.defaults.color = '#8B9399';
+  Chart.defaults.borderColor = '#223845';
+  Chart.defaults.font.family = 'DM Sans, sans-serif';
+
+  // Portafolio ilustrativo estilo embotellador PepsiCo (refrescos, aguas, jugos, isotónicos)
+  // Cada SKU: x = ventas baseline (miles de unidades / 26 semanas), e = |elasticidad|, p0 = precio MXN, c = costo unitario MXN
+  // Patrón realista: formatos familiares 2L/garrafón inelásticos; singles 600ml/355ml más elásticos
   const skuData = [
     { label: 'Cola 600ml PET Single', x: 850, e: 1.8, p0: 14, c: 7.5 },
     { label: 'Cola 2L PET Familiar', x: 620, e: 0.5, p0: 32, c: 18 },
@@ -979,10 +1004,10 @@ flowchart LR
       datasets: [{
         label: 'SKUs',
         data: recalc(0).points,
-        backgroundColor: 'rgba(59,130,246,0.55)',
+        backgroundColor: 'rgba(255,54,33,0.55)',
         borderColor: '#FF3621',
         borderWidth: 1.5,
-        hoverBackgroundColor: 'rgba(59,130,246,0.85)'
+        hoverBackgroundColor: 'rgba(255,54,33,0.85)'
       }]
     },
     options: {
@@ -1066,7 +1091,16 @@ flowchart LR
 
   const slider = document.getElementById('priceSlider');
   const priceLabel = document.getElementById('priceChangeVal');
-  */
+  slider.addEventListener('input', (e) => {
+    const dp = parseFloat(e.target.value);
+    priceLabel.textContent = (dp >= 0 ? '+' : '') + dp + '%';
+    const r = recalc(dp);
+    elasticityChart.data.datasets[0].data = r.points;
+    elasticityChart.update('none');
+    setStat('volImpact', r.dVol);
+    setStat('revImpact', r.dRev);
+    setStat('marginImpact', r.dMargin);
+  });
 
   // Accordion
   document.querySelectorAll('[data-story] .story-head').forEach(h => {
