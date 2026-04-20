@@ -419,17 +419,6 @@
             <div class="evidence-label">Evidencia · casos públicos</div>
 
             <div class="evidence-item">
-              <div class="who">Mondelēz International</div>
-              <div class="what">Uplift modeling con MLflow + Unity Catalog + Mosaic AI ("SnackGPT") para recomendar SKUs a nivel tienda con modelos versionados a escala.</div>
-              <div class="kpis">
-                <span class="kpi-tag">+2–4% uplift SKU</span>
-                <span class="kpi-tag">+3–5% forecast accuracy</span>
-                <span class="kpi-tag">20K modelos · 3K en prod</span>
-              </div>
-              <a class="src" href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>
-            </div>
-
-            <div class="evidence-item">
               <div class="who">Embotelladora global (bebidas · vidrio/lata/PET)</div>
               <div class="what">Cálculo automatizado de elasticidad a nivel SKU × segmento POS × canal (tradicional vs online), incluyendo densidad competidora como covariable. Dashboards descriptivo + predictivo + prescriptivo con what-if.</div>
               <div class="kpis">
@@ -591,31 +580,6 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Reckitt</div>
-            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex, marcas de consumo</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Unificó investigación de consumidor, reseñas de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que da visibilidad de elasticidad, campañas y respuesta del consumidor a cambios de precio, la misma infraestructura que habilita pricing dinámico.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
-              <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
-              <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en tareas de marketing</div></div>
-            </div>
-            <div class="story-quote">
-              "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
             <div class="name">Steelcase</div>
             <div class="sector">Mobiliario · Consumer Goods · 130+ países · 70,000+ escenarios de pricing/año</div>
           </div>
@@ -702,11 +666,8 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/pepsico" target="_blank">PepsiCo: Customer Story</a></td><td class="dim">Consolidación BI sobre DBSQL: -65% costo ($500K → $175K), decommission Synapse/Teradata.</td></tr>
               <tr><td class="hi"><a href="https://lingarogroup.com/blog/cpg-case-study-ai-enhanced-price-elasticity-strategy-for-revenue-growth-management" target="_blank">Lingaro: AI Price Elasticity para RGM</a></td><td class="dim">Embotelladora global de bebidas con SKU × POS × canal en 4 mercados.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">CPG global unificando analytics sobre Mosaic AI.</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/customers/steelcase" target="_blank">Steelcase: Customer Story</a></td><td class="dim">Motor de pricing con Random Forest + Unity Catalog en producción.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">+2–4% uplift por SKU, +80% sales rep effectiveness, 20K modelos / 3K en producción.</td></tr>
             </tbody>
           </table>
         </div>
@@ -926,7 +887,7 @@ flowchart LR
   Chart.defaults.borderColor = '#223845';
   Chart.defaults.font.family = 'DM Sans, sans-serif';
 
-  // Portafolio ilustrativo estilo embotellador PepsiCo (refrescos, aguas, jugos, isotónicos)
+  // Portafolio ilustrativo estilo embotellador
   // Cada SKU: x = ventas baseline (miles de unidades / 26 semanas), e = |elasticidad|, p0 = precio MXN, c = costo unitario MXN
   // Patrón realista: formatos familiares 2L/garrafón inelásticos; singles 600ml/355ml más elásticos
   const skuData = [
@@ -1011,7 +972,7 @@ flowchart LR
       maintainAspectRatio: false,
       animation: { duration: 450 },
       plugins: {
-        title: { display: true, text: 'Elasticidad × volumen por SKU · portafolio tipo embotellador (refrescos · aguas · jugos)', color: '#EEEFF1', font: { size: 13, weight: '600' }, padding: { bottom: 12 } },
+        title: { display: true, text: 'Elasticidad × volumen por SKU · portafolio tipo embotellador', color: '#EEEFF1', font: { size: 13, weight: '600' }, padding: { bottom: 12 } },
         legend: { display: false },
         tooltip: {
           backgroundColor: '#0E181C',
