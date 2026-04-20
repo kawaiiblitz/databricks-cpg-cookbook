@@ -365,7 +365,7 @@
       <a href="#comparativa">Comparativa</a>
       <a href="#kpis">KPIs</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="promo-nbo.html" style="color: #A855F7;">Promo &amp; NBO →</a>
+      <a href="promo-nbo.html" style="color: #3B82F6;">Promo &amp; NBO →</a>
     </div>
   </div>
 </nav>
@@ -734,17 +734,15 @@ flowchart LR
   <section class="stage" id="comparativa">
     <div class="reveal">
       <div class="section-label"><span class="num">5</span>Pricing dinámico vs. normal</div>
-      <h2 class="head">Seis dimensiones que <em>cambian</em></h2>
+      <h2 class="head">Cuatro dimensiones que <em>cambian</em></h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:22%;">Dimensión</th><th>Tradicional</th><th>Dinámico</th></tr></thead>
           <tbody>
             <tr><td class="hi">Ciclo de decisión</td><td class="dim">Trimestral o mensual, en comité.</td><td>Diario a intra-día según canal y categoría.</td></tr>
-            <tr><td class="hi">Granularidad</td><td class="dim">Lista de precios por región o por cliente grande.</td><td>SKU × canal × cliente × momento.</td></tr>
+            <tr><td class="hi">Granularidad</td><td class="dim">Lista de precios por región o por cliente grande.</td><td>SKU, canal, cliente y momento.</td></tr>
             <tr><td class="hi">Input principal</td><td class="dim">Costos + margen objetivo; benchmark manual.</td><td>Elasticidad aprendida, señales de demanda, competencia en tiempo real.</td></tr>
-            <tr><td class="hi">Gobierno de promociones</td><td class="dim">Aprobación manual, sin visibilidad de margen post-descuento.</td><td>Guardrails automáticos, simulación, margen trazable.</td></tr>
-            <tr><td class="hi">Dueño del dato</td><td class="dim">Silos: finanzas, comercial, trade-marketing.</td><td>Lakehouse único con linaje y permisos.</td></tr>
-            <tr><td class="hi">Medición del uplift</td><td class="dim">Estimación ex-post, difícil de atribuir.</td><td>Test & learn cerrado, atribución por SKU × canal.</td></tr>
+            <tr><td class="hi">Medición del uplift</td><td class="dim">Estimación ex-post, difícil de atribuir.</td><td>Test &amp; learn cerrado, atribución por SKU y canal.</td></tr>
           </tbody>
         </table>
       </div>
@@ -843,17 +841,15 @@ flowchart LR
   <section class="stage" id="medir">
     <div class="reveal">
       <div class="section-label"><span class="num">7</span>Framework de medición</div>
-      <h2 class="head">Seis preguntas antes de <em>arrancar</em></h2>
+      <h2 class="head">Cuatro preguntas antes de <em>arrancar</em></h2>
       <p class="section-deck">Aplica esta auditoría interna antes de iniciar un proyecto, para tener baseline y definir metas concretas.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:24%;">Dimensión</th><th>Pregunta clave</th><th style="width:32%;">Cómo medirla</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Baseline de margen</td><td>¿Cuál es el margen bruto por SKU × canal × cliente hoy, post-descuento?</td><td class="dim">Reporte mensual desde ERP + TX, conciliado con finanzas.</td></tr>
-            <tr><td class="hi">Elasticidad intuitiva</td><td>¿Cuánto cambia el volumen cuando mueves precio 1% en cada canal?</td><td class="dim">Análisis histórico 12–24 meses por categoría.</td></tr>
+            <tr><td class="hi">Baseline de margen</td><td>¿Cuál es el margen bruto por SKU, canal y cliente hoy, post-descuento?</td><td class="dim">Reporte mensual desde ERP + transaccional, conciliado con finanzas.</td></tr>
+            <tr><td class="hi">Elasticidad intuitiva</td><td>¿Cuánto cambia el volumen cuando mueves precio 1% en cada canal?</td><td class="dim">Análisis histórico de 12–24 meses por categoría.</td></tr>
             <tr><td class="hi">Ciclo de decisión</td><td>¿Cuánto tarda aprobar un cambio de precio o una promoción?</td><td class="dim">Log de aprobaciones; medir p50 y p95 en días.</td></tr>
-            <tr><td class="hi">Descuento perdido</td><td>¿Qué % de promociones no generan uplift incremental?</td><td class="dim">Test A/B o comparación pre/post con control group.</td></tr>
-            <tr><td class="hi">Time-to-insight</td><td>¿Cuánto tarda responder "¿cuál fue el margen de esta promo?"</td><td class="dim">Cronometrar con equipo comercial o de trade-marketing.</td></tr>
             <tr><td class="hi">Calidad del dato</td><td>¿Hay un único lugar donde precio, costo y promoción convivan gobernados?</td><td class="dim">Auditoría: contar sistemas fuente y pipelines duplicados.</td></tr>
           </tbody>
         </table>

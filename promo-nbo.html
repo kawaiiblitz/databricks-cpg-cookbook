@@ -19,8 +19,8 @@
     --text: #EEEFF1;
     --text-soft: #C9CED3;
     --muted: #8B9399;
-    --red: #A855F7;
-    --red-dim: #7E3FC9;
+    --red: #3B82F6;
+    --red-dim: #2563EB;
     --brand-red: #FF3621;
     --green: #00A972;
     --orange: #FCA429;
@@ -38,7 +38,7 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--red); text-decoration: none; }
-  a:hover { color: #c58aff; }
+  a:hover { color: #7aa8fa; }
 
   /* NAV */
   nav.topnav {
@@ -70,7 +70,7 @@
     padding: 120px 32px 100px;
     overflow: hidden;
     background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(168,85,247,0.12), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59,130,246,0.12), transparent 70%),
       radial-gradient(ellipse 50% 40% at 20% 80%, rgba(0,169,114,0.08), transparent 70%),
       linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     border-bottom: 1px solid var(--border);
@@ -83,9 +83,9 @@
   .hero .brand-lock .sub { color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; }
   .hero .brand-lock .sub strong { color: var(--text); display: block; font-weight: 600; letter-spacing: 0.5px; font-size: 14px; text-transform: none; }
 
-  .hero .primer-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 32px; }
-  .hero .primer-tag::before { content: ''; width: 32px; height: 1px; background: var(--red); }
-  .hero .primer-tag::after { content: ''; width: 32px; height: 1px; background: var(--red); }
+  .hero .primer-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-red); margin-bottom: 32px; }
+  .hero .primer-tag::before { content: ''; width: 32px; height: 1px; background: var(--brand-red); }
+  .hero .primer-tag::after { content: ''; width: 32px; height: 1px; background: var(--brand-red); }
 
   .hero .byline { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; max-width: 760px; }
   .hero .byline strong { color: var(--text); font-weight: 600; }
@@ -136,7 +136,7 @@
   /* Citations */
   .citations { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
   .citations a { font-size: 12px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
-  .citations a:hover { color: var(--red); border-color: rgba(168,85,247,0.4); background: rgba(168,85,247,0.04); }
+  .citations a:hover { color: var(--red); border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.04); }
   .citations a::before { content: '↗ '; opacity: 0.6; }
 
   /* Reveal on scroll */
@@ -146,7 +146,7 @@
   /* Narrative prose */
   .prose { max-width: 66ch; font-family: var(--display); font-size: 19px; line-height: 1.7; color: var(--text); }
   .prose p { margin: 0 0 20px; }
-  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(168,85,247,0.18) 60%); padding: 0 2px; }
+  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(59,130,246,0.18) 60%); padding: 0 2px; }
   .prose p { color: var(--text-soft); }
   .prose p:first-of-type { font-size: 21px; color: var(--text); }
 
@@ -156,9 +156,9 @@
     background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
     padding: 26px; position: relative; transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .step-card:hover { transform: translateY(-4px); border-color: rgba(168,85,247,0.4); }
+  .step-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
   .step-card .n {
-    font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--red);
+    font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--orange);
     line-height: 1; margin-bottom: 12px;
   }
   .step-card .t { font-weight: 600; font-size: 17px; margin-bottom: 8px; }
@@ -178,7 +178,7 @@
   thead th { background: var(--panel-2); color: var(--text); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-align: left; padding: 16px 20px; font-weight: 700; border-bottom: 1px solid var(--border); }
   tbody td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: top; color: var(--text-soft); }
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: rgba(168,85,247,0.04); }
+  tbody tr:hover { background: rgba(59,130,246,0.04); }
   td.hi { color: var(--text); font-weight: 600; }
   td.dim { color: var(--muted); }
 
@@ -206,23 +206,23 @@
     background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
     margin-bottom: 14px; overflow: hidden; transition: border-color 0.3s ease;
   }
-  .story.open { border-color: rgba(168,85,247,0.5); }
+  .story.open { border-color: rgba(255,54,33,0.5); }
   .story-head {
     padding: 24px 28px; display: flex; align-items: center; justify-content: space-between;
     cursor: pointer; user-select: none;
     transition: background 0.2s ease;
   }
-  .story-head:hover { background: rgba(168,85,247,0.04); }
+  .story-head:hover { background: rgba(59,130,246,0.04); }
   .story-head .left { flex: 1; }
   .story-head .name { font-family: var(--display); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
   .story-head .sector { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .story-head .plus {
     width: 36px; height: 36px; border-radius: 50%;
     border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-    color: var(--red); font-size: 18px; font-weight: 300;
+    color: var(--brand-red); font-size: 18px; font-weight: 300;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .story.open .story-head .plus { transform: rotate(45deg); border-color: var(--red); }
+  .story.open .story-head .plus { transform: rotate(45deg); border-color: var(--brand-red); }
   .story-body {
     max-height: 0; overflow: hidden;
     transition: max-height 0.5s ease;
@@ -241,7 +241,7 @@
   .story-metric .v { color: var(--green); font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; }
   .story-metric .l { color: var(--muted); font-size: 12px; margin-top: 6px; }
   .story-quote {
-    border-left: 3px solid var(--red); padding: 6px 0 6px 22px;
+    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px;
     margin: 20px 0; font-family: var(--display); font-size: 18px; line-height: 1.55;
     color: var(--text); font-weight: 500;
   }
@@ -257,11 +257,11 @@
     padding: 28px; position: relative; overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .phase:hover { transform: translateY(-4px); border-color: rgba(168,85,247,0.4); }
+  .phase:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
   .phase::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red);
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange);
   }
-  .phase .ph { color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .phase .ph { color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
   .phase .t { font-family: var(--display); font-size: 24px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.2px; }
   .phase ul { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; line-height: 1.65; }
   .phase ul li { margin-bottom: 8px; }
@@ -325,8 +325,8 @@
   .sim-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; }
   .sim-value { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
   .sim-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; outline: none; }
-  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(168,85,247,0.18); }
-  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(168,85,247,0.18); }
+  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
+  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
   .sim-ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px; }
   .sim-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
   @media (max-width: 640px) { .sim-stats { grid-template-columns: 1fr; } }
@@ -398,9 +398,10 @@
   <section class="stage" id="que-es">
     <div class="reveal">
       <div class="section-label"><span class="num">1</span>Qué es Promo &amp; NBO</div>
-      <h2 class="head">Del <em>descuento masivo</em> al cupón inteligente</h2>
+      <h2 class="head">Del <em>descuento masivo</em> a la oferta personalizada</h2>
       <div class="prose">
-        <p>Promo &amp; NBO es el paso de mandar la misma promoción a todos los shoppers con <strong>mecánicas fijas (2×1, 10% off, bundle)</strong> a <strong>personalizar la oferta por shopper × canal × momento</strong>, con atribución causal (test + control), uplift modeling que estima qué hubiera pasado sin la promo, y un recomendador que decide qué SKU empujar a cada cliente. <strong>NBO (Next Best Offer)</strong> — también llamado NBA (Next Best Action) — es el componente que decide "qué oferta, a quién, cuándo y por qué canal" para maximizar margen incremental sin canibalizar el mix.</p>
+        <p>Promo &amp; NBO es el paso de mandar la misma promoción a todos los shoppers, a <strong>personalizar la oferta por shopper, canal y momento</strong>. Se apoya en tres piezas: una <strong>atribución causal</strong> que compara resultados entre un grupo que recibió la promo y un grupo control, un <strong>uplift model</strong> que estima cuánta de la venta es realmente incremental (no hubiera ocurrido sin la promo), y un <strong>recomendador</strong> que decide qué producto ofrecer a cada cliente.</p>
+        <p><strong>NBO (Next Best Offer)</strong> es el componente que pone todo junto: dice qué oferta, a quién, cuándo y por qué canal, buscando el margen incremental más alto sin afectar las ventas de otros productos del portafolio.</p>
       </div>
     </div>
   </section>
@@ -507,7 +508,7 @@ flowchart LR
     classDef src fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
     classDef silver fill:#11212A,stroke:#8B9399,stroke-width:1px,color:#EEEFF1
     classDef gold fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef ai fill:#1B1016,stroke:#A855F7,stroke-width:2px,color:#A855F7
+    classDef ai fill:#0E1B2A,stroke:#3B82F6,stroke-width:2px,color:#3B82F6
     classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
 
     subgraph Sources [Fuentes]
@@ -535,7 +536,7 @@ flowchart LR
 
     subgraph Act ["Activación multicanal"]
       direction TB
-      AP["Push en app<br/>Mi Mandadito, BEES"]
+      AP["Push en app<br/>D2C / B2B"]
       CU["Cupón personalizado<br/>e-commerce"]
       RU["App del vendedor<br/>ruta a detalle"]
       EM["Email / SMS"]
@@ -575,7 +576,7 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">3</span>Casos de éxito públicos</div>
       <h2 class="head">Lo que otras marcas ya <em>consiguieron</em></h2>
-      <p class="section-deck">Historias públicas de clientes que ya implementaron promo optimization, recommenders y NBO sobre Databricks. El primero — AB InBev BEES — es el más cercano al caso canónico "app D2C + recommender con promo" (tipo Mi Mandadito).</p>
+      <p class="section-deck">Historias públicas de clientes que ya implementaron promo optimization, recommenders y NBO sobre Databricks. Haz click en cada historia para ver métricas, quote y link al caso completo.</p>
 
       <div class="story" data-story>
         <div class="story-head">
@@ -587,7 +588,7 @@ flowchart LR
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">BEES es la app B2B de AB InBev donde 2.1M tiendas (tienditas, autoservicios pequeños, bares) hacen pedidos directamente. Sobre Databricks, BEES personaliza <strong>ofertas limitadas en el tiempo por tienda × momento</strong>, con active learning. Es el caso público más cercano al patrón "app de ruta a detalle + recommender con promo" — el mismo que ocupa una embotelladora con una app para sus clientes detallistas (tipo Mi Mandadito).</p>
+            <p class="story-desc">BEES es la app B2B de AB InBev donde 2.1M tiendas (tienditas, autoservicios pequeños, bares) hacen pedidos directamente. Sobre Databricks, BEES personaliza <strong>ofertas limitadas en el tiempo por tienda y momento</strong>, con active learning. Es el caso público de referencia para cualquier embotelladora o CPG que opere una app D2C o B2B con recomendador y promoción asociada.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">75%</div><div class="l">de las órdenes generadas por ML</div></div>
               <div class="story-metric"><div class="v">1.6M</div><div class="l">órdenes por semana</div></div>
@@ -755,17 +756,15 @@ flowchart LR
   <section class="stage" id="comparativa">
     <div class="reveal">
       <div class="section-label"><span class="num">5</span>Promo masiva vs. personalizada</div>
-      <h2 class="head">Seis dimensiones que <em>cambian</em></h2>
+      <h2 class="head">Cuatro dimensiones que <em>cambian</em></h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:22%;">Dimensión</th><th>Promo tradicional</th><th>Promo &amp; NBO</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Segmentación</td><td class="dim">Todos los shoppers / todo el canal reciben la misma oferta.</td><td>Micro-segmentos o personalización 1:1 por shopper × momento.</td></tr>
-            <tr><td class="hi">Mecánica</td><td class="dim">Fija: 2×1, 10% off, bundle idéntico para toda la campaña.</td><td>Adaptativa: la mecánica se ajusta al perfil y al histórico del shopper.</td></tr>
-            <tr><td class="hi">Atribución del uplift</td><td class="dim">Estimación ex-post, comparando período vs período. Confounding alto.</td><td>Atribución causal con test &amp; control. Uplift incremental medido, no estimado.</td></tr>
-            <tr><td class="hi">Ciclo de planeación</td><td class="dim">Trimestral, en comité. Difícil de corregir a mitad de ciclo.</td><td>Semanal o en tiempo casi real, con feedback de redemption.</td></tr>
-            <tr><td class="hi">Canibalización</td><td class="dim">No se mide o se mira manualmente después de la promo.</td><td>Modelada: el optimizador penaliza recomendaciones que canibalizan otros SKUs del mix.</td></tr>
+            <tr><td class="hi">Segmentación</td><td class="dim">Todos los shoppers reciben la misma oferta.</td><td>Micro-segmentos o personalización 1:1 por shopper y momento.</td></tr>
+            <tr><td class="hi">Atribución del uplift</td><td class="dim">Estimación ex-post comparando período vs. período. Confounding alto.</td><td>Atribución causal con test y control. Uplift incremental medido, no estimado.</td></tr>
             <tr><td class="hi">Gasto promocional</td><td class="dim">Blanket: todos los elegibles reciben el descuento, rentable o no.</td><td>Dirigido: gasta donde el uplift es real. Reasigna budget a SKUs con ROI positivo.</td></tr>
+            <tr><td class="hi">Ciclo de planeación</td><td class="dim">Trimestral, en comité. Difícil de corregir a mitad de ciclo.</td><td>Semanal o en tiempo casi real, con feedback de redemption.</td></tr>
           </tbody>
         </table>
       </div>
@@ -824,18 +823,16 @@ flowchart LR
   <section class="stage" id="medir">
     <div class="reveal">
       <div class="section-label"><span class="num">7</span>Framework de medición</div>
-      <h2 class="head">Seis preguntas antes de <em>arrancar</em></h2>
+      <h2 class="head">Cuatro preguntas antes de <em>arrancar</em></h2>
       <p class="section-deck">Auditoría interna antes de iniciar un programa de Promo &amp; NBO, para tener baseline y poder medir el impacto real del cambio.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:24%;">Dimensión</th><th>Pregunta clave</th><th style="width:32%;">Cómo medirla</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Identidad resuelta</td><td>¿Puedes vincular la misma persona entre POS, loyalty, app y e-com?</td><td class="dim">Auditoría: ¿hay un customer_id único? ¿qué % de transacciones están vinculadas?</td></tr>
             <tr><td class="hi">Grupo control</td><td>¿Tienes holdout aleatorio disponible cuando lanzas una promo?</td><td class="dim">Revisar últimas 5 promos: ¿se reservó un % de shoppers elegibles sin ofrecer la promo?</td></tr>
+            <tr><td class="hi">Identidad resuelta</td><td>¿Puedes vincular la misma persona entre POS, loyalty, app y e-com?</td><td class="dim">Auditoría: ¿hay un customer_id único? ¿qué % de transacciones están vinculadas?</td></tr>
             <tr><td class="hi">Uplift histórico</td><td>¿Qué % de tus promos del último año generaron uplift incremental positivo?</td><td class="dim">Análisis causal post-hoc de 12 meses de promos con control o matched-pair.</td></tr>
-            <tr><td class="hi">Redemption rate</td><td>¿Cuántas ofertas enviadas efectivamente se canjearon, por canal?</td><td class="dim">Canjes / ofertas enviadas, por canal × mecánica × segmento. p50 y long tail.</td></tr>
-            <tr><td class="hi">Canibalización</td><td>¿Mides qué SKUs caen cuando promocionas otro, o sólo el SKU objetivo?</td><td class="dim">Revisar si el dashboard actual incluye SKUs sustitutos o sólo el SKU en promo.</td></tr>
-            <tr><td class="hi">Costo de la promo</td><td>¿Sabes exactamente cuánto cuesta cada promo, incluyendo costo del descuento + costo operativo?</td><td class="dim">Conciliación con finanzas: COGS incremental + descuento neto + costo de activación.</td></tr>
+            <tr><td class="hi">Costo de la promo</td><td>¿Sabes exactamente cuánto cuesta cada promo, incluyendo descuento y activación?</td><td class="dim">Conciliación con finanzas: COGS incremental + descuento neto + costo de activación.</td></tr>
           </tbody>
         </table>
       </div>
@@ -981,10 +978,10 @@ flowchart LR
       datasets: [{
         label: 'SKUs',
         data: recalc(0).points,
-        backgroundColor: 'rgba(168,85,247,0.55)',
+        backgroundColor: 'rgba(59,130,246,0.55)',
         borderColor: '#FF3621',
         borderWidth: 1.5,
-        hoverBackgroundColor: 'rgba(168,85,247,0.85)'
+        hoverBackgroundColor: 'rgba(59,130,246,0.85)'
       }]
     },
     options: {
