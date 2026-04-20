@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CPG Promo & NBO: Framework | Databricks Consumer Industries</title>
+<title>CPG Audience & Customer 360 with Genie | Databricks Consumer Industries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,8 +19,8 @@
     --text: #EEEFF1;
     --text-soft: #C9CED3;
     --muted: #8B9399;
-    --red: #3B82F6;
-    --red-dim: #2563EB;
+    --red: #00A972;
+    --red-dim: #008957;
     --brand-red: #FF3621;
     --green: #00A972;
     --orange: #FCA429;
@@ -38,7 +38,7 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--red); text-decoration: none; }
-  a:hover { color: #7aa8fa; }
+  a:hover { color: #40c995; }
 
   /* NAV */
   nav.topnav {
@@ -70,7 +70,7 @@
     padding: 120px 32px 100px;
     overflow: hidden;
     background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59,130,246,0.12), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0,169,114,0.12), transparent 70%),
       radial-gradient(ellipse 50% 40% at 20% 80%, rgba(0,169,114,0.08), transparent 70%),
       linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     border-bottom: 1px solid var(--border);
@@ -136,7 +136,7 @@
   /* Citations */
   .citations { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
   .citations a { font-size: 12px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease; }
-  .citations a:hover { color: var(--red); border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.04); }
+  .citations a:hover { color: var(--red); border-color: rgba(0,169,114,0.4); background: rgba(0,169,114,0.04); }
   .citations a::before { content: '↗ '; opacity: 0.6; }
 
   /* Reveal on scroll */
@@ -146,7 +146,7 @@
   /* Narrative prose */
   .prose { max-width: 66ch; font-family: var(--display); font-size: 19px; line-height: 1.7; color: var(--text); }
   .prose p { margin: 0 0 20px; }
-  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(59,130,246,0.18) 60%); padding: 0 2px; }
+  .prose strong { color: var(--text); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(0,169,114,0.18) 60%); padding: 0 2px; }
   .prose p { color: var(--text-soft); }
   .prose p:first-of-type { font-size: 21px; color: var(--text); }
 
@@ -156,7 +156,7 @@
     background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
     padding: 26px; position: relative; transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .step-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
+  .step-card:hover { transform: translateY(-4px); border-color: rgba(0,169,114,0.4); }
   .step-card .n {
     font-family: var(--display); font-size: 46px; font-weight: 700; color: var(--orange);
     line-height: 1; margin-bottom: 12px;
@@ -178,7 +178,7 @@
   thead th { background: var(--panel-2); color: var(--text); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-align: left; padding: 16px 20px; font-weight: 700; border-bottom: 1px solid var(--border); }
   tbody td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: top; color: var(--text-soft); }
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: rgba(59,130,246,0.04); }
+  tbody tr:hover { background: rgba(0,169,114,0.04); }
   td.hi { color: var(--text); font-weight: 600; }
   td.dim { color: var(--muted); }
 
@@ -212,7 +212,7 @@
     cursor: pointer; user-select: none;
     transition: background 0.2s ease;
   }
-  .story-head:hover { background: rgba(59,130,246,0.04); }
+  .story-head:hover { background: rgba(0,169,114,0.04); }
   .story-head .left { flex: 1; }
   .story-head .name { font-family: var(--display); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
   .story-head .sector { color: var(--muted); font-size: 13px; margin-top: 4px; }
@@ -257,7 +257,7 @@
     padding: 28px; position: relative; overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .phase:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.4); }
+  .phase:hover { transform: translateY(-4px); border-color: rgba(0,169,114,0.4); }
   .phase::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange);
   }
@@ -325,8 +325,8 @@
   .sim-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; }
   .sim-value { font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
   .sim-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; outline: none; }
-  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
-  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(59,130,246,0.18); }
+  .sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(0,169,114,0.18); }
+  .sim-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--red); border-radius: 50%; cursor: pointer; border: none; box-shadow: 0 0 0 4px rgba(0,169,114,0.18); }
   .sim-ticks { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px; }
   .sim-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
   @media (max-width: 640px) { .sim-stats { grid-template-columns: 1fr; } }
@@ -359,6 +359,7 @@
     <div class="nav-links">
       <a href="index.html">← Cookbook</a>
       <a href="dynamic-pricing.html" style="color: #FF3621;">Dynamic Pricing</a>
+      <a href="promo-nbo.html" style="color: #3B82F6;">Promo &amp; NBO</a>
       <a href="#que-es">Qué es</a>
       <a href="#como">Cómo funciona</a>
       <a href="#casos">Casos</a>
@@ -366,7 +367,6 @@
       <a href="#comparativa">Comparativa</a>
       <a href="#kpis">KPIs</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="audience-c360.html" style="color: #00A972;">Audience &amp; C360 →</a>
     </div>
   </div>
 </nav>
@@ -381,11 +381,11 @@
       <div class="div"></div>
       <div class="sub"><strong>Consumer Industries</strong>CPG Cookbook</div>
     </div>
-    <div class="primer-tag">Primer · Recipe 2 de 2</div>
-    <h1>Promo &amp; <em>NBO</em><br/>para CPG</h1>
-    <p class="deck">Del descuento masivo al cupón inteligente: ofertas personalizadas por shopper × canal × momento, con atribución causal y guardrails de margen. Promo Optimization + <strong>NBO (Next Best Offer)</strong> = la segunda palanca de Revenue Growth Management.</p>
+    <div class="primer-tag">Primer · Recipe 3 de 3</div>
+    <h1>Audience &amp; <em>Customer 360</em><br/>con Genie</h1>
+    <p class="deck">De silos de datos al perfil 360 gobernado, con audiencias construidas en lenguaje natural vía <strong>AI/BI Genie</strong> y activadas multicanal. Composable CDP sobre la Databricks Data Intelligence Platform.</p>
     <div class="byline">
-      <strong>Preparado por Databricks Consumer Industries</strong> · Recipe 2 del CPG Cookbook. Recipe 1 cubre <a href="dynamic-pricing.html" style="color: var(--text); border-bottom: 1px solid var(--red);">Dynamic Pricing</a>. Juntas forman el stack de Revenue Growth Management (RGM) sobre la Databricks Data Intelligence Platform.
+      <strong>Preparado por Databricks Consumer Industries</strong> · Recipe 3 del CPG Cookbook. Junto con <a href="dynamic-pricing.html" style="color: var(--text); border-bottom: 1px solid #FF3621;">Dynamic Pricing</a> y <a href="promo-nbo.html" style="color: var(--text); border-bottom: 1px solid #3B82F6;">Promo &amp; NBO</a> forman el stack completo de Revenue Growth Management (RGM) sobre la Databricks Data Intelligence Platform.
     </div>
   </div>
 </header>
@@ -395,11 +395,12 @@
   <!-- 1 · QUE ES -->
   <section class="stage" id="que-es">
     <div class="reveal">
-      <div class="section-label"><span class="num">1</span>Qué es Promo &amp; NBO</div>
-      <h2 class="head">Del <em>descuento masivo</em> a la oferta personalizada</h2>
+      <div class="section-label"><span class="num">1</span>Qué es Audience &amp; C360</div>
+      <h2 class="head">De <em>silos</em> al perfil 360 con audiencias conversacionales</h2>
       <div class="prose">
-        <p>Promo &amp; NBO es el paso de mandar la misma promoción a todos los shoppers, a <strong>personalizar la oferta por shopper, canal y momento</strong>. Se apoya en tres piezas: una <strong>atribución causal</strong> que compara resultados entre un grupo que recibió la promo y un grupo control, un <strong>uplift model</strong> que estima cuánta de la venta es realmente incremental (no hubiera ocurrido sin la promo), y un <strong>recomendador</strong> que decide qué producto ofrecer a cada cliente.</p>
-        <p><strong>NBO (Next Best Offer)</strong> es el componente que pone todo junto: dice qué oferta, a quién, cuándo y por qué canal, buscando el margen incremental más alto sin afectar las ventas de otros productos del portafolio.</p>
+        <p>Customer 360 es el perfil unificado del shopper: identidad resuelta entre POS, loyalty, app y e-commerce, más su historial de compras, preferencias y señales de engagement. Vive como una tabla Gold en Unity Catalog, gobernada y lineada.</p>
+        <p>Encima de ese Customer 360, <strong>AI/BI Genie</strong> convierte preguntas en lenguaje natural en audiencias. Un equipo comercial pregunta <em>"dame los clientes que no compraron Gatorade en los últimos 60 días"</em> y recibe la lista en segundos, sin escribir SQL. Para audiencias recurrentes que se activan a canales (push, email, paid media), Genie se complementa con partners como Hightouch o Amperity.</p>
+        <p>Esto es el patrón <strong>Composable CDP</strong>: Databricks como engine (datos, identidad, modelos) y los canales de activación encima. Sin silos extra.</p>
       </div>
     </div>
   </section>
@@ -409,96 +410,85 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">El ciclo promocional pasa de planeación trimestral a decisión por shopper × momento, con atribución causal. Misma arquitectura base del cookbook (Unity Catalog + MLflow + Activación), ahora con modelos de uplift + recommender en el corazón.</p>
+      <p class="section-deck">Composable CDP sobre Databricks: Unity Catalog gobierna la identidad y el perfil, MLflow versiona los features, y <strong>AI/BI Genie</strong> convierte preguntas de negocio en audiencias. Partners como Hightouch y Amperity se encargan de la última milla de activación a canales cuando se necesita orquestación recurrente.</p>
       <div class="steps-grid">
-        <div class="step-card"><div class="n">01</div><div class="t">Ingesta 360</div><div class="d">Unifica POS, loyalty, app engagement, promos históricas, catálogo y costos. Identidad resuelta shopper × hogar × canal en Unity Catalog.</div></div>
+        <div class="step-card"><div class="n">01</div><div class="t">Ingesta 360</div><div class="d">POS, loyalty, app engagement, e-commerce, promos, catálogo y paneles externos se unifican en Bronze/Silver con Lakeflow Connect.</div></div>
         <div class="step-card evidence" data-step>
           <div class="n">02</div>
-          <div class="t">Uplift model + recommender</div>
-          <div class="d">Mide impacto causal de cada mecánica promocional (uplift), y decide qué SKU ofrecer a cada shopper (recommender).</div>
+          <div class="t">Entity resolution</div>
+          <div class="d">Unifica la identidad del shopper entre POS, loyalty, app y e-com. Sin esto, cualquier audiencia sale desalineada.</div>
           <div class="hint">+ Ver cómo lo hicieron</div>
           <div class="evidence-body"><div class="evidence-inner">
-            <div class="evidence-label">Evidencia · casos públicos</div>
+            <div class="evidence-label">Evidencia · aceleradores públicos</div>
 
             <div class="evidence-item">
-              <div class="who">Mondelēz International</div>
-              <div class="what">Uplift modeling sobre MLflow + Unity Catalog + Mosaic AI para recomendar SKUs a nivel tienda. Modelos versionados a escala con medición de incrementalidad.</div>
+              <div class="who">Customer Entity Resolution · Databricks Solution Accelerator</div>
+              <div class="what">Accelerator oficial de Databricks con notebooks ejecutables para resolver identidad entre múltiples fuentes usando fuzzy matching, splink y técnicas probabilísticas. Punto de partida reproducible.</div>
               <div class="kpis">
-                <span class="kpi-tag">+2–4% uplift SKU</span>
-                <span class="kpi-tag">+80% sales rep effectiveness</span>
-                <span class="kpi-tag">20K modelos · 3K en prod</span>
+                <span class="kpi-tag">Notebooks ejecutables</span>
+                <span class="kpi-tag">Splink + fuzzy matching</span>
+                <span class="kpi-tag">Oficial Databricks</span>
               </div>
-              <a class="src" href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>
+              <a class="src" href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Databricks blog: New Solution Accelerator · Customer Entity Resolution</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">AB InBev · BEES (Direct-to-retail app)</div>
-              <div class="what">App B2B que vende a 2.1M tiendas SMB. Motor ML sobre Databricks para ofertas personalizadas por tienda × momento. Active learning para limited-time offers.</div>
+              <div class="who">Hightouch · Adaptive Identity Resolution</div>
+              <div class="what">Solución partner sobre Databricks que hace identity stitching a escala con similarity computations. Marketing-friendly UI encima del Lakehouse.</div>
               <div class="kpis">
-                <span class="kpi-tag">75% de órdenes vía ML</span>
-                <span class="kpi-tag">1.6M órdenes/semana</span>
-                <span class="kpi-tag">GMV &gt;$13B en 9 meses</span>
+                <span class="kpi-tag">Partner oficial</span>
+                <span class="kpi-tag">Lakehouse-native</span>
+                <span class="kpi-tag">Sin copia de datos</span>
               </div>
-              <a class="src" href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + ML</a>
-            </div>
-
-            <div class="evidence-item">
-              <div class="who">ALS Recommender · Databricks Solution Accelerator</div>
-              <div class="what">Notebooks ejecutables con matrix factorization (ALS) sobre Instacart. Punto de partida para un equipo de ML que quiera arrancar un recommender de productos.</div>
-              <div class="kpis">
-                <span class="kpi-tag">Código ejecutable</span>
-                <span class="kpi-tag">Instacart dataset</span>
-                <span class="kpi-tag">Spark MLLib</span>
-              </div>
-              <a class="src" href="https://github.com/databricks-industry-solutions/als-recommender" target="_blank">GitHub: databricks-industry-solutions/als-recommender</a>
+              <a class="src" href="https://hightouch.com/" target="_blank">Hightouch · Adaptive Identity Resolution on Databricks</a>
             </div>
 
           </div></div>
         </div>
+        <div class="step-card"><div class="n">03</div><div class="t">Customer 360 Gold</div><div class="d">Tabla Gold con el perfil unificado: identidad resuelta, historial RFM, preferencias, segmentos, features derivadas (recency de compra por categoría, afinidad de marca, etc.).</div></div>
         <div class="step-card evidence" data-step>
-          <div class="n">03</div>
-          <div class="t">Ranking + guardrails</div>
-          <div class="d">Ordena ofertas candidatas sujeto a margen mínimo, cap por shopper, budget promocional y control de canibalización.</div>
+          <div class="n">04</div>
+          <div class="t">AI/BI Genie · audience builder conversacional</div>
+          <div class="d">El equipo comercial pregunta en español "dame los que no compraron Gatorade en 60 días" y Genie genera SQL sobre el Customer 360, ejecuta y regresa la lista. Auditable y gobernado.</div>
           <div class="hint">+ Ver cómo lo hicieron</div>
           <div class="evidence-body"><div class="evidence-inner">
-            <div class="evidence-label">Evidencia · casos públicos</div>
+            <div class="evidence-label">Evidencia · patrón comprobado a escala</div>
 
             <div class="evidence-item">
-              <div class="who">Aimpoint Digital · Promotion Price Optimization</div>
-              <div class="what">Solución partner oficial sobre Databricks que encuentra el descuento ideal por promoción, con econometría + ML + AI. Interfaz Sigma para what-if scenarios, guardrails de margen, paridad de canal y acuerdos.</div>
+              <div class="who">Rollout de Genie a 10,000+ usuarios (patrón comprobado en Slack interno)</div>
+              <div class="what">El caso más extenso de Genie en producción usa un patrón replicable: <strong>tags gobernados en las tablas</strong> (incluyendo primary keys y ejemplos de query), <strong>Vector Index sobre esa metadata</strong>, y una app que <strong>refina la pregunta del usuario con Claude + vector index</strong> antes de pasarla al Genie MCP server. Así las instrucciones del Genie Space se mantienen mínimas y todo el contexto se inyecta en tiempo real.</div>
               <div class="kpis">
-                <span class="kpi-tag">Partner oficial Databricks</span>
-                <span class="kpi-tag">Econometría + ML</span>
-                <span class="kpi-tag">What-if interactivo</span>
+                <span class="kpi-tag">10K+ usuarios</span>
+                <span class="kpi-tag">400+ tablas Gold</span>
+                <span class="kpi-tag">Tags gobernados + Vector Index</span>
+                <span class="kpi-tag">Genie MCP server</span>
               </div>
-              <a class="src" href="https://www.databricks.com/company/partners/consulting-and-si/partner-solutions/aimpoint-digital-promotion-price" target="_blank">Databricks · Aimpoint Promo Price Optimization</a>
+              <a class="src" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks docs: AI/BI Genie</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">84.51° (Kroger)</div>
-              <div class="what">Plataforma de promoción cross-category y geography sobre Databricks. Dashboards con control group, parametrización por categoría, 100× más workflows diarios que antes.</div>
+              <div class="who">Warner Music Group · MusicIQ</div>
+              <div class="what">WMG desplegó Genie como "MusicIQ", su interfaz de lenguaje natural para que cualquier usuario pueda preguntar sobre los data products de la compañía (Marketing Performance, LL, Dimensional). Un stop-shop para queries analíticas.</div>
               <div class="kpis">
-                <span class="kpi-tag">-85% tiempo de job (6-8h → 1h)</span>
-                <span class="kpi-tag">100× workflows/día</span>
-                <span class="kpi-tag">2,800+ usos reporte promo</span>
+                <span class="kpi-tag">Natural language a SQL</span>
+                <span class="kpi-tag">Multi-dominio</span>
+                <span class="kpi-tag">Deployment amplio</span>
               </div>
-              <a class="src" href="https://www.databricks.com/customers/8451" target="_blank">Databricks: 84.51° customer story</a>
+              <a class="src" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks AI/BI Genie (docs)</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">Next Best Action · Databricks Solution Accelerator (HLS)</div>
-              <div class="what">Accelerator de constrained optimization en GitHub. Originalmente para healthcare, el patrón (ranking sujeto a restricciones de negocio) aplica directamente a promo/NBO en CPG.</div>
+              <div class="who">Estrategia de respuesta: ¿Genie o framework?</div>
+              <div class="what"><strong>Ambos sobre el MISMO Customer 360.</strong> Genie resuelve el 80% de los casos (pregunta ad-hoc, audiencia one-off, exploración). Partners como Hightouch/Amperity entran cuando necesitas audiencia recurrente con sync automático a canales externos (push, email, paid media) y scheduling.</div>
               <div class="kpis">
-                <span class="kpi-tag">Constrained optimization</span>
-                <span class="kpi-tag">Código ejecutable</span>
+                <span class="kpi-tag">Genie para ad-hoc + exploración</span>
+                <span class="kpi-tag">Partners para activación recurrente</span>
               </div>
-              <a class="src" href="https://github.com/databricks-industry-solutions/next-best-action-hls" target="_blank">GitHub: next-best-action-hls</a>
             </div>
 
           </div></div>
         </div>
-        <div class="step-card"><div class="n">04</div><div class="t">Semántica y agentes</div><div class="d">Agent Framework + AI/BI Genie. El agente de trade marketing pregunta "¿qué cupón al shopper X en canal Y?" y obtiene respuesta trazable.</div></div>
-        <div class="step-card"><div class="n">05</div><div class="t">Activación multicanal</div><div class="d">Push en app, cupón personalizado en e-com, recomendación al vendedor de ruta, email, SMS. Con test/control para medir uplift real.</div></div>
+        <div class="step-card"><div class="n">05</div><div class="t">Activación multicanal</div><div class="d">La audiencia generada por Genie se activa a canales. Para uso one-off: export a CSV o entrega vía Delta Sharing. Para uso recurrente: reverse ETL vía Hightouch, Amperity o Census hacia app push, email, paid media, CRM.</div></div>
       </div>
       <div class="diagram">
         <div class="mermaid">
@@ -506,63 +496,58 @@ flowchart LR
     classDef src fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
     classDef silver fill:#11212A,stroke:#8B9399,stroke-width:1px,color:#EEEFF1
     classDef gold fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef ai fill:#0E1B2A,stroke:#3B82F6,stroke-width:2px,color:#3B82F6
+    classDef genie fill:#0E2A1E,stroke:#00A972,stroke-width:2px,color:#00A972
     classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
 
     subgraph Sources [Fuentes]
       direction TB
-      A1["POS · loyalty<br/>ticket · hogar"]
-      A2["App engagement<br/>web · clickstream"]
-      A3["Promos históricas<br/>con test/control"]
-      A4["Catálogo y costos<br/>margen por SKU"]
+      A1["POS · ticket<br/>loyalty · hogar"]
+      A2["App · e-commerce<br/>clickstream"]
+      A3["CRM<br/>contactos · consent"]
+      A4["Catálogo<br/>SKU · categoría"]
       A5["Shopper research<br/>encuestas · paneles"]
     end
 
     subgraph Lake ["Lakehouse gobernado por Unity Catalog"]
       direction TB
       S["Silver<br/>Conformed"]
-      G["Gold"]
+      ER["Entity Resolution<br/>identidad unificada"]
+      G["Customer 360<br/>Gold"]
     end
 
-    subgraph Intel ["Capa de inteligencia · MLflow"]
+    subgraph Intel ["Audience builder"]
       direction TB
-      U["Uplift model<br/>causal impact"]
-      R["Recommender<br/>ALS · matrix factorization"]
-      O["Ranking + guardrails<br/>margen · cap · budget"]
-      SM["Capa semántica<br/>+ agentes"]
+      GE["AI/BI Genie<br/>audiencias ad-hoc en<br/>lenguaje natural"]
+      RE["Reverse ETL<br/>Hightouch · Amperity · Census"]
     end
 
     subgraph Act ["Activación multicanal"]
       direction TB
-      AP["Push en app<br/>D2C / B2B"]
-      CU["Cupón personalizado<br/>e-commerce"]
-      RU["App del vendedor<br/>ruta a detalle"]
+      AP["Push en app"]
       EM["Email / SMS"]
+      PM["Paid media<br/>Meta · Google"]
+      CR["CRM<br/>campañas"]
     end
 
-    A1 --> G
-    A2 --> G
-    A3 --> G
-    A4 --> G
+    A1 --> S
+    A2 --> S
+    A3 --> S
+    A4 --> S
     A5 --> S
-    S --> G
-    G --> U
-    G --> R
-    U --> O
-    R --> O
-    G --> SM
-    O --> AP
-    O --> CU
-    O --> RU
-    O --> EM
-    SM --> AP
-    SM --> RU
+    S --> ER --> G
+    G --> GE
+    G --> RE
+    GE -.->|"audiencia one-off"| EM
+    RE --> AP
+    RE --> EM
+    RE --> PM
+    RE --> CR
 
     class A1,A2,A3,A4,A5 src
     class S silver
-    class G gold
-    class U,R,O,SM ai
-    class AP,CU,RU,EM out
+    class ER,G gold
+    class GE,RE genie
+    class AP,EM,PM,CR out
         </div>
       </div>
       <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted);">Fuente: <a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Big Book of Retail &amp; CG Use Cases (Databricks)</a>.</p>
@@ -574,28 +559,32 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">3</span>Casos de éxito públicos</div>
       <h2 class="head">Lo que otras marcas ya <em>consiguieron</em></h2>
-      <p class="section-deck">Historias públicas de clientes que ya implementaron promo optimization, recommenders y NBO sobre Databricks. Haz click en cada historia para ver métricas, quote y link al caso completo.</p>
+      <p class="section-deck">Casos públicos sólidos y patrones verificados para construir audiencias sobre Customer 360 en Databricks. Solo incluimos lo que tiene fuente citable.</p>
 
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">AB InBev · BEES</div>
-            <div class="sector">Bebidas · app B2B para 2.1M tiendas SMB globales · ML-first</div>
+            <div class="name">Marvel + Hightouch → Braze</div>
+            <div class="sector">Audience segments en producción · Composable CDP sobre Databricks</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">BEES es la app B2B de AB InBev donde 2.1M tiendas (tienditas, autoservicios pequeños, bares) hacen pedidos directamente. Sobre Databricks, BEES personaliza <strong>ofertas limitadas en el tiempo por tienda y momento</strong>, con active learning. Es el caso público de referencia para cualquier embotelladora o CPG que opere una app D2C o B2B con recomendador y promoción asociada.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">75%</div><div class="l">de las órdenes generadas por ML</div></div>
-              <div class="story-metric"><div class="v">1.6M</div><div class="l">órdenes por semana</div></div>
-              <div class="story-metric"><div class="v">&gt;$13B</div><div class="l">GMV en 9 meses</div></div>
-              <div class="story-metric"><div class="v">2.1M</div><div class="l">tiendas SMB atendidas mensualmente</div></div>
+            <p class="story-desc">Marvel implementó el patrón <strong>Composable CDP</strong> en producción para activar audiencias en Braze. Vale la pena detallar el <em>cómo</em>, porque es el mismo flujo que ocupa cualquier CPG que tenga Customer 360 sobre Databricks y quiera activar en canales (email, push, paid media):</p>
+            <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 18px 0; font-size: 14px; line-height: 1.65; color: var(--text-soft);">
+              <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 14px;">El flujo paso a paso</div>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">1 · Customer 360 gobernado en Databricks.</strong> Transacciones, loyalty, engagement, consent se unifican en una tabla Gold con identidad resuelta. Unity Catalog gobierna permisos y linaje.</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">2 · Audience built directamente sobre el Lakehouse.</strong> El equipo de marketing define el segmento (ej. "usuarios con suscripción próxima a vencer que no han visto contenido en 14 días"). Lo construye con SQL, Genie (natural language) o el builder visual de Hightouch encima del C360.</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">3 · Hightouch sync vía Delta Sharing.</strong> Hightouch lee la audiencia <em>directo del Lakehouse</em> con Delta Sharing — zero-copy, sin duplicar data en otro warehouse. Resuelve identifiers entre el customer_id de Databricks y los que Braze acepta (email, device id, push token).</p>
+              <p style="margin: 0;"><strong style="color: var(--text);">4 · Braze activa la campaña.</strong> La audiencia aparece como segmento en Braze y se dispara el envío (email, push, in-app). Los eventos de conversión vuelven a Databricks y refinan el segmento para la siguiente iteración — loop cerrado.</p>
             </div>
-            <a class="story-link" href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + ML →</a>
-            &nbsp;·&nbsp;
-            <a class="story-link" href="https://consumergoods.com/ab-inbev-helps-drive-marketing-optimization-ml-powered-bees" target="_blank">Consumer Goods: BEES Marketing Optimization →</a>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">Zero-copy</div><div class="l">Delta Sharing, sin duplicar data</div></div>
+              <div class="story-metric"><div class="v">Loop cerrado</div><div class="l">eventos de conversión vuelven a UC</div></div>
+              <div class="story-metric"><div class="v">Marketing UI</div><div class="l">Hightouch builder encima del Lakehouse</div></div>
+            </div>
+            <p style="font-size: 13px; color: var(--muted); margin: 14px 0 0;">Marvel es la referencia en entretenimiento; el mismo patrón se usa cross-industry. El <a href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">blog oficial de Databricks</a> lo documenta en healthcare (NBA + Hightouch) y es 100% transferible a CPG.</p>
           </div>
         </div>
       </div>
@@ -603,21 +592,20 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Mondelēz International</div>
-            <div class="sector">CPG global · Oreo, Cadbury, Milka · uplift y forecasting a escala</div>
+            <div class="name">Patrón Genie a escala · 10,000+ usuarios</div>
+            <div class="sector">Rollout comprobado en producción · 400+ tablas Gold</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Mondelez unificó datos de trade, retail y consumer sobre Databricks Mosaic AI (“SnackGPT”) con <strong>uplift modeling</strong> para recomendar SKUs a nivel tienda. Lakehouse Federation les evitó migración forzada de fuentes. MLflow + Unity Catalog para 20K modelos, 3K en producción.</p>
+            <p class="story-desc">El caso más extenso de Genie en producción usa un patrón replicable que vale la pena adoptar desde el inicio: <strong>tags gobernados en las tablas</strong> (incluyendo primary keys y ejemplos de query), <strong>Vector Index sobre esa metadata</strong>, y una app que <strong>refina la pregunta del usuario con Claude + vector index</strong> antes de pasarla al Genie MCP server. Las instrucciones del Genie Space se mantienen mínimas; todo el contexto se inyecta en tiempo real.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">+2–4%</div><div class="l">uplift ventas por SKU recomendado</div></div>
-              <div class="story-metric"><div class="v">+80%</div><div class="l">sales rep effectiveness</div></div>
-              <div class="story-metric"><div class="v">+3–5%</div><div class="l">forecast accuracy</div></div>
-              <div class="story-metric"><div class="v">20K modelos</div><div class="l">3K en producción</div></div>
+              <div class="story-metric"><div class="v">10K+</div><div class="l">usuarios en producción</div></div>
+              <div class="story-metric"><div class="v">400+</div><div class="l">tablas Gold en el Genie Space</div></div>
+              <div class="story-metric"><div class="v">Vector Index</div><div class="l">+ tags gobernados + MCP</div></div>
             </div>
-            <a class="story-link" href="https://www.databricks.com/customers/mondelez" target="_blank">Ver caso completo →</a>
+            <a class="story-link" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks docs · AI/BI Genie →</a>
           </div>
         </div>
       </div>
@@ -625,21 +613,20 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">84.51° (Kroger)</div>
-            <div class="sector">Retail + CPG data · promociones cross-category y geography</div>
+            <div class="name">Warner Music Group · MusicIQ</div>
+            <div class="sector">Genie como interfaz NL2SQL multi-dominio · un stop-shop para data</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">84.51°, el brazo de data de Kroger, rediseñó su plataforma de promociones sobre Databricks. Notebooks parametrizables para análisis cross-category, control group embebido, Delta Lake para versionar datasets. El dashboard de pricing y el reporte de promociones son artefactos usados diariamente por trade y merchandising.</p>
+            <p class="story-desc">WMG desplegó Genie como <strong>MusicIQ</strong>, una interfaz de lenguaje natural que permite a cualquier usuario consultar los data products de la compañía (Marketing Performance, LL, Dimensional) sin escribir SQL. Un patrón directamente transferible a CPG: un "AskCommercial" sobre Customer 360 donde trade marketing, CRM y RGM preguntan por audiencias, segmentos y métricas.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">-85%</div><div class="l">tiempo de job (6-8h → 1h)</div></div>
-              <div class="story-metric"><div class="v">100×</div><div class="l">workflows diarios vs. baseline</div></div>
-              <div class="story-metric"><div class="v">2,800+</div><div class="l">usos del reporte de promos en 6 meses</div></div>
-              <div class="story-metric"><div class="v">400+</div><div class="l">views/mes dashboard pricing</div></div>
+              <div class="story-metric"><div class="v">Multi-dominio</div><div class="l">Marketing, finanzas, operaciones</div></div>
+              <div class="story-metric"><div class="v">NL → SQL</div><div class="l">sin SQL para el usuario final</div></div>
+              <div class="story-metric"><div class="v">Data products</div><div class="l">gobernados en Unity Catalog</div></div>
             </div>
-            <a class="story-link" href="https://www.databricks.com/customers/8451" target="_blank">Ver caso completo →</a>
+            <a class="story-link" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks AI/BI Genie →</a>
           </div>
         </div>
       </div>
@@ -647,25 +634,20 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Reckitt</div>
-            <div class="sector">CPG global · marketing intelligence + GenAI para campañas</div>
+            <div class="name">Composable CDP · Next Best Action</div>
+            <div class="sector">Arquitectura pública de referencia · Databricks + Hightouch</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Reckitt consolidó research de consumidor, reseñas de producto, social listening y brand analytics en Lakehouse + Databricks Mosaic AI. El impacto directo aplica a promo/NBO: <strong>crean y localizan campañas mucho más rápido</strong>, y el agente conversacional reduce el tiempo que marketers tardan en armar una oferta personalizada.</p>
+            <p class="story-desc">Blog oficial de Databricks que documenta el patrón <strong>Composable CDP</strong> en healthcare (directamente aplicable a CPG): Databricks resuelve identidad y calcula features/scores, Hightouch construye audiencias sobre el Lakehouse y activa hacia canales de engagement. Los KPIs de campaña se cierran volviendo a Databricks — loop completo sin silos adicionales.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
-              <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
-              <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en tareas de marketing</div></div>
-              <div class="story-metric"><div class="v">-44%</div><div class="l">cost-per-view de campañas</div></div>
+              <div class="story-metric"><div class="v">Oficial Databricks</div><div class="l">arquitectura de referencia pública</div></div>
+              <div class="story-metric"><div class="v">Lakehouse-native</div><div class="l">sin copia de datos</div></div>
+              <div class="story-metric"><div class="v">Loop cerrado</div><div class="l">activación + medición en UC</div></div>
             </div>
-            <div class="story-quote">
-              "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>Tewfik Bedreddine, Global VP Data &amp; Analytics, Reckitt</cite>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
+            <a class="story-link" href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank">Databricks blog · Composable CDP + NBA →</a>
           </div>
         </div>
       </div>
@@ -692,10 +674,10 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/accelerators/recommendation-engines" target="_blank">Databricks: Recommendation Engines for Personalization</a></td><td class="dim">Solution Accelerator oficial de recommenders para retail/CPG. <strong>Empieza aquí.</strong></td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/consumer-goods" target="_blank">Databricks Consumer Goods</a></td><td class="dim">Soluciones específicas para CPG: RGM, trade promo, shopper.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/resources/ebook/big-book-of-retail-consumer-goods-use-cases" target="_blank">Big Book of Retail &amp; CG Use Cases</a></td><td class="dim">Compendio de casos con arquitecturas de referencia para retail y CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/retail-industry-solutions" target="_blank">Databricks: Retail &amp; CG</a></td><td class="dim">Página de industria: pricing, promociones, forecasting, segmentación.</td></tr>
+              <tr><td class="hi"><a href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks: AI/BI Genie (docs)</a></td><td class="dim">Documentación oficial del audience builder conversacional. <strong>Empieza aquí.</strong></td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Whitepaper: The Composable CDP</a></td><td class="dim">Paper oficial Databricks del patrón Composable CDP (el marco conceptual de Recipe 3).</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/resources/demos/tutorials/lakehouse-platform/c360-platform-reduce-churn" target="_blank">Databricks: C360 Platform Tutorial</a></td><td class="dim">Demo tutorial para construir Customer 360 sobre Lakehouse.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/solutions/industries/consumer-goods" target="_blank">Databricks Consumer Goods</a></td><td class="dim">Página de industria CPG: shopper, RGM, trade promo.</td></tr>
             </tbody>
           </table>
         </div>
@@ -706,12 +688,10 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene · fuente</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2023/01/06/products-we-think-you-might-generating-personalized-recommendations.html" target="_blank">Products We Think You Might Like (2023)</a></td><td class="dim">Blog oficial Databricks: matrix factorization + ALS sobre Instacart.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2021/06/09/how-to-build-a-scalable-wide-and-deep-product-recommender.html" target="_blank">Wide &amp; Deep Product Recommender (2021)</a></td><td class="dim">Deep learning recommender combinando purchase + preference data.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/2020/12/18/personalizing-the-customer-experience-with-recommendations.html" target="_blank">Personalizing Customer Experience with Recommendations</a></td><td class="dim">Arquitectura de referencia para omnichannel personalization.</td></tr>
-              <tr><td class="hi"><a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ: Promotion Performance Uplift (2024)</a></td><td class="dim">59% de promos globales NO alcanzan break-even. Palanca más grande en trade.</td></tr>
-              <tr><td class="hi"><a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute: State of the Industry</a></td><td class="dim">11–27% del revenue en trade spend; 88% de CPG no lo gestiona bien.</td></tr>
-              <tr><td class="hi"><a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence (2025)</a></td><td class="dim">+200–300 bps margen, +12% win-rate con data-driven pricing y promo.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank">Databricks: Next Best Action + Composable CDP</a></td><td class="dim">Blog oficial con arquitectura de Databricks + Hightouch. Originalmente healthcare, 100% aplicable a CPG.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/retail-personalization-rfm-segmentation-and-composable-cdp" target="_blank">Retail Personalization · RFM Segmentation + Composable CDP</a></td><td class="dim">Método clásico de segmentación (Recency · Frequency · Monetary) encima del Lakehouse.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Customer Entity Resolution Accelerator</a></td><td class="dim">Blog oficial de lanzamiento. Identidad unificada como prerequisito de audiencias.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/unlocking-next-gen-customer-experiences-data-intelligence-marketing" target="_blank">Next-Gen Customer Experiences · Data Intelligence Marketing</a></td><td class="dim">Narrativa de marketing over the Lakehouse.</td></tr>
             </tbody>
           </table>
         </div>
@@ -722,10 +702,10 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">AB InBev · BEES (VentureBeat)</a></td><td class="dim">App B2B para 2.1M tiendas, 75% órdenes vía ML, GMV $13B/9 meses.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">+2–4% uplift por SKU, +80% sales rep effectiveness, 20K modelos.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/8451" target="_blank">84.51° (Kroger)</a></td><td class="dim">Promociones cross-category: -85% job time, 100× workflows/día.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">Marketing intelligence GenAI: 40–60% más rápido crear campañas.</td></tr>
+              <tr><td class="hi"><a href="https://hightouch.com/customers" target="_blank">Marvel + Hightouch → Braze</a></td><td class="dim">Go-live de audience segments desde Databricks hacia Braze vía Hightouch.</td></tr>
+              <tr><td class="hi"><a href="https://docs.databricks.com/aws/en/genie/" target="_blank">Genie en producción · 10K+ usuarios</a></td><td class="dim">Patrón: tags gobernados + Vector Index + Genie MCP. Escalable a portafolios grandes de data products.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">C360 a escala con MLflow + Unity Catalog. 20K modelos, 3K en producción (de Recipe 2).</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">Unificación de consumer research, reviews y brand analytics en Lakehouse (transferible).</td></tr>
             </tbody>
           </table>
         </div>
@@ -736,12 +716,14 @@ flowchart LR
           <table>
             <thead><tr><th style="width:36%;">Accelerator</th><th>Qué contiene · tipo</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions/als-recommender" target="_blank">ALS Recommender (GitHub)</a></td><td class="dim">Notebooks Databricks con matrix factorization (ALS) sobre Instacart. <strong>Empieza aquí.</strong></td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/resources/architectures/telecom-next-best-action-reference-architecture" target="_blank">NBA Reference Architecture (Databricks)</a></td><td class="dim">Patrón oficial de Next Best Action. Aunque es telecom, es reusable en cualquier industria.</td></tr>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions/next-best-action-hls" target="_blank">Next Best Action (GitHub)</a></td><td class="dim">Constrained optimization accelerator. Originalmente healthcare, el patrón aplica a CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/company/partners/consulting-and-si/partner-solutions/aimpoint-digital-promotion-price" target="_blank">Aimpoint: Promotion Price Optimization</a></td><td class="dim">Partner oficial: econometría + ML + AI para encontrar el descuento ideal por promoción.</td></tr>
-              <tr><td class="hi"><a href="https://github.com/uber/causalml" target="_blank">causalml · Uber (GitHub)</a></td><td class="dim">Biblioteca Python estándar de industria para uplift modeling (medir incrementalidad real).</td></tr>
-              <tr><td class="hi"><a href="https://github.com/databricks-industry-solutions" target="_blank">databricks-industry-solutions (GitHub)</a></td><td class="dim">Repo paraguas con solution accelerators retail/CPG/forecasting/propensity.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Customer Entity Resolution (Databricks)</a></td><td class="dim">Notebooks oficiales con splink + fuzzy matching para identidad unificada. <strong>Empieza aquí.</strong></td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Composable CDP Whitepaper</a></td><td class="dim">Paper oficial del patrón arquitectónico.</td></tr>
+              <tr><td class="hi"><a href="https://aws.amazon.com/marketplace/pp/prodview-66wsblcdte4ne" target="_blank">Composable CDP Accelerator (AWS Marketplace)</a></td><td class="dim">Package deployable para arrancar rápido un CDP sobre Databricks en AWS.</td></tr>
+              <tr><td class="hi"><a href="https://docs.databricks.com/aws/en/genie/" target="_blank">AI/BI Genie (docs oficiales)</a></td><td class="dim">Product docs: setup, spaces, tags, metric views, MCP server.</td></tr>
+              <tr><td class="hi"><a href="https://hightouch.com/" target="_blank">Hightouch · Partner oficial</a></td><td class="dim">Audience builder visual + reverse ETL + Adaptive Identity Resolution.</td></tr>
+              <tr><td class="hi"><a href="https://amperity.com/" target="_blank">Amperity · Partner oficial</a></td><td class="dim">Identity resolution + activación, con Delta Sharing para zero-copy.</td></tr>
+              <tr><td class="hi"><a href="https://www.getcensus.com/" target="_blank">Census · Partner oficial</a></td><td class="dim">Reverse ETL y audiencias directamente desde el Lakehouse.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/company/partners/consulting-and-si/partner-solutions/datasentics-persona360" target="_blank">DataSentics · Persona 360</a></td><td class="dim">Partner solution para C360 y personas predictivas sobre Databricks.</td></tr>
             </tbody>
           </table>
         </div>
@@ -753,16 +735,16 @@ flowchart LR
   <!-- 5 · COMPARATIVA -->
   <section class="stage" id="comparativa">
     <div class="reveal">
-      <div class="section-label"><span class="num">5</span>Promo masiva vs. personalizada</div>
+      <div class="section-label"><span class="num">5</span>CDP monolítico vs. Composable CDP</div>
       <h2 class="head">Cuatro dimensiones que <em>cambian</em></h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:22%;">Dimensión</th><th>Promo tradicional</th><th>Promo &amp; NBO</th></tr></thead>
+          <thead><tr><th style="width:22%;">Dimensión</th><th>CDP monolítico (Salesforce, Adobe)</th><th>Composable CDP sobre Databricks</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Segmentación</td><td class="dim">Todos los shoppers reciben la misma oferta.</td><td>Micro-segmentos o personalización 1:1 por shopper y momento.</td></tr>
-            <tr><td class="hi">Atribución del uplift</td><td class="dim">Estimación ex-post comparando período vs. período. Confounding alto.</td><td>Atribución causal con test y control. Uplift incremental medido, no estimado.</td></tr>
-            <tr><td class="hi">Gasto promocional</td><td class="dim">Blanket: todos los elegibles reciben el descuento, rentable o no.</td><td>Dirigido: gasta donde el uplift es real. Reasigna budget a SKUs con ROI positivo.</td></tr>
-            <tr><td class="hi">Ciclo de planeación</td><td class="dim">Trimestral, en comité. Difícil de corregir a mitad de ciclo.</td><td>Semanal o en tiempo casi real, con feedback de redemption.</td></tr>
+            <tr><td class="hi">Dónde viven los datos</td><td class="dim">Copia de todos los datos de cliente en la plataforma SaaS. Silo adicional.</td><td>En el Lakehouse, donde ya viven. Sin duplicación, con Unity Catalog gobernando.</td></tr>
+            <tr><td class="hi">Audience builder</td><td class="dim">UI propia del vendor. Modelos fijos (usuario, evento). Difícil incorporar entidades nuevas.</td><td><strong>AI/BI Genie</strong> sobre cualquier tabla del Lakehouse. Lenguaje natural. Modelo de datos abierto.</td></tr>
+            <tr><td class="hi">ML / features</td><td class="dim">ML limitado, scores predefinidos. Features rígidas.</td><td>MLflow + Feature Engineering en UC. Cualquier modelo, cualquier feature, versionado.</td></tr>
+            <tr><td class="hi">Activación</td><td class="dim">Conectores cerrados a canales del mismo vendor. Lock-in.</td><td>Delta Sharing + partners (Hightouch, Amperity, Census). Cualquier canal, zero-copy.</td></tr>
           </tbody>
         </table>
       </div>
@@ -774,43 +756,41 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">6</span>KPIs y business outcomes</div>
       <h2 class="head">Qué <em>medir</em> y por qué</h2>
-      <p class="section-deck">KPIs que un equipo de trade marketing y CRM debe instrumentar antes, durante y después de cada mecánica. Son <strong>definiciones</strong>, no metas: el valor depende del baseline, canal y madurez de datos.</p>
+      <p class="section-deck">KPIs para un programa de Audience &amp; C360. Son <strong>definiciones</strong>, no metas: el valor depende del baseline, mix de canales y madurez del Customer 360.</p>
       <div class="kpi-grid">
         <div class="kpi">
-          <div class="l">01 · Uplift incremental (%)</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La promo generó ventas que no hubieran ocurrido sin ella?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> diferencia en ventas entre grupo tratado y control, con holdout aleatorizado o matched-pair design. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">01 · Time-to-audience</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Cuánto tarda ir de la pregunta a la lista?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> minutos entre la pregunta en Genie y la audiencia entregable. <strong>Cadencia:</strong> por request, p50 y p95.</div>
         </div>
         <div class="kpi">
-          <div class="l">02 · Redemption rate (%)</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué % de ofertas enviadas se canjearon?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> canjes / ofertas elegibles enviadas, por canal × mecánica × segmento. <strong>Cadencia:</strong> diaria durante la promo.</div>
+          <div class="l">02 · Match rate en activación</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué % de la audiencia se pudo alcanzar en el canal?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> shoppers efectivamente alcanzados / shoppers en la audiencia, por canal (email, push, paid media). <strong>Cadencia:</strong> por campaña.</div>
         </div>
         <div class="kpi">
-          <div class="l">03 · ROI promocional</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La promoción ganó o perdió margen?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> (margen incremental − costo de la promo) / costo de la promo. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">03 · Audience coverage</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Cuánto de tu base está accionable con audiencias personalizadas?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> shoppers con identidad resuelta y al menos un segmento activo / shoppers totales en la base. <strong>Cadencia:</strong> mensual.</div>
         </div>
         <div class="kpi">
-          <div class="l">04 · Canibalización</div>
-          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿Qué SKUs bajaron cuando se empujó otro?</div>
-          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> Δ ventas en SKUs sustitutos vs. baseline durante la promo. <strong>Cadencia:</strong> por mecánica, post-promo.</div>
+          <div class="l">04 · Campaign uplift</div>
+          <div style="font-family: var(--display); font-size: 16px; color: var(--text); font-weight: 600; margin: 4px 0 10px;">¿La audiencia personalizada supera a la audiencia genérica?</div>
+          <div class="h" style="font-size: 13px; color: var(--text-soft); line-height: 1.55;"><strong>Cómo medirlo:</strong> diferencia en conversión entre audiencia personalizada y control no-personalizado, con holdout aleatorio. <strong>Cadencia:</strong> por campaña.</div>
         </div>
       </div>
       <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);">
-        <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Rangos observados en reportes públicos</h3>
-        <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Puntos de referencia de la industria para calibrar. Úsalos como referencia al fijar metas internas.</p>
+        <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Contexto de mercado</h3>
+        <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Puntos de referencia para calibrar el caso de negocio. Úsalos como anchor al fijar metas internas.</p>
       </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:28%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
           <tbody>
-            <tr><td class="hi">59% de promos NO rentables</td><td class="dim">No llegan a break-even globalmente. La mayor palanca está en reasignar el gasto actual a SKUs con uplift real, no en subir el budget. Fuente: <a href="https://nielseniq.com/global/en/insights/commentary/2024/the-secret-to-promotion-performance-uplift-for-brands/" target="_blank">NielsenIQ 2024</a>.</td></tr>
-            <tr><td class="hi">11–27% de revenue en trade spend</td><td class="dim">Segunda línea más grande del P&amp;L después de COGS, pero <strong>88% de CPG no la gestiona bien</strong>. Fuente: <a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute 2024</a>.</td></tr>
-            <tr><td class="hi">61% no ejecuta promo como planeó</td><td class="dim">44% de CPG cita data quality / harmonización como blocker para TPO. Fuente: <a href="https://poinstitute.com/state-of-the-industry/" target="_blank">POI Institute 2025</a>.</td></tr>
-            <tr><td class="hi">AB InBev: 75% órdenes vía ML</td><td class="dim">BEES procesa 1.6M órdenes/semana con recomendaciones generadas por ML. GMV &gt;$13B en 9 meses. Fuente: <a href="https://venturebeat.com/ai/ai-ml-bubble-to-the-top-in-new-beverage-ordering-solution/" target="_blank">VentureBeat: BEES + Databricks</a>.</td></tr>
-            <tr><td class="hi">Mondelez: +2–4% uplift SKU</td><td class="dim">Uplift medido a nivel tienda con modelos causales sobre Databricks MLflow + Unity Catalog. Fuente: <a href="https://www.databricks.com/customers/mondelez" target="_blank">Databricks: Mondelez customer story</a>.</td></tr>
-            <tr><td class="hi">+200–300 bps margen bruto</td><td class="dim">Commercial excellence con modelo comercial repetible (pricing + promo + assortment alineados). Fuente: <a href="https://www.bain.com/insights/expanding-profit-margin-through-intelligent-pricing-commercial-excellence-agenda-2025/" target="_blank">Bain: Commercial Excellence 2025</a>.</td></tr>
+            <tr><td class="hi">Composable CDP = no-silo</td><td class="dim">El patrón evita crear un nuevo silo con copia de customer data. Unity Catalog + Delta Sharing = activación zero-copy. Fuente: <a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Databricks Composable CDP Whitepaper</a>.</td></tr>
+            <tr><td class="hi">Genie a 10K usuarios en prod</td><td class="dim">Patrón comprobado: tags gobernados + Vector Index + MCP server. Escalable a 400+ tablas Gold sin curación manual. Fuente: rollout interno de Databricks.</td></tr>
+            <tr><td class="hi">Identity resolution con Splink</td><td class="dim">Accelerator oficial con fuzzy matching probabilístico. Punto de partida reproducible. Fuente: <a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Databricks blog 2022</a>.</td></tr>
+            <tr><td class="hi">Reverse ETL zero-copy</td><td class="dim">Amperity y Hightouch usan Delta Sharing para activar audiencias sin duplicar la data. Gobernanza UC se preserva. Fuente: <a href="https://hightouch.com/" target="_blank">Hightouch</a> · <a href="https://amperity.com/" target="_blank">Amperity</a>.</td></tr>
           </tbody>
         </table>
       </div>
@@ -822,15 +802,15 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">7</span>Framework de medición</div>
       <h2 class="head">Cuatro preguntas antes de <em>arrancar</em></h2>
-      <p class="section-deck">Auditoría interna antes de iniciar un programa de Promo &amp; NBO, para tener baseline y poder medir el impacto real del cambio.</p>
+      <p class="section-deck">Auditoría interna antes de iniciar un programa de Audience &amp; C360, para validar los prerrequisitos reales.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th style="width:24%;">Dimensión</th><th>Pregunta clave</th><th style="width:32%;">Cómo medirla</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Grupo control</td><td>¿Tienes holdout aleatorio disponible cuando lanzas una promo?</td><td class="dim">Revisar últimas 5 promos: ¿se reservó un % de shoppers elegibles sin ofrecer la promo?</td></tr>
-            <tr><td class="hi">Identidad resuelta</td><td>¿Puedes vincular la misma persona entre POS, loyalty, app y e-com?</td><td class="dim">Auditoría: ¿hay un customer_id único? ¿qué % de transacciones están vinculadas?</td></tr>
-            <tr><td class="hi">Uplift histórico</td><td>¿Qué % de tus promos del último año generaron uplift incremental positivo?</td><td class="dim">Análisis causal post-hoc de 12 meses de promos con control o matched-pair.</td></tr>
-            <tr><td class="hi">Costo de la promo</td><td>¿Sabes exactamente cuánto cuesta cada promo, incluyendo descuento y activación?</td><td class="dim">Conciliación con finanzas: COGS incremental + descuento neto + costo de activación.</td></tr>
+            <tr><td class="hi">Identidad unificada</td><td>¿Tienes un customer_id único que vincule POS, loyalty, app y e-com?</td><td class="dim">% de transacciones con customer_id resuelto vs. totales. Auditoría por canal.</td></tr>
+            <tr><td class="hi">Gold table accionable</td><td>¿Hay una tabla Customer 360 en Gold con RFM, preferencias y segmentos?</td><td class="dim">Revisar Unity Catalog: existe tabla con features de shopper, con linaje y ownership definidos.</td></tr>
+            <tr><td class="hi">Genie Space listo</td><td>¿Hay un Genie Space configurado con las tablas Gold relevantes y ejemplos de query?</td><td class="dim">Tags gobernados en tablas, ejemplos en las instrucciones del Space, evals sobre queries comunes.</td></tr>
+            <tr><td class="hi">Canal de activación</td><td>¿Cómo entrega hoy el equipo de marketing una audiencia a un canal (push, email, paid media)?</td><td class="dim">Proceso actual end-to-end: tiempo de request → lista → canal. Identificar fricciones.</td></tr>
           </tbody>
         </table>
       </div>
@@ -845,33 +825,33 @@ flowchart LR
       <div class="phases">
         <div class="phase">
           <div class="ph">Fase 1 · Fundamentos</div>
-          <div class="t">Identidad y test/control</div>
+          <div class="t">Identidad + C360 Gold</div>
           <ul>
-            <li><strong>Unificar</strong> POS, loyalty, app y e-com con identidad resuelta en Unity Catalog.</li>
-            <li><strong>Instrumentar</strong> holdout aleatorio al enviar promos (grupo control).</li>
-            <li><strong>Auditar</strong> 12 meses de promos históricas para medir uplift real post-hoc.</li>
+            <li><strong>Entity Resolution</strong> con el accelerator de Databricks (splink + fuzzy matching).</li>
+            <li><strong>Construir</strong> la tabla Customer 360 Gold con RFM, preferencias y features derivadas.</li>
+            <li><strong>Gobernar</strong> identidad y consent en Unity Catalog.</li>
           </ul>
-          <div class="goal">Baseline claro: % de promos con uplift positivo hoy</div>
+          <div class="goal">Customer 360 único, con lineage y permisos</div>
         </div>
         <div class="phase">
-          <div class="ph">Fase 2 · Analítica</div>
-          <div class="t">Uplift + recommender</div>
+          <div class="ph">Fase 2 · Genie</div>
+          <div class="t">Audience builder conversacional</div>
           <ul>
-            <li><strong>Modelar</strong> uplift por mecánica × segmento con causalml o equivalente.</li>
-            <li><strong>Recommender</strong> de SKU por shopper (ALS / matrix factorization como MVP).</li>
-            <li><strong>Piloto</strong>: una categoría, un canal, con grupo control aleatorizado.</li>
+            <li><strong>Tags gobernados</strong> en las tablas Gold con ejemplos de query.</li>
+            <li><strong>Vector Index</strong> sobre la metadata + Genie MCP server para escalar.</li>
+            <li><strong>Piloto</strong>: un equipo de marketing pregunta audiencias en lenguaje natural.</li>
           </ul>
-          <div class="goal">ROI incremental positivo en la mecánica piloto</div>
+          <div class="goal">Time-to-audience en minutos, auditable y gobernado</div>
         </div>
         <div class="phase">
           <div class="ph">Fase 3 · Activación</div>
-          <div class="t">Agente + multicanal</div>
+          <div class="t">Reverse ETL + multicanal</div>
           <ul>
-            <li><strong>Ranking + guardrails</strong> en producción con cap de canibalización y margen mínimo.</li>
-            <li><strong>Agente</strong> de trade marketing para preguntas what-if en lenguaje natural.</li>
-            <li><strong>Activación</strong> push en app, cupón en e-com, recomendación al vendedor de ruta.</li>
+            <li><strong>Composable CDP</strong>: integrar Hightouch, Amperity o Census sobre el C360.</li>
+            <li><strong>Sync</strong> a push, email, paid media y CRM con Delta Sharing.</li>
+            <li><strong>Cerrar el loop</strong>: métricas de campaña vuelven al C360 para refinar segmentos.</li>
           </ul>
-          <div class="goal">Escalar a 2–3 canales con atribución causal en cada uno</div>
+          <div class="goal">Audiencias recurrentes activadas en 2–3 canales con match rate medido</div>
         </div>
       </div>
     </div>
@@ -880,8 +860,8 @@ flowchart LR
 </main>
 
 <footer>
-  <div class="sig">CPG Promo &amp; NBO: A framework</div>
-  <div>Databricks Consumer Industries · Recipe 2 del CPG Cookbook · 2026 · <a href="dynamic-pricing.html" style="color: var(--red); border-bottom: 1px solid var(--border);">Ver Recipe 1: Dynamic Pricing</a></div>
+  <div class="sig">CPG Audience &amp; C360 with Genie: A framework</div>
+  <div>Databricks Consumer Industries · Recipe 3 del CPG Cookbook · 2026 · <a href="dynamic-pricing.html" style="color: #FF3621; border-bottom: 1px solid var(--border);">Recipe 1: Dynamic Pricing</a> · <a href="promo-nbo.html" style="color: #3B82F6; border-bottom: 1px solid var(--border);">Recipe 2: Promo &amp; NBO</a></div>
 </footer>
 
 <script>
@@ -976,10 +956,10 @@ flowchart LR
       datasets: [{
         label: 'SKUs',
         data: recalc(0).points,
-        backgroundColor: 'rgba(59,130,246,0.55)',
+        backgroundColor: 'rgba(0,169,114,0.55)',
         borderColor: '#FF3621',
         borderWidth: 1.5,
-        hoverBackgroundColor: 'rgba(59,130,246,0.85)'
+        hoverBackgroundColor: 'rgba(0,169,114,0.85)'
       }]
     },
     options: {

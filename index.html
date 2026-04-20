@@ -66,10 +66,34 @@
       linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     border-bottom: 1px solid var(--border);
   }
-  .hero-inner { max-width: 980px; margin: 0 auto; position: relative; text-align: center; }
-  .hero .brand-lock { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-  .hero .brand-lock .logo-svg { height: 36px; width: auto; display: block; }
-  .hero .brand-lock .mark { font-weight: 800; font-size: 30px; color: var(--text); letter-spacing: -0.8px; }
+  /* Brick pattern overlay: nod to the Databricks 3-stacked parallelograms */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(238,239,241,0.045) 1px, transparent 0);
+    background-size: 28px 28px;
+    pointer-events: none;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 80%, transparent 100%);
+  }
+  .hero-bricks {
+    position: absolute; top: 50%; right: 5%; transform: translateY(-50%);
+    opacity: 0.06; pointer-events: none;
+    width: 360px; height: 420px;
+  }
+  .hero-bricks-left {
+    position: absolute; top: 50%; left: 5%; transform: translateY(-50%) scaleX(-1);
+    opacity: 0.04; pointer-events: none;
+    width: 280px; height: 320px;
+  }
+  @media (max-width: 820px) {
+    .hero-bricks, .hero-bricks-left { display: none; }
+  }
+  .hero-inner { max-width: 980px; margin: 0 auto; position: relative; text-align: center; z-index: 2; }
+  .hero .brand-lock { display: inline-flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .hero .brand-lock .logo-svg { height: 64px; width: auto; display: block; }
+  .hero .brand-lock .mark { font-weight: 800; font-size: 36px; color: var(--text); letter-spacing: -1px; line-height: 1; }
   .hero .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; }
 
   .hero h1 {
@@ -92,10 +116,10 @@
   main { max-width: 1180px; margin: 0 auto; padding: 60px 24px 40px; }
   .recipes-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  @media (max-width: 820px) { .recipes-grid { grid-template-columns: 1fr; gap: 18px; } }
+  @media (max-width: 1000px) { .recipes-grid { grid-template-columns: 1fr; gap: 18px; } }
 
   .recipe-card {
     background: var(--panel);
@@ -114,6 +138,8 @@
   .recipe-card.r1:hover { border-color: rgba(255,54,33,0.5); box-shadow: 0 20px 60px -20px rgba(255,54,33,0.22); }
   .recipe-card.r2 { border-top: 4px solid var(--blue); }
   .recipe-card.r2:hover { border-color: rgba(59,130,246,0.5); box-shadow: 0 20px 60px -20px rgba(59,130,246,0.22); }
+  .recipe-card.r3 { border-top: 4px solid var(--green); }
+  .recipe-card.r3:hover { border-color: rgba(0,169,114,0.5); box-shadow: 0 20px 60px -20px rgba(0,169,114,0.22); }
 
   .recipe-card .num {
     font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;
@@ -121,6 +147,7 @@
   }
   .recipe-card.r1 .num { color: var(--red); }
   .recipe-card.r2 .num { color: var(--blue); }
+  .recipe-card.r3 .num { color: var(--green); }
 
   .recipe-card h2 {
     font-size: clamp(28px, 3.5vw, 38px); font-weight: 700; margin: 0 0 8px;
@@ -154,6 +181,8 @@
   .recipe-card.r1 .cta:hover { background: var(--red); color: var(--bg); border-color: var(--red); }
   .recipe-card.r2 .cta { color: var(--blue); border-color: rgba(59,130,246,0.4); }
   .recipe-card.r2 .cta:hover { background: var(--blue); color: var(--bg); border-color: var(--blue); }
+  .recipe-card.r3 .cta { color: var(--green); border-color: rgba(0,169,114,0.4); }
+  .recipe-card.r3 .cta:hover { background: var(--green); color: var(--bg); border-color: var(--green); }
   .recipe-card .cta .arrow { font-size: 18px; transition: transform 0.2s ease; }
   .recipe-card .cta:hover .arrow { transform: translateX(4px); }
 
@@ -180,29 +209,31 @@
 <nav class="topnav">
   <div class="nav-inner">
     <div class="brand">
-      <svg class="logo-svg" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
-        <path d="M0 7L12 0L24 7L12 14L0 7Z"/>
-        <path d="M0 14L12 7L24 14L12 21L0 14Z" opacity="0.55"/>
-        <path d="M0 21L12 14L24 21L12 28L0 21Z" opacity="0.25"/>
+      <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
+        <path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/>
       </svg>
-      <span class="logo-mark">Databricks</span><span class="sep">|</span><span class="tag">Consumer Industries · CPG Cookbook</span>
+      <span class="logo-mark">databricks</span><span class="sep">|</span><span class="tag">Consumer Industries</span>
     </div>
   </div>
 </nav>
 
 <header class="hero">
+  <svg class="hero-bricks-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#3B82F6" aria-hidden="true">
+    <path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/>
+  </svg>
+  <svg class="hero-bricks" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
+    <path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/>
+  </svg>
   <div class="hero-inner">
     <div class="brand-lock">
-      <svg class="logo-svg" viewBox="0 0 24 28" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
-        <path d="M0 7L12 0L24 7L12 14L0 7Z"/>
-        <path d="M0 14L12 7L24 14L12 21L0 14Z" opacity="0.55"/>
-        <path d="M0 21L12 14L24 21L12 28L0 21Z" opacity="0.25"/>
+      <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
+        <path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/>
       </svg>
-      <span class="mark">Databricks</span>
+      <span class="mark">databricks</span>
     </div>
-    <div class="tag">CPG Cookbook · Revenue Growth Management</div>
-    <h1>Dos palancas para <em>RGM</em> en CPG</h1>
-    <p class="deck">Frameworks prácticos con casos públicos, arquitecturas de referencia y KPIs, listos para pitch o workshop con tu equipo comercial.</p>
+    <div class="tag">Consumer Industries</div>
+    <h1>CPG <em>Cookbook</em></h1>
+    <p class="deck">Recipes para Revenue Growth Management. Frameworks prácticos con casos públicos, arquitecturas de referencia y KPIs.</p>
     <div class="sub">Sobre la Databricks Data Intelligence Platform · Elige una recipe para comenzar</div>
   </div>
 </header>
@@ -210,7 +241,7 @@
 <main>
 
   <div class="intro">
-    <p><strong>Revenue Growth Management (RGM)</strong> es la palanca #1 de crecimiento en CPG. Este cookbook cubre las dos capacidades centrales: <strong>Dynamic Pricing</strong> (ajustar precio con elasticidad aprendida) y <strong>Promo &amp; NBO</strong> (personalizar ofertas con atribución causal). Ambas se construyen sobre el mismo stack: Unity Catalog, MLflow, Agent Framework y Databricks Apps.</p>
+    <p><strong>Revenue Growth Management (RGM)</strong> es la palanca #1 de crecimiento en CPG. Este cookbook cubre las tres capacidades centrales: <strong>Dynamic Pricing</strong> (ajustar precio con elasticidad aprendida), <strong>Promo &amp; NBO</strong> (personalizar ofertas con atribución causal) y <strong>Audience &amp; C360 con Genie</strong> (perfiles unificados y audiencias en lenguaje natural). Todas se construyen sobre el mismo stack: Unity Catalog, MLflow, AI/BI Genie, Agent Framework y Databricks Apps.</p>
   </div>
 
   <div class="recipes-grid">
@@ -241,6 +272,20 @@
         <li>4 KPIs, framework y roadmap de 3 fases</li>
       </ul>
       <span class="cta">Abrir Recipe 2 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="recipe-card r3" href="audience-c360.html">
+      <div class="num">Recipe 3</div>
+      <h2>Audience &amp; C360 con Genie</h2>
+      <div class="subtitle">De silos al perfil 360 con audiencias conversacionales</div>
+      <div class="desc">Customer 360 sobre Lakehouse + AI/BI Genie como audience builder conversacional. Composable CDP: las audiencias se activan a canales con partners (Hightouch, Amperity, Census) sin copiar la data.</div>
+      <ul>
+        <li>Arquitectura Composable CDP sobre Unity Catalog</li>
+        <li>Casos sólidos (Marvel+Hightouch, Genie 10K users, WMG MusicIQ)</li>
+        <li>Aceleradores (Entity Resolution, Composable CDP Whitepaper)</li>
+        <li>4 KPIs, framework y roadmap de 3 fases</li>
+      </ul>
+      <span class="cta">Abrir Recipe 3 <span class="arrow">→</span></span>
     </a>
 
   </div>
