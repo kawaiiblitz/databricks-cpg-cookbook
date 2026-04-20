@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CPG Audience & Customer 360 with Genie | Databricks Consumer Industries</title>
+<title>CPG Audience & Customer 360 | Databricks Consumer Industries</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -354,7 +354,7 @@
       <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FF3621" aria-hidden="true">
         <path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308Z"/>
       </svg>
-      <span class="logo-mark">databricks</span><span class="sep">|</span><span class="tag">Consumer Industries · CPG Cookbook</span>
+      <span class="logo-mark">databricks</span>
     </div>
     <div class="nav-links">
       <a href="index.html">← Cookbook</a>
@@ -382,8 +382,8 @@
       <div class="sub"><strong>Consumer Industries</strong>CPG Cookbook</div>
     </div>
     <div class="primer-tag">Primer · Recipe 3 de 3</div>
-    <h1>Audience &amp; <em>Customer 360</em><br/>con Genie</h1>
-    <p class="deck">De silos de datos al perfil 360 gobernado, con audiencias construidas en lenguaje natural vía <strong>AI/BI Genie</strong> y activadas multicanal. Composable CDP sobre la Databricks Data Intelligence Platform.</p>
+    <h1>Audience &amp; <em>Customer 360</em></h1>
+    <p class="deck">De silos de datos al perfil 360 gobernado, con audiencias construidas sobre el Lakehouse y activadas multicanal. Composable CDP sobre la Databricks Data Intelligence Platform.</p>
     <div class="byline">
       <strong>Preparado por Databricks Consumer Industries</strong> · Recipe 3 del CPG Cookbook. Junto con <a href="dynamic-pricing.html" style="color: var(--text); border-bottom: 1px solid #FF3621;">Dynamic Pricing</a> y <a href="promo-nbo.html" style="color: var(--text); border-bottom: 1px solid #3B82F6;">Promo &amp; NBO</a> forman el stack completo de Revenue Growth Management (RGM) sobre la Databricks Data Intelligence Platform.
     </div>
@@ -396,11 +396,11 @@
   <section class="stage" id="que-es">
     <div class="reveal">
       <div class="section-label"><span class="num">1</span>Qué es Audience &amp; C360</div>
-      <h2 class="head">De <em>silos</em> al perfil 360 con audiencias conversacionales</h2>
+      <h2 class="head">De <em>silos</em> al perfil 360 con audiencias activables</h2>
       <div class="prose">
         <p>Customer 360 es el perfil unificado del shopper: identidad resuelta entre POS, loyalty, app y e-commerce, más su historial de compras, preferencias y señales de engagement. Vive como una tabla Gold en Unity Catalog, gobernada y lineada.</p>
-        <p>Encima de ese Customer 360, <strong>AI/BI Genie</strong> convierte preguntas en lenguaje natural en audiencias. Un equipo comercial pregunta <em>"dame los clientes que no compraron Gatorade en los últimos 60 días"</em> y recibe la lista en segundos, sin escribir SQL. Para audiencias recurrentes que se activan a canales (push, email, paid media), Genie se complementa con partners como Hightouch o Amperity.</p>
-        <p>Esto es el patrón <strong>Composable CDP</strong>: Databricks como engine (datos, identidad, modelos) y los canales de activación encima. Sin silos extra.</p>
+        <p>Sobre ese Customer 360 se construyen <strong>audiencias</strong> que responden preguntas del negocio tipo <em>"dame los clientes que no compraron Gatorade en los últimos 60 días"</em>. Hay varios caminos: SQL directo, dashboards con filtros, builders visuales de partners como Hightouch, o interfaces conversacionales como AI/BI Genie. La elección depende del usuario, del caso y de si la audiencia es one-off o recurrente.</p>
+        <p>Lo clave es el patrón <strong>Composable CDP</strong>: Databricks como engine (datos, identidad, modelos) y los canales de activación encima. Sin silos extra.</p>
       </div>
     </div>
   </section>
@@ -410,7 +410,7 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">Composable CDP sobre Databricks: Unity Catalog gobierna la identidad y el perfil, MLflow versiona los features, y <strong>AI/BI Genie</strong> convierte preguntas de negocio en audiencias. Partners como Hightouch y Amperity se encargan de la última milla de activación a canales cuando se necesita orquestación recurrente.</p>
+      <p class="section-deck">Composable CDP sobre Databricks: Unity Catalog gobierna la identidad y el perfil, MLflow versiona los features, y las audiencias se construyen sobre el Customer 360 vía SQL, dashboards, builders visuales (Hightouch) o interfaces conversacionales (AI/BI Genie). Partners como Hightouch, Amperity o Census se encargan de la activación recurrente a canales.</p>
       <div class="steps-grid">
         <div class="step-card"><div class="n">01</div><div class="t">Ingesta 360</div><div class="d">POS, loyalty, app engagement, e-commerce, promos, catálogo y paneles externos se unifican en Bronze/Silver con Lakeflow Connect.</div></div>
         <div class="step-card evidence" data-step>
@@ -448,41 +448,51 @@
         <div class="step-card"><div class="n">03</div><div class="t">Customer 360 Gold</div><div class="d">Tabla Gold con el perfil unificado: identidad resuelta, historial RFM, preferencias, segmentos, features derivadas (recency de compra por categoría, afinidad de marca, etc.).</div></div>
         <div class="step-card evidence" data-step>
           <div class="n">04</div>
-          <div class="t">AI/BI Genie · audience builder conversacional</div>
-          <div class="d">El equipo comercial pregunta en español "dame los que no compraron Gatorade en 60 días" y Genie genera SQL sobre el Customer 360, ejecuta y regresa la lista. Auditable y gobernado.</div>
-          <div class="hint">+ Ver cómo lo hicieron</div>
+          <div class="t">Audience builder</div>
+          <div class="d">Construye la audiencia sobre el Customer 360 Gold. Puede ser SQL directo, un dashboard con filtros, un builder visual de partner, o una interfaz conversacional. Lo que importa: que sea gobernado, auditable y reproducible.</div>
+          <div class="hint">+ Ver opciones y casos</div>
           <div class="evidence-body"><div class="evidence-inner">
-            <div class="evidence-label">Evidencia · patrón comprobado a escala</div>
+            <div class="evidence-label">Opciones · según madurez y uso</div>
 
             <div class="evidence-item">
-              <div class="who">Rollout de Genie a 10,000+ usuarios (patrón comprobado en Slack interno)</div>
-              <div class="what">El caso más extenso de Genie en producción usa un patrón replicable: <strong>tags gobernados en las tablas</strong> (incluyendo primary keys y ejemplos de query), <strong>Vector Index sobre esa metadata</strong>, y una app que <strong>refina la pregunta del usuario con Claude + vector index</strong> antes de pasarla al Genie MCP server. Así las instrucciones del Genie Space se mantienen mínimas y todo el contexto se inyecta en tiempo real.</div>
+              <div class="who">SQL directo / Dashboards con filtros</div>
+              <div class="what">La opción más madura y predecible. Un analista escribe la query sobre el Customer 360 o el equipo comercial usa un dashboard parametrizado. Gobernado por Unity Catalog, 100% reproducible, sin dependencia de modelos de lenguaje.</div>
               <div class="kpis">
-                <span class="kpi-tag">10K+ usuarios</span>
-                <span class="kpi-tag">400+ tablas Gold</span>
-                <span class="kpi-tag">Tags gobernados + Vector Index</span>
-                <span class="kpi-tag">Genie MCP server</span>
+                <span class="kpi-tag">Máxima predictibilidad</span>
+                <span class="kpi-tag">Gobernanza UC</span>
+                <span class="kpi-tag">Requiere SQL o dashboards curados</span>
+              </div>
+            </div>
+
+            <div class="evidence-item">
+              <div class="who">Hightouch · Audience Builder visual</div>
+              <div class="what">UI no-code sobre el Lakehouse. El marketer define el segmento con filtros visuales (inclusión, exclusión, recency) directamente encima del Customer 360, sin tocar SQL. Incluye scheduling y reverse ETL a canales.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Marketer-friendly</span>
+                <span class="kpi-tag">Scheduling + sync</span>
+                <span class="kpi-tag">Partner oficial</span>
+              </div>
+              <a class="src" href="https://hightouch.com/" target="_blank">Hightouch Audience Builder</a>
+            </div>
+
+            <div class="evidence-item">
+              <div class="who">AI/BI Genie · interfaz conversacional</div>
+              <div class="what">Para preguntas ad-hoc en lenguaje natural ("¿clientes que no compraron Gatorade en 60 días?"). Útil para exploración y audiencias one-off. En rollouts a escala (10K+ usuarios) requiere un patrón específico: tags gobernados en tablas, Vector Index sobre metadata y Genie MCP server. Evalúa calidad con un conjunto de queries de referencia antes de promoverlo a producción.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Ad-hoc · exploración</span>
+                <span class="kpi-tag">Requiere evaluación de calidad</span>
+                <span class="kpi-tag">Escalable con patrón específico</span>
               </div>
               <a class="src" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks docs: AI/BI Genie</a>
             </div>
 
             <div class="evidence-item">
-              <div class="who">Warner Music Group · MusicIQ</div>
-              <div class="what">WMG desplegó Genie como "MusicIQ", su interfaz de lenguaje natural para que cualquier usuario pueda preguntar sobre los data products de la compañía (Marketing Performance, LL, Dimensional). Un stop-shop para queries analíticas.</div>
+              <div class="who">Recomendación práctica</div>
+              <div class="what"><strong>Empieza por SQL/dashboards + un partner (Hightouch o Census) para activación multicanal.</strong> Esa combinación cubre el 80% del uso con máxima predictibilidad y gobernanza. Considera Genie <em>después</em>, como capa de exploración adicional para analistas que hacen preguntas ad-hoc, no como reemplazo del builder principal.</div>
               <div class="kpis">
-                <span class="kpi-tag">Natural language a SQL</span>
-                <span class="kpi-tag">Multi-dominio</span>
-                <span class="kpi-tag">Deployment amplio</span>
-              </div>
-              <a class="src" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks AI/BI Genie (docs)</a>
-            </div>
-
-            <div class="evidence-item">
-              <div class="who">Estrategia de respuesta: ¿Genie o framework?</div>
-              <div class="what"><strong>Ambos sobre el MISMO Customer 360.</strong> Genie resuelve el 80% de los casos (pregunta ad-hoc, audiencia one-off, exploración). Partners como Hightouch/Amperity entran cuando necesitas audiencia recurrente con sync automático a canales externos (push, email, paid media) y scheduling.</div>
-              <div class="kpis">
-                <span class="kpi-tag">Genie para ad-hoc + exploración</span>
-                <span class="kpi-tag">Partners para activación recurrente</span>
+                <span class="kpi-tag">SQL/dashboards = base sólida</span>
+                <span class="kpi-tag">Partner = activación multicanal</span>
+                <span class="kpi-tag">Genie = capa opcional de exploración</span>
               </div>
             </div>
 
@@ -517,7 +527,9 @@ flowchart LR
 
     subgraph Intel ["Audience builder"]
       direction TB
-      GE["AI/BI Genie<br/>audiencias ad-hoc en<br/>lenguaje natural"]
+      SQ["SQL / Dashboards<br/>analista o curados"]
+      HT["Hightouch · Census<br/>builder visual"]
+      GE["AI/BI Genie<br/>exploración ad-hoc"]
       RE["Reverse ETL<br/>Hightouch · Amperity · Census"]
     end
 
@@ -535,8 +547,11 @@ flowchart LR
     A4 --> S
     A5 --> S
     S --> ER --> G
+    G --> SQ
+    G --> HT
     G --> GE
-    G --> RE
+    SQ --> RE
+    HT --> RE
     GE -.->|"audiencia one-off"| EM
     RE --> AP
     RE --> EM
@@ -546,7 +561,7 @@ flowchart LR
     class A1,A2,A3,A4,A5 src
     class S silver
     class ER,G gold
-    class GE,RE genie
+    class SQ,HT,GE,RE genie
     class AP,EM,PM,CR out
         </div>
       </div>
@@ -809,7 +824,7 @@ flowchart LR
           <tbody>
             <tr><td class="hi">Identidad unificada</td><td>¿Tienes un customer_id único que vincule POS, loyalty, app y e-com?</td><td class="dim">% de transacciones con customer_id resuelto vs. totales. Auditoría por canal.</td></tr>
             <tr><td class="hi">Gold table accionable</td><td>¿Hay una tabla Customer 360 en Gold con RFM, preferencias y segmentos?</td><td class="dim">Revisar Unity Catalog: existe tabla con features de shopper, con linaje y ownership definidos.</td></tr>
-            <tr><td class="hi">Genie Space listo</td><td>¿Hay un Genie Space configurado con las tablas Gold relevantes y ejemplos de query?</td><td class="dim">Tags gobernados en tablas, ejemplos en las instrucciones del Space, evals sobre queries comunes.</td></tr>
+            <tr><td class="hi">Audience builder activo</td><td>¿Cómo construye hoy audiencias tu equipo de marketing — SQL, dashboards, builder visual, algo conversacional?</td><td class="dim">Inventario de herramientas actuales, tiempo típico por request, % de audiencias que sí se activan en campaña.</td></tr>
             <tr><td class="hi">Canal de activación</td><td>¿Cómo entrega hoy el equipo de marketing una audiencia a un canal (push, email, paid media)?</td><td class="dim">Proceso actual end-to-end: tiempo de request → lista → canal. Identificar fricciones.</td></tr>
           </tbody>
         </table>
@@ -834,12 +849,12 @@ flowchart LR
           <div class="goal">Customer 360 único, con lineage y permisos</div>
         </div>
         <div class="phase">
-          <div class="ph">Fase 2 · Genie</div>
-          <div class="t">Audience builder conversacional</div>
+          <div class="ph">Fase 2 · Audience builder</div>
+          <div class="t">SQL + builder visual</div>
           <ul>
-            <li><strong>Tags gobernados</strong> en las tablas Gold con ejemplos de query.</li>
-            <li><strong>Vector Index</strong> sobre la metadata + Genie MCP server para escalar.</li>
-            <li><strong>Piloto</strong>: un equipo de marketing pregunta audiencias en lenguaje natural.</li>
+            <li><strong>Dashboards parametrizados</strong> sobre el Customer 360 Gold con filtros comunes.</li>
+            <li><strong>Partner</strong> (Hightouch o Census) para builder visual + scheduling + sync.</li>
+            <li><strong>Piloto</strong>: un equipo de marketing construye y activa una audiencia recurrente.</li>
           </ul>
           <div class="goal">Time-to-audience en minutos, auditable y gobernado</div>
         </div>
@@ -860,7 +875,7 @@ flowchart LR
 </main>
 
 <footer>
-  <div class="sig">CPG Audience &amp; C360 with Genie: A framework</div>
+  <div class="sig">CPG Audience &amp; Customer 360: A framework</div>
   <div>Databricks Consumer Industries · Recipe 3 del CPG Cookbook · 2026 · <a href="dynamic-pricing.html" style="color: #FF3621; border-bottom: 1px solid var(--border);">Recipe 1: Dynamic Pricing</a> · <a href="promo-nbo.html" style="color: #3B82F6; border-bottom: 1px solid var(--border);">Recipe 2: Promo &amp; NBO</a></div>
 </footer>
 
