@@ -497,46 +497,29 @@
       <div class="diagram" style="margin-top: 24px;">
         <div class="mermaid">
 flowchart TB
-    classDef ux fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
+    classDef user fill:#1B3139,stroke:#8B9399,color:#EEEFF1
+    classDef app fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
     classDef intel fill:#0E2A1E,stroke:#00A972,stroke-width:2px,color:#00A972
     classDef data fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef act fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
+    classDef channel fill:#11212A,stroke:#EEEFF1,color:#EEEFF1
 
-    subgraph UX ["Capa de experiencia"]
-      APP["Databricks App<br/>formulario · preview · guardar · activar · medir"]
-    end
+    U["Usuario de negocio<br/>trade · RGM · marketing"]
+    APP["Databricks App<br/>UX a la medida"]
+    GE["Genie Conversation API<br/>NL → SQL"]
+    UC["Unity Catalog<br/>Customer 360 + audiencias guardadas"]
+    CH["Activación multicanal<br/>email · push · paid media · CRM"]
 
-    subgraph BR ["Capa de inteligencia"]
-      GE["Genie Conversation API<br/>NL → SQL"]
-      AG["Agent Bricks (opcional)<br/>flujos multi-step"]
-    end
+    U --> APP --> GE --> UC --> CH
+    CH -.->|eventos de conversión| UC
 
-    subgraph DATA ["Capa de datos · Unity Catalog"]
-      C360["Customer 360 Gold"]
-      AUD["Audiencias guardadas<br/>(entidad first-class)"]
-    end
-
-    subgraph ACT ["Canales de activación"]
-      EM["Email · Push · SMS"]
-      PM["Paid media"]
-      CR["CRM · SFMC · Braze"]
-    end
-
-    APP --> GE
-    APP --> AG
-    GE --> C360
-    AG --> C360
-    C360 --> AUD
-    AUD --> EM & PM & CR
-    EM & PM & CR -.->|eventos de conversión| C360
-
-    class APP ux
-    class GE,AG intel
-    class C360,AUD data
-    class EM,PM,CR act
+    class U user
+    class APP app
+    class GE intel
+    class UC data
+    class CH channel
         </div>
       </div>
-      <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted); text-align: center;">Las 3 capas superiores viven en Databricks. La activación vive en los canales existentes del cliente, integrada vía reverse ETL o API directa. El loop cerrado (eventos de conversión → UC) refina el segmento en cada iteración.</p>
+      <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted); text-align: center;">Las primeras 4 capas viven en Databricks. La activación vive en los canales del cliente, integrada vía reverse ETL o API. Los eventos de conversión regresan a Unity Catalog y refinan el segmento en cada iteración.</p>
     </div>
   </section>
 
