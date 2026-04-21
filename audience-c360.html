@@ -565,28 +565,6 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Webmotors + GSK · Genie en producción</div>
-            <div class="sector">Self-service analytics con AI/BI Genie · dos patrones de rollout comprobados</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc"><strong>Webmotors</strong> (marketplace automotriz) dio a sus empleados self-service analytics con AI/BI Genie, habilitando que cualquier usuario formule preguntas sin SQL. En paralelo, <strong>GSK Global Supply Chain</strong> (37 sitios manufactura GMP, pharma) escaló Genie 10x en producción construyendo un "AI/BI Factory": patrón operativo que trata Genie no como herramienta aislada sino como sistema productivo gobernado. Ambos son transferibles a CPG: marketing, RGM o trade pueden operar sobre Customer 360 con Genie sin depender del equipo de data.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">Self-service</div><div class="l">Webmotors · analytics sin SQL</div></div>
-              <div class="story-metric"><div class="v">10x</div><div class="l">GSK · Genie scaling en producción</div></div>
-              <div class="story-metric"><div class="v">AI/BI Factory</div><div class="l">patrón operativo gobernado</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/customers/webmotors/ai-bi-genie" target="_blank">Caso Webmotors →</a>
-            <a class="story-link" href="https://www.databricks.com/dataaisummit/session/scaling-databricks-genie-10x-gsk-global-supply-chain-building-production" target="_blank" style="margin-left: 16px;">Sesión GSK (Data+AI Summit) →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
             <div class="name">Italgas · Genie embebido en DEVA</div>
             <div class="sector">Utility · Genie + app embebida vendida a terceros · self-service BI al 80% de empleados</div>
           </div>
@@ -608,66 +586,54 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Multi-agent audience intelligence</div>
-            <div class="sector">Patrón oficial Databricks · advertisers traducen briefs a audiencias con Genie + agentes</div>
+            <div class="name">Multi-agent audience intelligence · patrón insignia</div>
+            <div class="sector">Patrón oficial Databricks · Genie + Affinity Agent + Supervisor (Agent Bricks) · Abril 2026</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Databricks publicó el patrón <strong>Multi-Agent Audience Intelligence</strong>: advertisers definen briefs de campaña en lenguaje natural y un sistema de agentes (con <strong>Affinity Agent</strong> para lift calculations estadísticamente validados, Genie para SQL, Agent Bricks como supervisor) los traducen a segmentos precisos sobre Customer 360, sin SQL manual. Integrable con Adobe Marketing Agent vía MCP para loop cerrado de audience creation + campaign optimization. Es el patrón de referencia para una app donde trade/RGM mete un perfil objetivo y obtiene los clientes que cumplen.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">Brief → segment</div><div class="l">lenguaje natural, sin SQL manual</div></div>
-              <div class="story-metric"><div class="v">Affinity Agent</div><div class="l">lift statistically validated</div></div>
-              <div class="story-metric"><div class="v">MCP</div><div class="l">integración Adobe Marketing Agent</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Blog Databricks · Multi-agent audience intelligence →</a>
-          </div>
-        </div>
-      </div>
+            <p class="story-desc">El patrón más reciente publicado por Databricks para audience building. El planner de campaña escribe el brief en lenguaje natural y un sistema de <strong>tres agentes</strong> lo traduce a audiencia + insights listos para activar, en minutos, no días ni semanas. Publicado por Bradley Munday y Tyler Hickey (Databricks, Abril 2026).</p>
 
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Reckitt</div>
-            <div class="sector">CPG global · Durex, Dettol, Lysol, Mucinex, marcas de consumo</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Unificó investigación de consumidor, reviews de producto, social listening y analytics de marca en un Lakehouse sobre Databricks Mosaic AI. Convirtió un stack fragmentado en una plataforma única que alimenta Customer 360, brand insights y audiencias accionables. La misma data foundation sirve para marketing, CRM y los equipos que construyen audiencias segmentadas para activación.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">40–60%</div><div class="l">más rápido crear campañas</div></div>
-              <div class="story-metric"><div class="v">30%</div><div class="l">más rápido localizar anuncios</div></div>
-              <div class="story-metric"><div class="v">40%</div><div class="l">menos tiempo en tareas de marketing</div></div>
+            <img src="https://www.databricks.com/sites/default/files/inline-images/multi-agent-approach-audience-intelligence-blog-img-1.png" alt="AI audience builder architecture" style="width: 100%; max-width: 720px; border-radius: 8px; margin: 22px auto 8px; display: block; border: 1px solid var(--border);">
+            <p style="color: var(--muted); font-size: 12px; text-align: center; margin: 0 0 22px;">Arquitectura multi-agente publicada por Databricks.</p>
+
+            <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin: 18px 0 12px;">Los tres agentes</div>
+            <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: var(--text-soft);">
+              <p style="margin: 0 0 12px;"><strong style="color: var(--text);">1 · Genie</strong> · traduce el brief en NL a SQL gobernado sobre una Population Table (Customer 360 extendido). Requiere curación: gold tables joineadas, comments descriptivos, 30+ ejemplos de query y definiciones de términos de negocio.</p>
+              <p style="margin: 0 0 12px;"><strong style="color: var(--text);">2 · Affinity Agent</strong> · compara la audiencia seleccionada contra la baseline y devuelve patrones estadísticamente validados con lift calculations. Usa funciones deterministas de Unity Catalog; cada número se computa con herramienta determinista, no con razonamiento puro de LLM.</p>
+              <p style="margin: 0;"><strong style="color: var(--text);">3 · Supervisor (Agent Bricks)</strong> · recibe la pregunta del usuario y decide qué agente llamar, o los encadena. Para "find high-income outdoor enthusiasts and tell me what makes them unique", encadena Genie (construir segmento) + Affinity (analizarlo) y devuelve respuesta unificada.</p>
             </div>
+
+            <img src="https://www.databricks.com/sites/default/files/inline-images/multi-agent-approach-audience-intelligence-blog-img-5.png" alt="Supervisor agent routing request to appropriate sub-agent" style="width: 100%; max-width: 720px; border-radius: 8px; margin: 12px auto 8px; display: block; border: 1px solid var(--border);">
+            <p style="color: var(--muted); font-size: 12px; text-align: center; margin: 0 0 22px;">El Supervisor enruta al agente correcto según la intención del usuario.</p>
+
+            <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin: 18px 0 12px;">Caso walk-through · Luxury travel brand</div>
+            <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 0 0 18px; font-size: 14px; line-height: 1.7; color: var(--text-soft);">
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">Brief del planner:</strong> "campaña para viajeros affluent 35-54 que reservan experiencias premium".</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">Genie devuelve:</strong> audiencia + tamaño + comparación contra baseline + sample, en segundos.</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">Affinity Agent descubre:</strong></p>
+              <ul style="margin: 0 0 12px; padding-left: 22px;">
+                <li>Sobre-indexan como <strong>early technology adopters</strong> vs. el resto de la población</li>
+                <li>Invierten en <strong>cripto 2.5x</strong> la tasa base</li>
+                <li>Afinidad fuerte con <strong>wellness y spa, fitness 5.7x</strong></li>
+              </ul>
+              <p style="margin: 0;"><strong style="color: var(--text);">Planner itera</strong> el segmento en la misma conversación y <strong>lo persiste en Unity Catalog</strong> como audiencia guardada, lista para exportar a DSPs, email o social media.</p>
+            </div>
+
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">Brief → audiencia</div><div class="l">en minutos, no semanas</div></div>
+              <div class="story-metric"><div class="v">3 agentes</div><div class="l">Genie + Affinity + Supervisor</div></div>
+              <div class="story-metric"><div class="v">Lift validado</div><div class="l">deterministic UC functions</div></div>
+              <div class="story-metric"><div class="v">Governance</div><div class="l">audiencias guardadas en UC</div></div>
+            </div>
+
             <div class="story-quote">
-              "Con herramientas GenAI sobre Databricks, nuestros marketers convierten semanas de trabajo manual en momentos de acción."
-              <cite>Tewfik Bedreddine, Global VP Data & Analytics, Reckitt</cite>
+              "The people closest to the strategy are furthest from the data. This pattern collapses what is typically a days-to-weeks cycle of briefs, analyst queues, QA, and iteration into minutes."
+              <cite>Bradley Munday &amp; Tyler Hickey · Databricks</cite>
             </div>
-            <a class="story-link" href="https://www.databricks.com/customers/reckitt" target="_blank">Ver caso completo →</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="story" data-story>
-        <div class="story-head">
-          <div class="left">
-            <div class="name">Composable CDP · Next Best Action</div>
-            <div class="sector">Arquitectura pública de referencia · Databricks + Hightouch</div>
-          </div>
-          <div class="plus">+</div>
-        </div>
-        <div class="story-body">
-          <div class="story-body-inner">
-            <p class="story-desc">Blog oficial de Databricks que documenta el patrón <strong>Composable CDP</strong> en healthcare (directamente aplicable a CPG): Databricks resuelve identidad y calcula features/scores, Hightouch construye audiencias sobre el Lakehouse y activa hacia canales de engagement. Los KPIs de campaña se cierran volviendo a Databricks: loop completo sin silos adicionales.</p>
-            <div class="story-metrics">
-              <div class="story-metric"><div class="v">Oficial Databricks</div><div class="l">arquitectura de referencia pública</div></div>
-              <div class="story-metric"><div class="v">Lakehouse-native</div><div class="l">sin copia de datos</div></div>
-              <div class="story-metric"><div class="v">Loop cerrado</div><div class="l">activación + medición en UC</div></div>
-            </div>
-            <a class="story-link" href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank">Databricks blog · Composable CDP + NBA →</a>
+            <a class="story-link" href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Leer el blog completo →</a>
           </div>
         </div>
       </div>
