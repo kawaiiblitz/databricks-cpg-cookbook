@@ -383,7 +383,7 @@
     </div>
     <div class="primer-tag">Primer · Recipe 3 de 3</div>
     <h1>Audience &amp; <em>Customer 360</em></h1>
-    <p class="deck">De silos de datos al perfil 360 gobernado, con audiencias construidas sobre el Lakehouse y activadas multicanal. Composable CDP sobre la Databricks Data Intelligence Platform.</p>
+    <p class="deck">Perfiles 360, audiencias y activación sobre Databricks — sin duplicar la data en un CDP aparte.</p>
     <div class="byline">
       <strong>Preparado por Databricks Consumer Industries</strong> · Recipe 3 del CPG Cookbook. Junto con <a href="dynamic-pricing.html" style="color: var(--text); border-bottom: 1px solid #FF3621;">Dynamic Pricing</a> y <a href="promo-nbo.html" style="color: var(--text); border-bottom: 1px solid #3B82F6;">Promo &amp; NBO</a> forman el stack completo de Revenue Growth Management (RGM) sobre la Databricks Data Intelligence Platform.
     </div>
@@ -578,10 +578,9 @@
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://hightouch.com/customers" target="_blank">Marvel + Hightouch → Braze</a></td><td class="dim">Go-live de audience segments desde Databricks hacia Braze vía Hightouch.</td></tr>
-              <tr><td class="hi"><a href="https://docs.databricks.com/aws/en/genie/" target="_blank">Genie en producción · 10K+ usuarios</a></td><td class="dim">Patrón: tags gobernados + Vector Index + Genie MCP. Escalable a portafolios grandes de data products.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/mondelez" target="_blank">Mondelez: Customer Story</a></td><td class="dim">C360 a escala con MLflow + Unity Catalog. 20K modelos, 3K en producción (de Recipe 2).</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/customers/reckitt" target="_blank">Reckitt: Customer Story</a></td><td class="dim">Unificación de consumer research, reviews y brand analytics en Lakehouse (transferible).</td></tr>
+              <tr><td class="hi"><a href="https://hightouch.com/blog/make-databricks-your-cdp" target="_blank">Domino's + Hightouch</a></td><td class="dim">Lifecycle marketing con Composable CDP: audiencias built sobre Databricks, activadas en canales con test/holdout. Patrón QSR/CPG.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/customers/italgas/ai-bi" target="_blank">Italgas · Genie embebido en DEVA</a></td><td class="dim">Genie + Conversation API embebidos en producto vendible a terceros. 80% de empleados con self-service BI.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Multi-agent audience intelligence</a></td><td class="dim">Patrón oficial Databricks: brief en NL → Genie + Affinity + Supervisor → audiencia + affinities en minutos. Abril 2026.</td></tr>
             </tbody>
           </table>
         </div>
@@ -662,30 +661,10 @@
     </div>
   </section>
 
-  <!-- 7 · FRAMEWORK -->
-  <section class="stage" id="medir">
-    <div class="reveal">
-      <div class="section-label"><span class="num">7</span>Framework de medición</div>
-      <h2 class="head">Cuatro preguntas antes de <em>arrancar</em></h2>
-      <p class="section-deck">Auditoría interna antes de iniciar un programa de Audience &amp; C360, para validar los prerrequisitos reales.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th style="width:24%;">Dimensión</th><th>Pregunta clave</th><th style="width:32%;">Cómo medirla</th></tr></thead>
-          <tbody>
-            <tr><td class="hi">Identidad unificada</td><td>¿Tienes un customer_id único que vincule POS, loyalty, app y e-com?</td><td class="dim">% de transacciones con customer_id resuelto vs. totales. Auditoría por canal.</td></tr>
-            <tr><td class="hi">Gold table accionable</td><td>¿Hay una tabla Customer 360 en Gold con RFM, preferencias y segmentos?</td><td class="dim">Revisar Unity Catalog: existe tabla con features de shopper, con linaje y ownership definidos.</td></tr>
-            <tr><td class="hi">Audience builder activo</td><td>¿Cómo construye hoy audiencias tu equipo de marketing: SQL, dashboards, builder visual, algo conversacional?</td><td class="dim">Inventario de herramientas actuales, tiempo típico por request, % de audiencias que sí se activan en campaña.</td></tr>
-            <tr><td class="hi">Canal de activación</td><td>¿Cómo entrega hoy el equipo de marketing una audiencia a un canal (push, email, paid media)?</td><td class="dim">Proceso actual end-to-end: tiempo de request → lista → canal. Identificar fricciones.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8 · ROADMAP -->
+  <!-- 7 · ROADMAP -->
   <section class="stage" id="roadmap">
     <div class="reveal">
-      <div class="section-label"><span class="num">8</span>Roadmap de madurez y business outcomes</div>
+      <div class="section-label"><span class="num">7</span>Roadmap de madurez y business outcomes</div>
       <h2 class="head">Tres fases:<em>de semanas a meses</em></h2>
       <div class="phases">
         <div class="phase">
