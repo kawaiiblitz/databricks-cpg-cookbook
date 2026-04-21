@@ -399,7 +399,7 @@
       <h2 class="head">De <em>silos</em> al perfil 360 con audiencias activables</h2>
       <div class="prose">
         <p>Customer 360 es el perfil unificado del shopper: identidad resuelta entre POS, loyalty, app y e-commerce, más su historial de compras, preferencias y señales de engagement. Vive como una tabla Gold en Unity Catalog, gobernada y lineada.</p>
-        <p>Sobre ese Customer 360 se construyen <strong>audiencias</strong> que responden preguntas del negocio tipo <em>"dame los clientes que no compraron Gatorade en los últimos 60 días"</em>. Hay varios caminos: SQL directo, dashboards con filtros, builders visuales de partners como Hightouch, o interfaces conversacionales como AI/BI Genie. La elección depende del usuario, del caso y de si la audiencia es one-off o recurrente.</p>
+        <p>Sobre ese Customer 360 se construyen <strong>audiencias</strong> que responden preguntas del negocio: segmentos de clientes para campañas, listas priorizadas para el equipo comercial, o cortes específicos para un análisis puntual. Hay varios caminos: SQL directo, dashboards con filtros, builders visuales de partners de Databricks, o interfaces conversacionales como AI/BI Genie. La elección depende del usuario, del caso y de si la audiencia es one-off o recurrente.</p>
         <p>Lo clave es el patrón <strong>Composable CDP</strong>: Databricks como engine (datos, identidad, modelos) y los canales de activación encima. Sin silos extra.</p>
       </div>
     </div>
@@ -409,38 +409,19 @@
   <section class="stage" id="como">
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>De la pregunta a la activación</div>
-      <h2 class="head">Cuatro caminos <em>para la pregunta típica</em></h2>
-      <p class="section-deck">La pregunta que el usuario de negocio va a hacer textualmente — <em>"dame los clientes que no me compraron en los últimos 60 días"</em> — tiene cuatro formas válidas de resolverse sobre Customer 360. La elección depende de quién pregunta, qué tan frecuente es la consulta, y si el resultado necesita activarse en un canal. Todas corren sobre la misma tabla Gold gobernada por Unity Catalog, con identidad resuelta y respeto a consent.</p>
+      <h2 class="head">Cuatro caminos <em>para construir audiencias</em></h2>
+      <p class="section-deck">Hay cuatro formas válidas de resolver preguntas de audiencia sobre Customer 360. La elección depende de quién pregunta, qué tan frecuente es la consulta, y si el resultado necesita activarse en un canal. Todas corren sobre la misma tabla Gold gobernada por Unity Catalog, con identidad resuelta y respeto a consent.</p>
       <div class="steps-grid">
         <div class="step-card evidence" data-step>
           <div class="n">01</div>
-          <div class="t">Dashboard parametrizado</div>
-          <div class="d">El usuario abre un dashboard AI/BI con filtros (días desde última compra, segmento, canal) y ve el resultado, lo exporta o lo comparte.</div>
-          <div class="hint">+ Cuándo elegirlo</div>
-          <div class="evidence-body"><div class="evidence-inner">
-            <div class="evidence-label">Detalle · Dashboard parametrizado</div>
-            <div class="evidence-item">
-              <div class="who">Quién lo usa</div>
-              <div class="what">Trade marketing, RGM, comercial — uso recurrente con preguntas similares. Usuarios que prefieren clickear filtros a escribir. Lo más maduro y predecible: un SQL gobernado detrás del dashboard, 100% reproducible, sin dependencia de LLMs.</div>
-              <div class="kpis">
-                <span class="kpi-tag">Esfuerzo build: bajo</span>
-                <span class="kpi-tag">Predictibilidad: máxima</span>
-                <span class="kpi-tag">Flexibilidad: media</span>
-              </div>
-              <a class="src" href="https://www.databricks.com/product/ai-bi" target="_blank">Databricks AI/BI Dashboards</a>
-            </div>
-          </div></div>
-        </div>
-        <div class="step-card evidence" data-step>
-          <div class="n">02</div>
           <div class="t">AI/BI Genie · lenguaje natural</div>
-          <div class="d">El usuario teclea la pregunta en un Genie Space. Genie genera el SQL sobre Customer 360 y devuelve la tabla. Ideal para exploración y preguntas ad-hoc sin dashboard predefinido.</div>
+          <div class="d">El usuario teclea la pregunta en un Genie Space. Genie genera el SQL sobre Customer 360 y devuelve la tabla. El camino más corto entre la pregunta y la respuesta, ideal para preguntas ad-hoc sin dashboard predefinido.</div>
           <div class="hint">+ Cuándo elegirlo</div>
           <div class="evidence-body"><div class="evidence-inner">
             <div class="evidence-label">Detalle · AI/BI Genie</div>
             <div class="evidence-item">
               <div class="who">Quién lo usa</div>
-              <div class="what">Analistas, insights, data-curious del negocio — preguntas ad-hoc que no están en ningún dashboard. Requiere curar el Space con tags de tablas, primary keys documentadas y ejemplos de query. Validar con un set de preguntas de referencia antes de promover a producción.</div>
+              <div class="what">Analistas, insights, trade/RGM y data-curious del negocio. Requiere curar el Space con tags de tablas, primary keys documentadas y ejemplos de query. Validar con un set de preguntas de referencia antes de promover a producción.</div>
               <div class="kpis">
                 <span class="kpi-tag">Esfuerzo build: bajo</span>
                 <span class="kpi-tag">Flexibilidad: máxima</span>
@@ -451,9 +432,28 @@
           </div></div>
         </div>
         <div class="step-card evidence" data-step>
+          <div class="n">02</div>
+          <div class="t">Dashboard parametrizado</div>
+          <div class="d">El usuario abre un dashboard AI/BI con filtros (días desde última compra, segmento, canal) y ve el resultado, lo exporta o lo comparte.</div>
+          <div class="hint">+ Cuándo elegirlo</div>
+          <div class="evidence-body"><div class="evidence-inner">
+            <div class="evidence-label">Detalle · Dashboard parametrizado</div>
+            <div class="evidence-item">
+              <div class="who">Quién lo usa</div>
+              <div class="what">Trade marketing, RGM, comercial: uso recurrente con preguntas similares, mismos filtros, mismo corte. Usuarios que prefieren clickear filtros a escribir. SQL gobernado detrás del dashboard, 100% reproducible.</div>
+              <div class="kpis">
+                <span class="kpi-tag">Esfuerzo build: bajo</span>
+                <span class="kpi-tag">Predictibilidad: máxima</span>
+                <span class="kpi-tag">Flexibilidad: media</span>
+              </div>
+              <a class="src" href="https://www.databricks.com/product/ai-bi" target="_blank">Databricks AI/BI Dashboards</a>
+            </div>
+          </div></div>
+        </div>
+        <div class="step-card evidence" data-step>
           <div class="n">03</div>
           <div class="t">Databricks App + Genie API</div>
-          <div class="d">App a la medida con formulario de criterios + campo libre NL. Llama a Genie Conversation API o SQL, muestra preview con count, y activa al canal con un botón — todo en una sola UX controlada.</div>
+          <div class="d">App a la medida con formulario de criterios + campo libre NL. Llama a Genie Conversation API o SQL, muestra preview con count, y activa al canal con un botón, todo en una sola UX controlada.</div>
           <div class="hint">+ Cuándo elegirlo</div>
           <div class="evidence-body"><div class="evidence-inner">
             <div class="evidence-label">Detalle · Databricks App custom</div>
@@ -472,14 +472,14 @@
         </div>
         <div class="step-card evidence" data-step>
           <div class="n">04</div>
-          <div class="t">Hightouch Audience Builder</div>
-          <div class="d">Builder visual no-code sobre el Lakehouse. Marketer define el segmento con filtros visuales, ve el count en vivo y sincroniza a canales (Braze, Salesforce MC, Meta, email, push) sin engineering.</div>
+          <div class="t">Audience Builder con partner de Databricks</div>
+          <div class="d">Builder visual no-code sobre el Lakehouse (ej: Hightouch). Marketer define el segmento con filtros visuales, ve el count en vivo y sincroniza a canales (Braze, Salesforce MC, Meta, email, push) sin engineering.</div>
           <div class="hint">+ Cuándo elegirlo</div>
           <div class="evidence-body"><div class="evidence-inner">
-            <div class="evidence-label">Detalle · Hightouch</div>
+            <div class="evidence-label">Detalle · Audience Builder con partner</div>
             <div class="evidence-item">
               <div class="who">Quién lo usa</div>
-              <div class="what">Marketing end-to-end — desde definir la audiencia hasta activarla. Integración Lakehouse-native vía Delta Sharing, sin duplicar datos. Es el patrón Composable CDP que usan Domino's, PetSmart y Grammarly.</div>
+              <div class="what">Marketing end-to-end, desde definir la audiencia hasta activarla. Integración Lakehouse-native vía Delta Sharing, sin duplicar datos. Es el patrón Composable CDP que usan clientes públicos como Domino's, PetSmart y Grammarly. <strong>Hightouch</strong> es el partner de referencia, Census es otra alternativa válida.</div>
               <div class="kpis">
                 <span class="kpi-tag">No-code para marketer</span>
                 <span class="kpi-tag">Activación incluida</span>
@@ -535,7 +535,7 @@ flowchart LR
       </div>
       <div style="margin-top: 22px; background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 10px; padding: 20px 24px; font-size: 14px; line-height: 1.65; color: var(--text-soft);">
         <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 10px;">Recomendación de arranque</div>
-        Empieza con <strong>Dashboard parametrizado + Hightouch</strong> — cubre 80% del uso con máxima predictibilidad. Agrega <strong>Genie</strong> cuando haya analistas pidiendo exploración ad-hoc. Considera <strong>App custom</strong> cuando tengas flujos específicos donde el negocio necesita combinar audience + activación + contexto (ej: trade marketing que quiere proponer una promo al segmento en la misma UI).
+        Empieza con <strong>AI/BI Genie</strong> sobre Customer 360: es el camino más corto entre la pregunta del negocio y la respuesta, sin depender de dashboards ni engineering. Complementa con <strong>Dashboard parametrizado</strong> para consultas recurrentes y predecibles (mismos filtros, mismo corte, todos los lunes). Suma <strong>App custom con Genie API</strong> cuando necesites una UX a la medida que combine audience, activación y contexto (ej: trade marketing proponiendo una promo al segmento en la misma UI). Y <strong>partner de activación</strong> (Hightouch, Census) cuando la audiencia tiene que salir a múltiples canales de forma recurrente y gobernada.
       </div>
     </div>
   </section>
@@ -557,12 +557,12 @@ flowchart LR
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">El equipo de lifecycle marketing de Domino's adoptó un enfoque <strong>Lakehouse-native</strong> con Databricks + Hightouch para automatizar journeys de cliente — con campañas avanzadas de win-back para lapsados y conversión web-to-app. El mismo patrón aplica a cualquier CPG con Customer 360 en Databricks que quiera activar en canales (email, push, paid media):</p>
+            <p class="story-desc">El equipo de lifecycle marketing de Domino's adoptó un enfoque <strong>Lakehouse-native</strong> con Databricks + Hightouch para automatizar journeys de cliente, con campañas avanzadas de win-back para lapsados y conversión web-to-app. El mismo patrón aplica a cualquier CPG con Customer 360 en Databricks que quiera activar en canales (email, push, paid media):</p>
             <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 18px 0; font-size: 14px; line-height: 1.65; color: var(--text-soft);">
               <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 14px;">El flujo paso a paso</div>
               <p style="margin: 0 0 10px;"><strong style="color: var(--text);">1 · Customer 360 gobernado en Databricks.</strong> Transacciones, loyalty, engagement, consent se unifican en una tabla Gold con identidad resuelta. Unity Catalog gobierna permisos y linaje.</p>
               <p style="margin: 0 0 10px;"><strong style="color: var(--text);">2 · Audience built directamente sobre el Lakehouse.</strong> El equipo de marketing define el segmento (ej. "usuarios lapsados de 90+ días con alto LTV histórico"). Lo construye con SQL, Genie (lenguaje natural) o el builder visual de Hightouch encima del C360.</p>
-              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">3 · Hightouch sync vía Delta Sharing.</strong> Hightouch lee la audiencia <em>directo del Lakehouse</em> con Delta Sharing — zero-copy, sin duplicar data en otro warehouse. Resuelve identifiers entre el customer_id de Databricks y los del canal destino (email, device id, push token).</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">3 · Hightouch sync vía Delta Sharing.</strong> Hightouch lee la audiencia <em>directo del Lakehouse</em> con Delta Sharing: zero-copy, sin duplicar data en otro warehouse. Resuelve identifiers entre el customer_id de Databricks y los del canal destino (email, device id, push token).</p>
               <p style="margin: 0;"><strong style="color: var(--text);">4 · Activación con medición cerrada.</strong> La audiencia se dispara en el canal (email, push, paid media) y Hightouch soporta <strong>test/holdout groups</strong> para probar incrementalidad. Los eventos de conversión vuelven a Databricks y refinan el segmento para la siguiente iteración.</p>
             </div>
             <div class="story-metrics">
@@ -571,7 +571,7 @@ flowchart LR
               <div class="story-metric"><div class="v">Marketing UI</div><div class="l">Hightouch builder encima del Lakehouse</div></div>
             </div>
             <div class="story-quote">
-              "Databricks y Hightouch nos permiten activar nuestra data para hablarle a los clientes según dónde están en su relación con la marca — con impacto notable vs. el enfoque anterior de 'batch and blast'."
+              "Databricks y Hightouch nos permiten activar nuestra data para hablarle a los clientes según dónde están en su relación con la marca, con impacto notable vs. el enfoque anterior de 'batch and blast'."
               <cite>Equipo de Lifecycle Marketing · Domino's</cite>
             </div>
             <a class="story-link" href="https://hightouch.com/blog/make-databricks-your-cdp" target="_blank">Ver caso completo (Hightouch blog) →</a>
@@ -589,7 +589,7 @@ flowchart LR
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc"><strong>Webmotors</strong> (marketplace automotriz) dio a sus empleados self-service analytics con AI/BI Genie, habilitando que cualquier usuario formule preguntas sin SQL. En paralelo, <strong>GSK Global Supply Chain</strong> (37 sitios manufactura GMP, pharma) escaló Genie 10x en producción construyendo un "AI/BI Factory" — patrón operativo que trata Genie no como herramienta aislada sino como sistema productivo gobernado. Ambos son transferibles a CPG: marketing, RGM o trade pueden operar sobre Customer 360 con Genie sin depender del equipo de data.</p>
+            <p class="story-desc"><strong>Webmotors</strong> (marketplace automotriz) dio a sus empleados self-service analytics con AI/BI Genie, habilitando que cualquier usuario formule preguntas sin SQL. En paralelo, <strong>GSK Global Supply Chain</strong> (37 sitios manufactura GMP, pharma) escaló Genie 10x en producción construyendo un "AI/BI Factory": patrón operativo que trata Genie no como herramienta aislada sino como sistema productivo gobernado. Ambos son transferibles a CPG: marketing, RGM o trade pueden operar sobre Customer 360 con Genie sin depender del equipo de data.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">Self-service</div><div class="l">Webmotors · analytics sin SQL</div></div>
               <div class="story-metric"><div class="v">10x</div><div class="l">GSK · Genie scaling en producción</div></div>
@@ -632,7 +632,7 @@ flowchart LR
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Databricks publicó el patrón <strong>Multi-Agent Audience Intelligence</strong>: advertisers definen briefs de campaña en lenguaje natural y un sistema de agentes (con <strong>Affinity Agent</strong> para lift calculations estadísticamente validados, Genie para SQL, Agent Bricks como supervisor) los traducen a segmentos precisos sobre Customer 360 — sin SQL manual. Integrable con Adobe Marketing Agent vía MCP para loop cerrado de audience creation + campaign optimization. Es el patrón de referencia para una app donde trade/RGM mete un perfil objetivo y obtiene los clientes que cumplen.</p>
+            <p class="story-desc">Databricks publicó el patrón <strong>Multi-Agent Audience Intelligence</strong>: advertisers definen briefs de campaña en lenguaje natural y un sistema de agentes (con <strong>Affinity Agent</strong> para lift calculations estadísticamente validados, Genie para SQL, Agent Bricks como supervisor) los traducen a segmentos precisos sobre Customer 360, sin SQL manual. Integrable con Adobe Marketing Agent vía MCP para loop cerrado de audience creation + campaign optimization. Es el patrón de referencia para una app donde trade/RGM mete un perfil objetivo y obtiene los clientes que cumplen.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">Brief → segment</div><div class="l">lenguaje natural, sin SQL manual</div></div>
               <div class="story-metric"><div class="v">Affinity Agent</div><div class="l">lift statistically validated</div></div>
@@ -678,7 +678,7 @@ flowchart LR
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Blog oficial de Databricks que documenta el patrón <strong>Composable CDP</strong> en healthcare (directamente aplicable a CPG): Databricks resuelve identidad y calcula features/scores, Hightouch construye audiencias sobre el Lakehouse y activa hacia canales de engagement. Los KPIs de campaña se cierran volviendo a Databricks — loop completo sin silos adicionales.</p>
+            <p class="story-desc">Blog oficial de Databricks que documenta el patrón <strong>Composable CDP</strong> en healthcare (directamente aplicable a CPG): Databricks resuelve identidad y calcula features/scores, Hightouch construye audiencias sobre el Lakehouse y activa hacia canales de engagement. Los KPIs de campaña se cierran volviendo a Databricks: loop completo sin silos adicionales.</p>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">Oficial Databricks</div><div class="l">arquitectura de referencia pública</div></div>
               <div class="story-metric"><div class="v">Lakehouse-native</div><div class="l">sin copia de datos</div></div>
@@ -846,7 +846,7 @@ flowchart LR
           <tbody>
             <tr><td class="hi">Identidad unificada</td><td>¿Tienes un customer_id único que vincule POS, loyalty, app y e-com?</td><td class="dim">% de transacciones con customer_id resuelto vs. totales. Auditoría por canal.</td></tr>
             <tr><td class="hi">Gold table accionable</td><td>¿Hay una tabla Customer 360 en Gold con RFM, preferencias y segmentos?</td><td class="dim">Revisar Unity Catalog: existe tabla con features de shopper, con linaje y ownership definidos.</td></tr>
-            <tr><td class="hi">Audience builder activo</td><td>¿Cómo construye hoy audiencias tu equipo de marketing — SQL, dashboards, builder visual, algo conversacional?</td><td class="dim">Inventario de herramientas actuales, tiempo típico por request, % de audiencias que sí se activan en campaña.</td></tr>
+            <tr><td class="hi">Audience builder activo</td><td>¿Cómo construye hoy audiencias tu equipo de marketing: SQL, dashboards, builder visual, algo conversacional?</td><td class="dim">Inventario de herramientas actuales, tiempo típico por request, % de audiencias que sí se activan en campaña.</td></tr>
             <tr><td class="hi">Canal de activación</td><td>¿Cómo entrega hoy el equipo de marketing una audiencia a un canal (push, email, paid media)?</td><td class="dim">Proceso actual end-to-end: tiempo de request → lista → canal. Identificar fricciones.</td></tr>
           </tbody>
         </table>
