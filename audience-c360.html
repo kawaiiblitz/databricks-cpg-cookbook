@@ -579,27 +579,31 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Marvel + Hightouch → Braze</div>
-            <div class="sector">Audience segments en producción · Composable CDP sobre Databricks</div>
+            <div class="name">Domino's Pizza</div>
+            <div class="sector">QSR · lifecycle marketing · Composable CDP con Databricks + Hightouch</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">Marvel implementó el patrón <strong>Composable CDP</strong> en producción para activar audiencias en Braze. Vale la pena detallar el <em>cómo</em>, porque es el mismo flujo que ocupa cualquier CPG que tenga Customer 360 sobre Databricks y quiera activar en canales (email, push, paid media):</p>
+            <p class="story-desc">El equipo de lifecycle marketing de Domino's adoptó un enfoque <strong>Lakehouse-native</strong> con Databricks + Hightouch para automatizar journeys de cliente — con campañas avanzadas de win-back para lapsados y conversión web-to-app. El mismo patrón aplica a cualquier CPG con Customer 360 en Databricks que quiera activar en canales (email, push, paid media):</p>
             <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 18px 0; font-size: 14px; line-height: 1.65; color: var(--text-soft);">
               <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 14px;">El flujo paso a paso</div>
               <p style="margin: 0 0 10px;"><strong style="color: var(--text);">1 · Customer 360 gobernado en Databricks.</strong> Transacciones, loyalty, engagement, consent se unifican en una tabla Gold con identidad resuelta. Unity Catalog gobierna permisos y linaje.</p>
-              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">2 · Audience built directamente sobre el Lakehouse.</strong> El equipo de marketing define el segmento (ej. "usuarios con suscripción próxima a vencer que no han visto contenido en 14 días"). Lo construye con SQL, Genie (natural language) o el builder visual de Hightouch encima del C360.</p>
-              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">3 · Hightouch sync vía Delta Sharing.</strong> Hightouch lee la audiencia <em>directo del Lakehouse</em> con Delta Sharing — zero-copy, sin duplicar data en otro warehouse. Resuelve identifiers entre el customer_id de Databricks y los que Braze acepta (email, device id, push token).</p>
-              <p style="margin: 0;"><strong style="color: var(--text);">4 · Braze activa la campaña.</strong> La audiencia aparece como segmento en Braze y se dispara el envío (email, push, in-app). Los eventos de conversión vuelven a Databricks y refinan el segmento para la siguiente iteración — loop cerrado.</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">2 · Audience built directamente sobre el Lakehouse.</strong> El equipo de marketing define el segmento (ej. "usuarios lapsados de 90+ días con alto LTV histórico"). Lo construye con SQL, Genie (lenguaje natural) o el builder visual de Hightouch encima del C360.</p>
+              <p style="margin: 0 0 10px;"><strong style="color: var(--text);">3 · Hightouch sync vía Delta Sharing.</strong> Hightouch lee la audiencia <em>directo del Lakehouse</em> con Delta Sharing — zero-copy, sin duplicar data en otro warehouse. Resuelve identifiers entre el customer_id de Databricks y los del canal destino (email, device id, push token).</p>
+              <p style="margin: 0;"><strong style="color: var(--text);">4 · Activación con medición cerrada.</strong> La audiencia se dispara en el canal (email, push, paid media) y Hightouch soporta <strong>test/holdout groups</strong> para probar incrementalidad. Los eventos de conversión vuelven a Databricks y refinan el segmento para la siguiente iteración.</p>
             </div>
             <div class="story-metrics">
               <div class="story-metric"><div class="v">Zero-copy</div><div class="l">Delta Sharing, sin duplicar data</div></div>
-              <div class="story-metric"><div class="v">Loop cerrado</div><div class="l">eventos de conversión vuelven a UC</div></div>
+              <div class="story-metric"><div class="v">Test/holdout</div><div class="l">incrementalidad medida por campaña</div></div>
               <div class="story-metric"><div class="v">Marketing UI</div><div class="l">Hightouch builder encima del Lakehouse</div></div>
             </div>
-            <p style="font-size: 13px; color: var(--muted); margin: 14px 0 0;">Marvel es la referencia en entretenimiento; el mismo patrón se usa cross-industry. El <a href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">blog oficial de Databricks</a> lo documenta en healthcare (NBA + Hightouch) y es 100% transferible a CPG.</p>
+            <div class="story-quote">
+              "Databricks y Hightouch nos permiten activar nuestra data para hablarle a los clientes según dónde están en su relación con la marca — con impacto notable vs. el enfoque anterior de 'batch and blast'."
+              <cite>Equipo de Lifecycle Marketing · Domino's</cite>
+            </div>
+            <a class="story-link" href="https://hightouch.com/blog/make-databricks-your-cdp" target="_blank">Ver caso completo (Hightouch blog) →</a>
           </div>
         </div>
       </div>
@@ -607,20 +611,21 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Patrón Genie a escala · 10,000+ usuarios</div>
-            <div class="sector">Rollout comprobado en producción · 400+ tablas Gold</div>
+            <div class="name">Webmotors + GSK · Genie en producción</div>
+            <div class="sector">Self-service analytics con AI/BI Genie · dos patrones de rollout comprobados</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">El caso más extenso de Genie en producción usa un patrón replicable que vale la pena adoptar desde el inicio: <strong>tags gobernados en las tablas</strong> (incluyendo primary keys y ejemplos de query), <strong>Vector Index sobre esa metadata</strong>, y una app que <strong>refina la pregunta del usuario con Claude + vector index</strong> antes de pasarla al Genie MCP server. Las instrucciones del Genie Space se mantienen mínimas; todo el contexto se inyecta en tiempo real.</p>
+            <p class="story-desc"><strong>Webmotors</strong> (marketplace automotriz) dio a sus empleados self-service analytics con AI/BI Genie, habilitando que cualquier usuario formule preguntas sin SQL. En paralelo, <strong>GSK Global Supply Chain</strong> (37 sitios manufactura GMP, pharma) escaló Genie 10x en producción construyendo un "AI/BI Factory" — patrón operativo que trata Genie no como herramienta aislada sino como sistema productivo gobernado. Ambos son transferibles a CPG: marketing, RGM o trade pueden operar sobre Customer 360 con Genie sin depender del equipo de data.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">10K+</div><div class="l">usuarios en producción</div></div>
-              <div class="story-metric"><div class="v">400+</div><div class="l">tablas Gold en el Genie Space</div></div>
-              <div class="story-metric"><div class="v">Vector Index</div><div class="l">+ tags gobernados + MCP</div></div>
+              <div class="story-metric"><div class="v">Self-service</div><div class="l">Webmotors · analytics sin SQL</div></div>
+              <div class="story-metric"><div class="v">10x</div><div class="l">GSK · Genie scaling en producción</div></div>
+              <div class="story-metric"><div class="v">AI/BI Factory</div><div class="l">patrón operativo gobernado</div></div>
             </div>
-            <a class="story-link" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks docs · AI/BI Genie →</a>
+            <a class="story-link" href="https://www.databricks.com/customers/webmotors/ai-bi-genie" target="_blank">Caso Webmotors →</a>
+            <a class="story-link" href="https://www.databricks.com/dataaisummit/session/scaling-databricks-genie-10x-gsk-global-supply-chain-building-production" target="_blank" style="margin-left: 16px;">Sesión GSK (Data+AI Summit) →</a>
           </div>
         </div>
       </div>
@@ -628,20 +633,41 @@ flowchart LR
       <div class="story" data-story>
         <div class="story-head">
           <div class="left">
-            <div class="name">Warner Music Group · MusicIQ</div>
-            <div class="sector">Genie como interfaz NL2SQL multi-dominio · un stop-shop para data</div>
+            <div class="name">Italgas · Genie embebido en DEVA</div>
+            <div class="sector">Utility · Genie + app embebida vendida a terceros · self-service BI al 80% de empleados</div>
           </div>
           <div class="plus">+</div>
         </div>
         <div class="story-body">
           <div class="story-body-inner">
-            <p class="story-desc">WMG desplegó Genie como <strong>MusicIQ</strong>, una interfaz de lenguaje natural que permite a cualquier usuario consultar los data products de la compañía (Marketing Performance, LL, Dimensional) sin escribir SQL. Un patrón directamente transferible a CPG: un "AskCommercial" sobre Customer 360 donde trade marketing, CRM y RGM preguntan por audiencias, segmentos y métricas.</p>
+            <p class="story-desc">Italgas embebió <strong>Genie dentro de su producto DEVA</strong> (sistema de meter management que venden a otros distribuidores de gas), para que los usuarios consulten performance del sistema e identifiquen safety concerns con lenguaje natural. En paralelo, <strong>80% de sus empleados</strong> usan self-service BI con AI/BI Genie Dashboards. Es el patrón "Genie + App + Conversation API" que se transfiere directo a CPG: un "AskCommercial" o "AskAudience" sobre Customer 360 donde trade marketing, CRM y RGM preguntan por segmentos, métricas y audiencias.</p>
             <div class="story-metrics">
-              <div class="story-metric"><div class="v">Multi-dominio</div><div class="l">Marketing, finanzas, operaciones</div></div>
-              <div class="story-metric"><div class="v">NL → SQL</div><div class="l">sin SQL para el usuario final</div></div>
-              <div class="story-metric"><div class="v">Data products</div><div class="l">gobernados en Unity Catalog</div></div>
+              <div class="story-metric"><div class="v">80%</div><div class="l">empleados con self-service BI (Genie)</div></div>
+              <div class="story-metric"><div class="v">Genie + API</div><div class="l">embebido en producto vendible (DEVA)</div></div>
+              <div class="story-metric"><div class="v">41 modelos</div><div class="l">ML/GenAI en producción · 100% UC</div></div>
             </div>
-            <a class="story-link" href="https://docs.databricks.com/aws/en/genie/" target="_blank">Databricks AI/BI Genie →</a>
+            <a class="story-link" href="https://www.databricks.com/customers/italgas/ai-bi" target="_blank">Ver caso Italgas →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="story" data-story>
+        <div class="story-head">
+          <div class="left">
+            <div class="name">Multi-agent audience intelligence</div>
+            <div class="sector">Patrón oficial Databricks · advertisers traducen briefs a audiencias con Genie + agentes</div>
+          </div>
+          <div class="plus">+</div>
+        </div>
+        <div class="story-body">
+          <div class="story-body-inner">
+            <p class="story-desc">Databricks publicó el patrón <strong>Multi-Agent Audience Intelligence</strong>: advertisers definen briefs de campaña en lenguaje natural y un sistema de agentes (con <strong>Affinity Agent</strong> para lift calculations estadísticamente validados, Genie para SQL, Agent Bricks como supervisor) los traducen a segmentos precisos sobre Customer 360 — sin SQL manual. Integrable con Adobe Marketing Agent vía MCP para loop cerrado de audience creation + campaign optimization. Es el patrón de referencia para una app donde trade/RGM mete un perfil objetivo y obtiene los clientes que cumplen.</p>
+            <div class="story-metrics">
+              <div class="story-metric"><div class="v">Brief → segment</div><div class="l">lenguaje natural, sin SQL manual</div></div>
+              <div class="story-metric"><div class="v">Affinity Agent</div><div class="l">lift statistically validated</div></div>
+              <div class="story-metric"><div class="v">MCP</div><div class="l">integración Adobe Marketing Agent</div></div>
+            </div>
+            <a class="story-link" href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Blog Databricks · Multi-agent audience intelligence →</a>
           </div>
         </div>
       </div>
