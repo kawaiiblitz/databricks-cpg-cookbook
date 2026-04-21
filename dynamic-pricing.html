@@ -407,7 +407,7 @@
     <div class="reveal">
       <div class="section-label"><span class="num">2</span>Cómo funciona</div>
       <h2 class="head">Cinco componentes <em>en secuencia</em></h2>
-      <p class="section-deck">Ciclos de decisión de segundos a días, sobre una arquitectura de tres capas: <strong>Data Foundation</strong> (Unity Catalog + Delta Lake), <strong>Intelligence</strong> (MLflow versionando los modelos) y <strong>Activación</strong> (Model Serving, Agent Framework, AI/BI Genie, Databricks Apps). La mayoría de la data CPG (ERP, POS, scanner NielsenIQ, loyalty, inventario) probablemente ya vive en Gold; el framework asume ese punto de partida.</p>
+      <p class="section-deck">Ciclos de decisión de segundos a días, sobre una arquitectura de tres capas: <strong>Data Foundation</strong> (Unity Catalog + Delta Lake), <strong>Intelligence</strong> (MLflow versionando los modelos) y <strong>Activación</strong> (Model Serving, Agent Bricks, AI/BI Genie, Databricks Apps). La mayoría de la data CPG (ERP, POS, scanner NielsenIQ, loyalty, inventario) probablemente ya vive en Gold; el framework asume ese punto de partida.</p>
       <div class="steps-grid">
         <div class="step-card"><div class="n">01</div><div class="t">Ingesta gobernada</div><div class="d">ERP, ventas TX, competencia, promociones e inventario se unifican en Silver → Gold con linaje y permisos (Unity Catalog). La data que ya está en Gold se conecta directo.</div></div>
         <div class="step-card evidence" data-step>
@@ -512,7 +512,7 @@ flowchart LR
     subgraph Act ["Activación"]
       direction TB
       D["Databricks Apps<br/>Dashboard Revenue Mgmt"]
-      AG["Agent Framework<br/>agente Pricing"]
+      AG["Agent Bricks<br/>agente Pricing"]
       API["Model Serving<br/>API transaccional"]
     end
 
