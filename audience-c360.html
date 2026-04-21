@@ -399,7 +399,7 @@
       <h2 class="head">De <em>silos</em> al perfil 360 con audiencias activables</h2>
       <div class="prose">
         <p>Customer 360 es el perfil unificado del shopper: identidad resuelta entre POS, loyalty, app y e-commerce, más su historial de compras, preferencias y señales de engagement. Vive como una tabla Gold en Unity Catalog, gobernada y lineada.</p>
-        <p>Sobre ese Customer 360 se construyen <strong>audiencias</strong> que responden preguntas del negocio: segmentos de clientes para campañas, listas priorizadas para el equipo comercial, o cortes específicos para un análisis puntual. Hay varios caminos: SQL directo, dashboards con filtros, builders visuales de partners de Databricks, o interfaces conversacionales como AI/BI Genie. La elección depende del usuario, del caso y de si la audiencia es one-off o recurrente.</p>
+        <p>Sobre ese Customer 360 se construyen <strong>audiencias</strong> que responden preguntas del negocio: segmentos de clientes para campañas, listas priorizadas para el equipo comercial, o cortes específicos para un análisis puntual.</p>
         <p>Lo clave es el patrón <strong>Composable CDP</strong>: Databricks como engine (datos, identidad, modelos) y los canales de activación encima. Sin silos extra.</p>
       </div>
     </div>
@@ -564,10 +564,10 @@
           <table>
             <thead><tr><th style="width:36%;">Recurso</th><th>Qué contiene · fuente</th></tr></thead>
             <tbody>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank">Databricks: Next Best Action + Composable CDP</a></td><td class="dim">Blog oficial con arquitectura de Databricks + Hightouch. Originalmente healthcare, 100% aplicable a CPG.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/retail-personalization-rfm-segmentation-and-composable-cdp" target="_blank">Retail Personalization · RFM Segmentation + Composable CDP</a></td><td class="dim">Método clásico de segmentación (Recency · Frequency · Monetary) encima del Lakehouse.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Multi-agent Audience Intelligence</a></td><td class="dim">Patrón oficial Databricks: brief NL → Genie + Affinity + Supervisor → audiencia + affinities en minutos. Abril 2026.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/retail-personalization-rfm-segmentation-and-composable-cdp" target="_blank">Retail Personalization · RFM Segmentation + Composable CDP</a></td><td class="dim">Segmentación clásica Recency · Frequency · Monetary sobre Lakehouse, con activación composable.</td></tr>
               <tr><td class="hi"><a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Customer Entity Resolution Accelerator</a></td><td class="dim">Blog oficial de lanzamiento. Identidad unificada como prerequisito de audiencias.</td></tr>
-              <tr><td class="hi"><a href="https://www.databricks.com/blog/unlocking-next-gen-customer-experiences-data-intelligence-marketing" target="_blank">Next-Gen Customer Experiences · Data Intelligence Marketing</a></td><td class="dim">Narrativa de marketing over the Lakehouse.</td></tr>
+              <tr><td class="hi"><a href="https://www.databricks.com/blog/how-improve-patient-outcomes-next-best-actions-using-composable-cdp-databricks" target="_blank">Composable CDP + Next Best Action</a></td><td class="dim">Arquitectura de referencia Databricks + Hightouch con loop cerrado audience → activación → medición. Transferible a CPG.</td></tr>
             </tbody>
           </table>
         </div>
@@ -645,12 +645,12 @@
         </div>
       </div>
       <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);">
-        <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Contexto de mercado</h3>
-        <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Puntos de referencia para calibrar el caso de negocio. Úsalos como anchor al fijar metas internas.</p>
+        <h3 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.3px;">Patrones de referencia</h3>
+        <p style="color: var(--muted); font-size: 14px; max-width: 66ch; margin: 0 0 20px;">Tres conceptos arquitectónicos que sustentan audience building sobre Databricks.</p>
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:32%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
+          <thead><tr><th style="width:32%;">Patrón</th><th>Qué resuelve y fuente</th></tr></thead>
           <tbody>
             <tr><td class="hi">Multi-agent audience intelligence · patrón oficial Databricks</td><td class="dim">Brief en NL → 3 agentes (Genie + Affinity + Supervisor) → audiencia + affinities en minutos. <a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Databricks blog · Abril 2026</a>.</td></tr>
             <tr><td class="hi">Composable CDP · activación zero-copy</td><td class="dim">UC + Delta Sharing evita duplicar customer data en un silo nuevo. Partners como Hightouch, Amperity y Census leen la audiencia directo del Lakehouse. <a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Composable CDP Whitepaper</a>.</td></tr>
@@ -679,23 +679,24 @@
         </div>
         <div class="phase">
           <div class="ph">Fase 2 · Audience builder</div>
-          <div class="t">SQL + builder visual</div>
+          <div class="t">Genie + partner de activación</div>
           <ul>
-            <li><strong>Dashboards parametrizados</strong> sobre el Customer 360 Gold con filtros comunes.</li>
-            <li><strong>Partner</strong> (Hightouch o Census) para builder visual + scheduling + sync.</li>
-            <li><strong>Piloto</strong>: un equipo de marketing construye y activa una audiencia recurrente.</li>
+            <li><strong>AI/BI Genie</strong> sobre el Customer 360: tags gobernados, ejemplos de query y eval de calidad.</li>
+            <li><strong>Dashboards parametrizados</strong> para cortes recurrentes predecibles.</li>
+            <li><strong>Partner</strong> (Hightouch o Census) para activación multicanal.</li>
+            <li><strong>Piloto</strong>: un equipo de marketing construye y activa una audiencia recurrente end-to-end.</li>
           </ul>
           <div class="goal">Time-to-audience en minutos, auditable y gobernado</div>
         </div>
         <div class="phase">
-          <div class="ph">Fase 3 · Activación</div>
-          <div class="t">Reverse ETL + multicanal</div>
+          <div class="ph">Fase 3 · Multi-agente + loop cerrado</div>
+          <div class="t">Genie + Affinity + Supervisor</div>
           <ul>
-            <li><strong>Composable CDP</strong>: integrar Hightouch, Amperity o Census sobre el C360.</li>
-            <li><strong>Sync</strong> a push, email, paid media y CRM con Delta Sharing.</li>
-            <li><strong>Cerrar el loop</strong>: métricas de campaña vuelven al C360 para refinar segmentos.</li>
+            <li><strong>Agent Bricks</strong>: supervisor que encadena Genie (segmento) + Affinity Agent (insights).</li>
+            <li><strong>Databricks App</strong> custom con formulario NL + preview + activación integrada.</li>
+            <li><strong>Cerrar el loop</strong>: eventos de conversión vuelven al C360 para refinar segmentos y medir uplift.</li>
           </ul>
-          <div class="goal">Audiencias recurrentes activadas en 2–3 canales con match rate medido</div>
+          <div class="goal">Uplift de campaña medido contra holdout aleatorio</div>
         </div>
       </div>
     </div>
