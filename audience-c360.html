@@ -496,7 +496,7 @@
       </div>
       <div class="diagram" style="margin-top: 24px;">
         <div class="mermaid">
-flowchart TB
+flowchart LR
     classDef user fill:#1B3139,stroke:#8B9399,color:#EEEFF1
     classDef app fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
     classDef intel fill:#0E2A1E,stroke:#00A972,stroke-width:2px,color:#00A972
@@ -506,8 +506,8 @@ flowchart TB
     U["Usuario de negocio<br/>trade · RGM · marketing"]
     APP["Databricks App<br/>UX a la medida"]
     GE["Genie Conversation API<br/>NL → SQL"]
-    UC["Unity Catalog<br/>Customer 360 + audiencias guardadas"]
-    CH["Activación multicanal<br/>email · push · paid media · CRM"]
+    UC["Unity Catalog<br/>Customer 360 + audiencias"]
+    CH["Activación multicanal<br/>email · push · paid · CRM"]
 
     U --> APP --> GE --> UC --> CH
     CH -.->|eventos de conversión| UC
