@@ -437,63 +437,31 @@
       <img src="https://www.databricks.com/sites/default/files/inline-images/multi-agent-approach-audience-intelligence-blog-img-5.png" alt="Supervisor agent routing request to appropriate sub-agent" style="width: 100%; max-width: 820px; border-radius: 8px; margin: 32px auto 8px; display: block; border: 1px solid var(--border);">
       <p style="color: var(--muted); font-size: 12px; text-align: center; margin: 0 0 32px;">El Supervisor enruta al agente correcto según la intención del usuario.</p>
 
-      <h3 style="font-family: var(--display); font-size: 28px; font-weight: 700; margin: 40px 0 18px; letter-spacing: -0.3px;">Walk-through · Luxury travel brand</h3>
+      <h3 style="font-family: var(--display); font-size: 28px; font-weight: 700; margin: 40px 0 18px; letter-spacing: -0.3px;">Cómo se vería en CPG</h3>
+      <p class="section-deck" style="margin-bottom: 18px;">Ejemplo ilustrativo del mismo patrón aplicado a una embotelladora de bebidas. Los números son hipotéticos; lo que importa es el flujo.</p>
       <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin: 0 0 28px; font-size: 14px; line-height: 1.7; color: var(--text-soft);">
-        <p style="margin: 0 0 12px;"><strong style="color: var(--text);">Brief del planner:</strong> "campaña para viajeros affluent 35-54 que reservan experiencias premium".</p>
-        <p style="margin: 0 0 12px;"><strong style="color: var(--text);">Genie devuelve:</strong> audiencia + tamaño + comparación contra baseline + sample, en segundos.</p>
+        <p style="margin: 0 0 12px;"><strong style="color: var(--text);">Brief del planner:</strong> "clientes de alto valor histórico que dejaron de comprar la marca X en los últimos 60 días".</p>
+        <p style="margin: 0 0 12px;"><strong style="color: var(--text);">Genie devuelve:</strong> audiencia (ej. 80K shoppers) + tamaño relativo al total + comparación contra baseline + sample, en segundos.</p>
         <p style="margin: 0 0 12px;"><strong style="color: var(--text);">Affinity Agent descubre:</strong></p>
         <ul style="margin: 0 0 14px; padding-left: 22px;">
-          <li>Sobre-indexan como <strong>early technology adopters</strong> vs. el resto de la población</li>
-          <li>Invierten en <strong>cripto 2.5x</strong> la tasa base</li>
-          <li>Afinidad fuerte con <strong>wellness y spa, fitness 5.7x</strong></li>
+          <li>Concentrados en <strong>canal tradicional</strong> (tienditas) vs. moderno (3.2x sobre baseline)</li>
+          <li>Sobre-indexan en <strong>NSE C+ urbanos</strong> (1.8x)</li>
+          <li>También bajaron otras bebidas de la misma categoría, no solo la marca X: <strong>señal de cambio de categoría</strong>, no solo de preferencia</li>
         </ul>
-        <p style="margin: 0;"><strong style="color: var(--text);">Planner itera</strong> el segmento en la misma conversación y lo persiste en Unity Catalog como audiencia guardada, lista para exportar a DSPs, email o social media.</p>
-      </div>
-
-      <div style="background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 10px; padding: 20px 24px; margin: 28px 0; font-size: 14px; line-height: 1.65; color: var(--text-soft); font-style: italic;">
-        "The people closest to the strategy are furthest from the data. This pattern collapses what is typically a days-to-weeks cycle of briefs, analyst queues, QA, and iteration into minutes."
-        <div style="font-style: normal; color: var(--muted); font-size: 12px; margin-top: 10px;">Bradley Munday &amp; Tyler Hickey · <a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank" style="color: var(--muted); border-bottom: 1px solid var(--border);">Blog Databricks</a></div>
-      </div>
-
-      <h3 style="font-family: var(--display); font-size: 28px; font-weight: 700; margin: 48px 0 14px; letter-spacing: -0.3px;">Arquitectura end-to-end</h3>
-      <p class="section-deck" style="margin-bottom: 16px;">El stack completo: usuario → app → Genie API → Unity Catalog → activación en canales, con loop cerrado de eventos que refinan el segmento.</p>
-      <div class="diagram">
-        <div class="mermaid">
-flowchart LR
-    classDef user fill:#1B3139,stroke:#8B9399,color:#EEEFF1
-    classDef app fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
-    classDef intel fill:#0E2A1E,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef data fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef channel fill:#11212A,stroke:#EEEFF1,color:#EEEFF1
-
-    U["Usuario de negocio<br/>trade · RGM · marketing"]
-    APP["Databricks App<br/>UX a la medida"]
-    GE["Genie Conversation API<br/>NL → SQL"]
-    UC["Unity Catalog<br/>Customer 360 + audiencias"]
-    CH["Activación multicanal<br/>email · push · paid · CRM"]
-
-    U --> APP --> GE --> UC --> CH
-    CH -.->|eventos de conversión| UC
-
-    class U user
-    class APP app
-    class GE intel
-    class UC data
-    class CH channel
-        </div>
+        <p style="margin: 0;"><strong style="color: var(--text);">Planner itera</strong> el segmento en la misma conversación (ej: "filtra solo los de Ciudad de México", "excluye quienes ya respondieron a la última campaña") y lo persiste en Unity Catalog como audiencia guardada, lista para enviar a email de win-back, push en app, o retargeting en paid media.</p>
       </div>
 
       <h3 style="font-family: var(--display); font-size: 28px; font-weight: 700; margin: 48px 0 14px; letter-spacing: -0.3px;">Opciones de arranque según madurez</h3>
       <p class="section-deck" style="margin-bottom: 18px;">No todos empiezan con el patrón multi-agente completo. Según madurez del equipo y complejidad del caso, estas son las opciones escalables. Se pueden combinar.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:28%;">Opción</th><th>Cuándo usarla</th><th style="width:14%;">Esfuerzo</th></tr></thead>
+          <thead><tr><th style="width:32%;">Opción</th><th>Cuándo usarla</th></tr></thead>
           <tbody>
-            <tr><td class="hi">AI/BI Genie (NL)</td><td class="dim">Exploración ad-hoc, audiencias one-off. Analistas y data-curious del negocio. <a href="https://docs.databricks.com/aws/en/genie/" target="_blank">docs</a></td><td>Bajo</td></tr>
-            <tr><td class="hi">Dashboard parametrizado</td><td class="dim">Uso recurrente con mismos filtros. Trade, RGM y comercial que prefieren clickear a escribir. <a href="https://www.databricks.com/product/ai-bi" target="_blank">AI/BI Dashboards</a></td><td>Bajo</td></tr>
-            <tr><td class="hi">Databricks App + Genie API</td><td class="dim">Flujo específico del negocio que combina audience, activación y contexto en una UX a la medida. Como Italgas con DEVA. <a href="https://www.databricks.com/product/databricks-apps" target="_blank">Databricks Apps</a> · <a href="https://www.databricks.com/blog/genie-conversation-apis-public-preview" target="_blank">Genie API</a></td><td>Medio</td></tr>
-            <tr><td class="hi">Partner Audience Builder</td><td class="dim">Marketing end-to-end con builder visual no-code y activación multicanal. Patrón Composable CDP (Domino's, PetSmart). <a href="https://hightouch.com/solutions/databricks-cdp" target="_blank">Hightouch</a>, Census.</td><td>Bajo</td></tr>
-            <tr><td class="hi"><strong>Multi-agente (Genie + Affinity + Supervisor)</strong></td><td class="dim">Brief de campaña en NL traducido a audiencia + affinities, con iteración conversacional. Es el state-of-the-art descrito arriba.</td><td>Alto</td></tr>
+            <tr><td class="hi">AI/BI Genie (NL)</td><td class="dim">Exploración ad-hoc, audiencias one-off. Analistas y data-curious del negocio. <a href="https://docs.databricks.com/aws/en/genie/" target="_blank">docs</a></td></tr>
+            <tr><td class="hi">Dashboard parametrizado</td><td class="dim">Uso recurrente con mismos filtros. Trade, RGM y comercial que prefieren clickear a escribir. <a href="https://www.databricks.com/product/ai-bi" target="_blank">AI/BI Dashboards</a></td></tr>
+            <tr><td class="hi">Databricks App + Genie API</td><td class="dim">Flujo específico del negocio que combina audience, activación y contexto en una UX a la medida. Como Italgas con DEVA. <a href="https://www.databricks.com/product/databricks-apps" target="_blank">Databricks Apps</a> · <a href="https://www.databricks.com/blog/genie-conversation-apis-public-preview" target="_blank">Genie API</a></td></tr>
+            <tr><td class="hi">Partner Audience Builder</td><td class="dim">Marketing end-to-end con builder visual no-code y activación multicanal. Patrón Composable CDP (Domino's, PetSmart). <a href="https://hightouch.com/solutions/databricks-cdp" target="_blank">Hightouch</a>, Census.</td></tr>
+            <tr><td class="hi"><strong>Multi-agente (Genie + Affinity + Supervisor)</strong></td><td class="dim">Brief de campaña en NL traducido a audiencia + affinities, con iteración conversacional. Es el state-of-the-art descrito arriba.</td></tr>
           </tbody>
         </table>
       </div>
@@ -665,7 +633,7 @@ flowchart LR
     <div class="reveal">
       <div class="section-label"><span class="num">6</span>KPIs y business outcomes</div>
       <h2 class="head">Qué <em>medir</em> y por qué</h2>
-      <p class="section-deck">Dos KPIs con carnita: uno operacional (¿qué tan rápido vamos del brief a la audiencia?), uno de business outcome (¿la personalización realmente mueve la aguja?). Hay métricas técnicas adicionales (match rate, coverage) que sirven para operar, pero no defienden el business case.</p>
+      <p class="section-deck">Dos KPIs son suficientes para defender el programa: uno operacional (¿qué tan rápido vamos del brief a la audiencia?) y uno de business outcome (¿la personalización mueve la aguja?). Hay métricas adicionales (match rate, coverage) que sirven para operar el sistema, pero no defienden el caso de negocio.</p>
       <div class="kpi-grid">
         <div class="kpi">
           <div class="l">01 · Time-to-audience (operacional)</div>
@@ -684,12 +652,11 @@ flowchart LR
       </div>
       <div class="table-wrap">
         <table>
-          <thead><tr><th style="width:28%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
+          <thead><tr><th style="width:32%;">Hallazgo citable</th><th>Contexto y fuente</th></tr></thead>
           <tbody>
-            <tr><td class="hi">Composable CDP = no-silo</td><td class="dim">El patrón evita crear un nuevo silo con copia de customer data. Unity Catalog + Delta Sharing = activación zero-copy. Fuente: <a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Databricks Composable CDP Whitepaper</a>.</td></tr>
-            <tr><td class="hi">Multi-agent audience intelligence</td><td class="dim">Patrón oficial Databricks para audience building: brief NL → 3 agentes → audiencia + affinities en minutos. Fuente: <a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Databricks blog · Abril 2026</a>.</td></tr>
-            <tr><td class="hi">Identity resolution con Splink</td><td class="dim">Accelerator oficial con fuzzy matching probabilístico. Punto de partida reproducible. Fuente: <a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Databricks blog 2022</a>.</td></tr>
-            <tr><td class="hi">Reverse ETL zero-copy</td><td class="dim">Amperity y Hightouch usan Delta Sharing para activar audiencias sin duplicar la data. Gobernanza UC se preserva. Fuente: <a href="https://hightouch.com/" target="_blank">Hightouch</a> · <a href="https://amperity.com/" target="_blank">Amperity</a>.</td></tr>
+            <tr><td class="hi">Multi-agent audience intelligence · patrón oficial Databricks</td><td class="dim">Brief en NL → 3 agentes (Genie + Affinity + Supervisor) → audiencia + affinities en minutos. <a href="https://www.databricks.com/blog/multi-agent-approach-audience-intelligence" target="_blank">Databricks blog · Abril 2026</a>.</td></tr>
+            <tr><td class="hi">Composable CDP · activación zero-copy</td><td class="dim">UC + Delta Sharing evita duplicar customer data en un silo nuevo. Partners como Hightouch, Amperity y Census leen la audiencia directo del Lakehouse. <a href="https://www.databricks.com/resources/whitepapers/the-composable-customer-data-platform" target="_blank">Composable CDP Whitepaper</a>.</td></tr>
+            <tr><td class="hi">Identity resolution es precondición</td><td class="dim">Sin customer_id unificado entre POS, loyalty, app y e-com, cualquier audiencia sale desalineada. Solution accelerator oficial con Splink. <a href="https://www.databricks.com/blog/2022/08/04/new-solution-accelerator-customer-entity-resolution.html" target="_blank">Databricks blog 2022</a>.</td></tr>
           </tbody>
         </table>
       </div>
