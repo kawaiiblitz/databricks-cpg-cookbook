@@ -490,53 +490,53 @@
           </div></div>
         </div>
       </div>
-      <div class="diagram">
-        <div class="mermaid">
-flowchart LR
-    classDef q fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
-    classDef gold fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
-    classDef path fill:#1B3139,stroke:#3B82F6,stroke-width:1px,color:#EEEFF1
-    classDef out fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
-
-    Q["'Dame los clientes que<br/>no compraron en 60 días'"]
-    G["Customer 360 Gold<br/>Unity Catalog"]
-
-    subgraph Paths ["Cuatro caminos"]
-      direction TB
-      P1["Dashboard<br/>parametrizado"]
-      P2["AI/BI Genie<br/>lenguaje natural"]
-      P3["Databricks App<br/>+ Genie API"]
-      P4["Hightouch<br/>builder visual"]
-    end
-
-    A["Audiencia<br/>con consent"]
-
-    subgraph Act ["Activación multicanal"]
-      direction TB
-      AC1["Email · SMS · Push"]
-      AC2["Paid media<br/>Meta · Google"]
-      AC3["CRM · SFMC"]
-    end
-
-    L["Loop cerrado<br/>eventos → UC"]
-
-    Q --> P1 & P2 & P3 & P4
-    G --> P1 & P2 & P3 & P4
-    P1 & P2 & P3 & P4 --> A
-    A --> AC1 & AC2 & AC3
-    AC1 & AC2 & AC3 --> L
-    L -.->|refinar segmento| G
-
-    class Q q
-    class G gold
-    class P1,P2,P3,P4 path
-    class A,AC1,AC2,AC3,L out
-        </div>
-      </div>
       <div style="margin-top: 22px; background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 10px; padding: 20px 24px; font-size: 14px; line-height: 1.65; color: var(--text-soft);">
         <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 10px;">Recomendación de arranque</div>
-        Empieza con <strong>AI/BI Genie</strong> sobre Customer 360: es el camino más corto entre la pregunta del negocio y la respuesta, sin depender de dashboards ni engineering. Complementa con <strong>Dashboard parametrizado</strong> para consultas recurrentes y predecibles (mismos filtros, mismo corte, todos los lunes). Suma <strong>App custom con Genie API</strong> cuando necesites una UX a la medida que combine audience, activación y contexto (ej: trade marketing proponiendo una promo al segmento en la misma UI). Y <strong>partner de activación</strong> (Hightouch, Census) cuando la audiencia tiene que salir a múltiples canales de forma recurrente y gobernada.
+        Para audience building end-to-end sobre stack Databricks (definir, guardar, activar, medir, iterar), el patrón recomendado es <strong>Databricks App custom + Genie Conversation API + activación</strong>. Genie aporta la capa NL sobre Customer 360, la App controla la UX y el flujo de guardado, y la activación se resuelve con reverse ETL o integración nativa al canal. Para consultas one-off o exploración, AI/BI Genie solo; para audiencias recurrentes con foco en activación multicanal, partner como Hightouch o Census.
       </div>
+      <div class="diagram" style="margin-top: 24px;">
+        <div class="mermaid">
+flowchart TB
+    classDef ux fill:#1B1016,stroke:#FF3621,stroke-width:2px,color:#FF3621
+    classDef intel fill:#0E2A1E,stroke:#00A972,stroke-width:2px,color:#00A972
+    classDef data fill:#11212A,stroke:#00A972,stroke-width:2px,color:#00A972
+    classDef act fill:#11212A,stroke:#EEEFF1,stroke-width:1px,color:#EEEFF1
+
+    subgraph UX ["Capa de experiencia"]
+      APP["Databricks App<br/>formulario · preview · guardar · activar · medir"]
+    end
+
+    subgraph BR ["Capa de inteligencia"]
+      GE["Genie Conversation API<br/>NL → SQL"]
+      AG["Agent Bricks (opcional)<br/>flujos multi-step"]
+    end
+
+    subgraph DATA ["Capa de datos · Unity Catalog"]
+      C360["Customer 360 Gold"]
+      AUD["Audiencias guardadas<br/>(entidad first-class)"]
+    end
+
+    subgraph ACT ["Canales de activación"]
+      EM["Email · Push · SMS"]
+      PM["Paid media"]
+      CR["CRM · SFMC · Braze"]
+    end
+
+    APP --> GE
+    APP --> AG
+    GE --> C360
+    AG --> C360
+    C360 --> AUD
+    AUD --> EM & PM & CR
+    EM & PM & CR -.->|eventos de conversión| C360
+
+    class APP ux
+    class GE,AG intel
+    class C360,AUD data
+    class EM,PM,CR act
+        </div>
+      </div>
+      <p style="margin: 14px 0 0; font-size: 12px; color: var(--muted); text-align: center;">Las 3 capas superiores viven en Databricks. La activación vive en los canales existentes del cliente, integrada vía reverse ETL o API directa. El loop cerrado (eventos de conversión → UC) refina el segmento en cada iteración.</p>
     </div>
   </section>
 
